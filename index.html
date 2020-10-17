@@ -1,1 +1,419 @@
-hello mina lis 3
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--In Order to let Internet Explorer read the hebrew letters, I needed to had the encoding utf-8-->
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="./Savta-Home.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+		<title>סבתא מינה ליס</title>
+		<link rel="icon" href="favicon.png" type="image/png">
+		<!--without the meta tag my media queries didn't work properly-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+
+	<body>
+		<header>
+			<h1>סבתא מינה</h1>
+		</header>
+
+		<div id="space-under-the-fixed-title"></div>
+
+
+		<div id="subjects">
+
+			<div id="div-that-help-put-pic-box-savta-in-ie-grid"> 
+			<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
+				<a class="pic-box-savta" href="#movie-header">	
+						<img id="savta" src="pictures/mySavta.png" alt="תמונות"/>
+						<img id="savta-mobile" src="pictures/Mina-mobile.jpg" alt="תמונות"/>
+						<h1>סבתא מספרת</h1>
+				</a>
+			</div>
+
+
+			<div id="div-that-help-put-pic-box-time-in-ie-grid"> 
+			<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
+				<a class="pic-box-time" href="#time_line-header">
+					<img src="pictures/myClock.png" alt="ציר זמן"/>
+					<h1>ציר זמן</h1>
+					<p id="title">ציר הזמן</p>
+					<p id="paragraph">גלו באיזו שנה סבתא נולדה, מתי היא עלתה לארץ ומתי ארעו אירועים שונים בחייה</p>
+					<p id="read-more"><< צפו</p>
+				</a>
+			</div>
+
+
+			<div id="div-that-help-put-pic-box-tree-in-ie-grid"> 
+				<a class="pic-box-tree" href="#familyTree-header">
+					<img src="pictures/myTree1.jpg" alt="עץ משפחה"/>
+					<h1>עץ משפחה</h1>
+				</a>	
+			</div>
+
+
+			<div id="div-that-help-put-pic-box-pictures-in-ie-grid">
+				<a class="pic-box-pictures" href="#Images-header">
+					<img src="pictures/camera2.png" alt="תמונות"/>
+					<h1>תמונות</h1>
+				</a>
+			</div>
+
+
+			<div id="div-that-help-put-pic-box-food-in-ie-grid">
+				<a class="pic-box-food" href="#recipes-header">
+					<img src="pictures/chocolateBalls.png" alt="מתכונים"/>
+					<h1>מתכונים</h1>
+				</a>
+			</div>
+
+
+			<div id="div-that-help-put-pic-box-music-in-ie-grid">
+				<a class="pic-box-music" href="#music-header">
+					<img src="pictures/myViolin.png" alt="מוזיקה"/>
+					<h1>מוזיקה אהובה</h1>
+				</a>
+			</div>
+
+		</div>
+
+
+		<img id="myBtn" src="./arrow-up-outline-white.SVG" title="חזור לראש העמוד" name="arrow-up-outline" onclick="topFunction()">
+		<script>
+			//Get the button
+			var mybutton = document.getElementById("myBtn");
+
+			// When the user scrolls down 600px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+			    mybutton.style.display = "block";
+			  } else {
+			    mybutton.style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+		<p id="movie-header">סבתא מספרת</p>
+		<div id="background-of-movie">
+					<iframe width="510" height="315" src="https://www.youtube-nocookie.com/embed/tshhrdR5jSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+
+
+		<p id="familyTree-header">עץ משפחה</p>
+		<div id="family-tree">
+			<img src="FamilyTree/familyTree3.png" width="90%" alt="עץ משפחה"/>
+		</div>
+
+
+		<div id="time-line-father">
+			<p id="time_line-header">ציר זמן</p>
+			<div id="time_line">
+				<div id="horizontal-line"></div>
+
+				<p id="gap-start"></p>
+
+				<p id="year1929a">19</p>
+				<p id="year1929b">29</p>
+				<p id="text1929a">נולדה ברוסיה</p>
+				<p id="text1929b">בפרוז'אני -לבנה</p>
+				<p id="line1929"></p>
+
+				<p id="gap-middle19295"></p>
+
+				<p id="year1935">1935</p>
+				<p id="text1935">עלתה לארץ</p>
+				<p id="line1935"></p>
+
+				<p id="year1948a">19</p>
+				<p id="year1948b">48</p>
+				<p id="text1948a">&nbsp;נפגשה עם</p>
+				<p id="text1948b">לראשונה &nbsp;סבא</p>
+				<p id="line1948"></p>
+
+				<p id="gap-middle19485"></p>
+
+				<p id="year1949">1949</p>
+				<p id="text1949">התחתנה עם סבא</p>
+				<p id="line1949"></p>
+
+				<p id="gap-middle19495"></p>
+
+				<p id="year1950a">19</p>
+				<p id="year1950b">50</p>
+				<p id="text1950a">ילד<br>בתה</p>
+				<p id="text1950b">ה את &nbsp;הבכורה</p>
+				<p id="line1950"></p>
+
+				<p id="gap-middle1952"></p>
+
+				<p id="year1954a">19</p>
+				<p id="year1954b">54</p>
+				<p id="text1954a">ילד בתה</p>
+				<p id="text1954b">ה את  &nbsp;השניה</p>
+				<p id="line1954"></p>
+
+				<p id="year1980">1980</p>
+				<p id="text1980">הפכה לסבתא</p>
+				<p id="line1980"></p>
+
+				<p id="year2007a">20</p>
+				<p id="year2007b">07</p>
+				<p id="text2007a">	&nbsp;הפכה  רב</p><!--The phrase &nbsp; makes a gap between words without breaking the line-->
+				<p id="text2007b">לסבתא תא</p>
+				<p id="line2007"></p>
+
+				<p id="year2014a">20</p>
+				<p id="year2014b">14</p>
+				<p id="text2014a">הל<br>לעו</p>
+				<p id="text2014b">כה למה</p>
+				<p id="line2014"></p>
+
+				<p id="gap-end"></p>
+
+			</div>
+		</div>
+
+
+		<p id="Images-header">תמונות</p>
+		<div id="container">
+			<div id="image-gallery">
+				<div class="images" id="img-a"></div>
+				<div class="images" id="img-b"></div>
+				<div class="images" id="img-c"></div>
+				<div class="images" id="img-d"></div>
+				<div class="images" id="img-e"></div>
+				<div class="images" id="img-f"></div>
+				<div class="images" id="img-g"></div>
+				<div class="images" id="img-h"></div>
+				<div class="images" id="img-i"></div>
+				<div class="images" id="img-j"></div>
+				<div class="images" id="img-k"></div>
+				<div class="images" id="img-l"></div>
+				<div class="images" id="img-m"></div>
+				<div class="images" id="img-n"></div>
+				<div class="images" id="img-o"></div>
+				<div class="images" id="img-p"></div>
+				<div class="images" id="img-q"></div>
+				<div class="images" id="img-r"></div>
+				<div class="images" id="img-s"></div>
+				<div class="images" id="img-t"></div>
+				<div class="images" id="img-u"></div>
+				<div class="images" id="img-v"></div>
+				<div class="images" id="img-w"></div>
+				<div class="images" id="img-x"></div>
+				<div class="images" id="img-y"></div>
+				<!--div class="images" id="img-z"></div>
+				<div class="images" id="img-aa"></div-->
+			</div>
+		</div>
+
+
+
+		<p id="recipes-header">מתכונים</p>
+		<div id="recipes-container">
+
+
+			<div id="recipe1" class="recipe">
+
+				<div id="soup-img"></div>
+
+				<div id="soup-ingredients">
+					<p class="recipe-header">מרק תירס</p><br>
+					<p><ins class="products">רכיבים:</ins><br><br> <!--<ins> makes underline--> 
+						2 בצלים בינוניים<br>
+						6 כפות שמן<br>
+						1 קופסת שימורים של תירס<br>
+						2 כפות מרק עוף<br>
+						4 כפות קמח<br>
+						10 כוסות מים רותחים<br>
+						מלח ופלפל<br><br>
+				    </p>
+				</div>
+				
+				<div id="soup-instructions">    
+					<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+						קוצצים את הבצלים ומטגנים אותם בסיר עם השמן עד להזהבתם. כשהם מזהיבים יש להכניס לסיר את גרגירי התירס (לאחר שסוננו ונשטפו) ולערבב את הכל יחד. 
+						לאחר מכן יש להוסיף לסיר מלח ופלפל על פי הטעם, ואת שתי כפות מרק העוף. מערבבים הכל ומוסיפים את כפות הקמח (אחת-אחת). 
+						לאחר שהכל עורבב היטב שופכים לסיר את כוסות המים הרתוחים, מערבבים שוב ונותנים למרק לרתוח במשך 5 דקות.<br><br>
+						<span>מקררים ואוכלים בהנאה.<br>
+						בתאבון!</span>
+					</p>
+				</div>	
+
+			</div>
+
+			<div id="recipe2" class="recipe">
+
+                <div id="gefilte-img"></div>
+
+				<div class="gefilte-instructions">
+					<p class="recipe-header">גפילטע פיש</p><br>
+						<p><ins class="products">רכיבי הקציצות:</ins><br><br>
+							2.4 קילו ברוטו קרפיון טרי וטחון (לשמור את העצמות בצד ולחצות לשניים את הראשים- עבור הציר)<br>
+							1 כף סוכר<br>
+							1/3 כף פלפל לבן<br>
+							3/4 כף מלח<br>
+							1/2 שקית של כריך מלאה בבצל קצוץ שטוגן לצבע מוזהב<br>
+							3 ביצים<br>
+							מעט קמח מצה<br><br>					
+							<ins class="instructions">הוראות הכנה של הקציצות:</ins><br><br>
+							בקערה גדולה שמים את דגי הקרפיון הטחונים, ומעליהם שמים את הסוכר, הפלפל הלבן והמלח ומערבבים. מוסיפים את הבצל המטוגן ואת הביצים ושוב מערבבים. מוסיפים מעט מאד קמח מצה ומערבבים בפעם האחרונה (התחושה של הקציצות צריכה להיות של ג׳לי רך).<br><br>
+						</p>
+					</p>
+				</div>
+
+
+				<div class="juice-instructions">
+					<p><ins class="products">רכיבי הציר:</ins><br><br>
+						עצמות וראשי קרפיון חצויים<br>
+						2 גזרים חתוכים לפרוסות<br>
+						1 בצל לבן גדול חתוך לפרוסות<br>
+						1 כף סוכר<br>
+						1/4 כף פלפל לבן<br>
+						1/4 כף מלח<br>
+						מים<br><br>
+						<ins class="instructions">הוראות הכנה של הציר:</ins><br><br>
+						שמים בבסיס סיר גדול את העצמות והראשים, מעליהם מניחים את פרוסות הגזר ואת פרוסות הבצל. מפזרים מעל את הסוכר, הפלפל הלבן והמלח.
+						ממלאים את הסיר במים עד 1/3 מגובהו. שמים על הכיריים, ולאחר שהציר רותח מרטיבים את הידיים ומכניסים את קציצות הדגים לסיר (יש להרטיב את הידיים בין קציצה לקציצה). אחרי שכל הקציצות בסיר, סוגרים את המכסה, ממתינים ששוב המים בסיר ירתחו, ואז מנמיכים את האש לאש קטנה ומבשלים את הקציצות במשך שעתיים.
+						אחרי שעתיים מכבים את הגז ומחכים שהדגים יתקררו.<br>
+						מסדרים כל קציצת דג עם פרוסת גזר מעל ומתחילים לזלול.<br><br>
+						 <span>בתאבון! </span>
+					</p>
+				</div>
+
+			</div>
+
+
+			<div id="recipe3" class="recipe">
+				
+				<div id="chocolateBalls-img"></div>
+
+				<div id="chocolateBalls-ingredients">
+					<p class="recipe-header">כדורי שוקולד בסגנון סניקרס</p><br>
+					<p><ins class="products">רכיבים:</ins><br><br>
+						100 גרם קקאו<br>
+						1/2 1 כוסות סוכר<br>
+						1 חבילת מרגרינה מומסת<br>
+						1 כוס יין פטישים (לקידוש)<br>
+						1 כוס מיץ תפוזים<br>
+						2-3 כפות מיץ לימון<br>
+						500 גרם בוטנים טבעיים קצוצים<br>
+						ביסקוויטים טחונים<br>
+						קוקוס טחון<br><br>
+				    </p>
+				</div> 
+
+				<div id="chocolateBalls-instructions">
+					<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+						מערבבים את כל הרכיבים יחד (פרט לשניים האחרונים). מוסיפים ביסקוויטים טחונים, עד שמגיעים למרקם שמאפשר גלגול של העיסה לכדורים. את הכדורים שמכינים עוטפים בקוקוס ואוכלים בתאבון.<br><br>
+						<span>לבריאות!</span>
+					</p>
+				</div>
+
+			</div>
+
+
+			<div id="two-holiday-desserts">					
+
+				<div id="recipe4" class="recipe">
+					<div id="bubale-ingredients">
+						<p class="recipe-header">בובל'ה מתוקה</p><br>
+						<p><ins class="products">רכיבים:</ins><br><br>
+							1 ביצה<br>
+							2 כפות אבקת סוכר<br>
+							1 כף קמח מצה<br>
+							אבקת סוכר<br><br><br>
+						</p>
+					</div>
+
+					<div id="bubale-instructions">
+						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+						מפרידים את הביצה לחלמון ולחלבון. מקציפים את חלבון הביצה עם כף סוכר עד להיווצרות קצף יציב ורך.  סוגרים את המיקסר ומוסיפים לקצף את החלמון וכף קמח מצה בתנועות עדינות, כדי שהקצף לא ישבר. מטגנים את התערובת כמו חביתה משני הצדדים. לאחר שהבובל'ה קיבלה צבע חום יפה, מורידים אותה מהכיריים ומפזרים מעל את אבקת הסוכר.<br><br>
+						<span>מנה טעימה ופשוטה להכנה.<br>
+						בתאבון!</span>
+						</p>
+					</div>
+				</div>
+
+				<div id="recipe5" class="recipe">
+					<div id="cake-ingredients">
+						<p class="recipe-header">עוגת דבש</p><br>
+						<p><ins class="products">רכיבים:</ins><br><br>
+							4 כוסות קמח<br>
+							2 כפיות שטוחות של סודה לשתיה<br>
+							1 כוס סוכר<br>
+							3 כפות מלאות ריבה (עם בטן) או 1 כוס דבש<br>
+							1 כף נס קפה<br>
+							4 ביצים<br>
+							1/2 כוס שמן<br>
+							1 כוס מיץ תפוזים	<br><br>
+						</p>
+					</div>
+
+					<div id="cake-instructions">		
+						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							שמים בקערה את הסוכר, הריבה, הביצים והקפה ומערבבים היטב. לאחר מכן מוסיפים את השמן ומיץ התפוזים ושוב מערבבים. לבסוף שמים את הקמח, ומוסיפים סודה לשתיה דרך מסננת (כדי למנוע היווצרות גושים). מערבבים הכל, מכניסים לתבנית ואופים על 180 מעלות עד שמתקבל צבע חום יפה.<br><br>
+							<span>לללקק את האצבעות,<br>
+							ובתאבון! </span>
+						</p>
+					</div>
+
+					<div id="cake-img"></div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+		<p id="music-header">מוזיקה אהובה</p>
+		<div id="music-iframes">
+			<div class="instrument mandolin"></div>
+
+			<div class="instrument piano"></div>
+
+			<div class="instrument violin"></div>
+
+			<div class="instrument second-piano"></div>
+
+			<div class="song first-song">
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/vYs-BHkMV_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<!--iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/dJnZRCqJXkA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+			</div>
+
+			<div class="song second-song">
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/1vAtcQ0wVfk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+			<div class="song third-song">
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/mqokFDOE4AQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+			<div class="song fourth-song">
+			<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/xejh9WAJEHg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+			<div class="song fifth-song">
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/3oKmbOrglak" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<!--iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/azP5LUvA5I4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+			</div>
+
+			<div class="song sixth-song">
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/nJ1ERiGhpmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+			
+		</div>
+
+		<footer>© כל הזכויות שמורות למיכל דימינסקי צרפתי- אין לעשות  שום שימוש בתוכן ואו בתמונות  ללא אישור מראש ובכתב</footer>
+	</body>
+</html>
