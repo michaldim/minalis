@@ -1997,7 +1997,7 @@ a:link{
 
 #img-a{
 	grid-area: img-a;
-	background: url("pictures/mosaic/img1.JPG") no-repeat 47% 0%;
+	background: url("pictures/mosaic/img1.jpg") no-repeat 47% 0%;
 	background-size: auto 400px; /*The first number is width and the second is height*/
     -ms-grid-column: 1; 
     -ms-grid-row: 1;
@@ -2006,7 +2006,7 @@ a:link{
 
 #img-b{
 	grid-area: img-b;
-	background: url("pictures/mosaic/img2.JPG") no-repeat 55% 15%;/*first percent is right movement and second percent is down movement*/
+	background: url("pictures/mosaic/img2.jpg") no-repeat 55% 15%;/*first percent is right movement and second percent is down movement*/
 	background-size: auto 190px;
 	-ms-grid-column: 3; 
     -ms-grid-row: 1;
@@ -2014,7 +2014,7 @@ a:link{
 
 #img-c{
 	grid-area: img-c;
-	background: url("pictures/mosaic/img3.JPG") no-repeat 50% 50%;
+	background: url("pictures/mosaic/img3.jpg") no-repeat 50% 50%;
 	background-size: auto 330px;
 	-ms-grid-column: 5; 
     -ms-grid-row: 1;
@@ -2023,7 +2023,7 @@ a:link{
 
 #img-d{
 	grid-area: img-d;
-	background: url("pictures/mosaic/img4.JPG") no-repeat 40% 10%;
+	background: url("pictures/mosaic/img4.jpg") no-repeat 40% 10%;
 	background-size: auto 210px;
 	-ms-grid-column: 7; 
     -ms-grid-row: 1;
@@ -2031,7 +2031,7 @@ a:link{
 
 #img-e{
 	grid-area: img-e;
-	background: url("pictures/mosaic/img5.JPG") no-repeat 65% 50%;
+	background: url("pictures/mosaic/img5.jpg") no-repeat 65% 50%;
 	background-size: auto 350px;
 	-ms-grid-column: 9; 
     -ms-grid-row: 1;
@@ -2040,7 +2040,7 @@ a:link{
 
 #img-f{
 	grid-area: img-f;
-	background: url("pictures/mosaic/img6.JPG") no-repeat 100% 0%;
+	background: url("pictures/mosaic/img6.jpg") no-repeat 100% 0%;
 	background-size: auto 180px;
 	-ms-grid-column: 11; 
     -ms-grid-row: 1;
@@ -2048,7 +2048,7 @@ a:link{
 
 #img-g{
 	grid-area: img-g;
-	background: url("pictures/mosaic/img7.JPG") no-repeat 48% 30%;
+	background: url("pictures/mosaic/img7.jpg") no-repeat 48% 30%;
 	background-size: auto 360px;
 	-ms-grid-column: 3; 
     -ms-grid-row: 3;
@@ -2057,7 +2057,7 @@ a:link{
 
 #img-h{
 	grid-area: img-h;
-	background: url("pictures/mosaic/img8.JPG") no-repeat 70% 50%;
+	background: url("pictures/mosaic/img8.jpg") no-repeat 70% 50%;
 	background-size: auto 420px;
 	-ms-grid-column: 7; 
     -ms-grid-row: 3;
@@ -2066,7 +2066,7 @@ a:link{
 
 #img-i{
 	grid-area: img-i;
-	background: url("pictures/mosaic/img9.JPG") no-repeat 67% 0%;
+	background: url("pictures/mosaic/img9.jpg") no-repeat 67% 0%;
 	background-size: auto 320px;
 	-ms-grid-column: 11; 
     -ms-grid-row: 3;
@@ -2084,7 +2084,7 @@ a:link{
 
 #img-k{
 	grid-area: img-k;
-	background: url("pictures/mosaic/img11.JPG") no-repeat 50% 25%;
+	background: url("pictures/mosaic/img11.jpg") no-repeat 50% 25%;
 	background-size: auto 500px;
 	-ms-grid-column: 5; 
     -ms-grid-row: 5;
@@ -2111,7 +2111,7 @@ a:link{
 
 #img-n{
 	grid-area: img-n;
-	background: url("pictures/mosaic/img14.JPG") no-repeat 10% 0%;
+	background: url("pictures/mosaic/img14.jpg") no-repeat 10% 0%;
 	background-size: auto 320px;
 	-ms-grid-column: 7; 
     -ms-grid-row: 7;
@@ -2120,7 +2120,7 @@ a:link{
 
 #img-o{
 	grid-area: img-o;
-	background: url("pictures/mosaic/img15.JPG") no-repeat 48% 0%;
+	background: url("pictures/mosaic/img15.jpg") no-repeat 48% 0%;
 	background-size: auto 320px;
 	-ms-grid-column: 11; 
     -ms-grid-row: 7;
@@ -2156,7 +2156,7 @@ a:link{
 
 #img-s{
 	grid-area: img-s;
-	background: url("pictures/mosaic/img19.JPG") no-repeat 35% 0%;
+	background: url("pictures/mosaic/img19.jpg") no-repeat 35% 0%;
 	background-size: auto 320px;
 	-ms-grid-column: 3; 
     -ms-grid-row: 11;
@@ -2165,7 +2165,7 @@ a:link{
 
 #img-t{
 	grid-area: img-t;
-	background: url("pictures/mosaic/img20.JPG") no-repeat 50% 0%;
+	background: url("pictures/mosaic/img20.jpg") no-repeat 50% 0%;
 	background-size: auto 320px;
 	-ms-grid-column: 7; 
     -ms-grid-row: 11;
@@ -2174,7 +2174,7 @@ a:link{
 
 #img-u{
 	grid-area: img-u;
-	background: url("pictures/mosaic/img21.JPG") no-repeat 67% 0%;
+	background: url("pictures/mosaic/img21.jpg") no-repeat 67% 0%;
 	background-size: auto 320px;
 	-ms-grid-column: 11; 
     -ms-grid-row: 11;
@@ -2183,7 +2183,7 @@ a:link{
 
 #img-v{
 	grid-area: img-v;
-	background: url("pictures/mosaic/img22.JPG") no-repeat 32% 30%;
+	background: url("pictures/mosaic/img22.jpg") no-repeat 32% 30%;
 	background-size: auto 250px;
 	-ms-grid-column: 1; 
     -ms-grid-row: 13;
@@ -2207,24 +2207,10 @@ a:link{
 
 #img-y{
 	grid-area: img-y;
-	background: url("pictures/mosaic/img25.JPG") no-repeat 0% 40%;
+	background: url("pictures/mosaic/img25.jpg") no-repeat 0% 40%;
 	background-size: auto 500px;
 	display: none;
 }
-
-
-/*#img-z{
-	grid-area: img-z;
-	background: url("pictures/mosaic/img26.JPG") no-repeat 0% 0%;
-	background-size: auto 400px;
-}
-
-#img-aa{
-	grid-area: img-aa;
-	background: url("pictures/mosaic/img27.JPG") no-repeat 0% 0%;
-	background-size: auto 400px;
-}*/
-
 
 
 @media screen and (max-width: 1550px){
@@ -2238,42 +2224,42 @@ a:link{
 	}
 
 	#img-b{
-		background: url("pictures/mosaic/img2.JPG") no-repeat 50% 15%;/*first percent is right movement and second percent is down movement*/
+		background: url("pictures/mosaic/img2.jpg") no-repeat 50% 15%;/*first percent is right movement and second percent is down movement*/
 		background-size: auto 150px;
 	}
 
 	#img-c{
-		background: url("pictures/mosaic/img3.JPG") no-repeat 50% 50%;
+		background: url("pictures/mosaic/img3.jpg") no-repeat 50% 50%;
 		background-size: auto 280px;
 	}
 
 	#img-d{
-		background: url("pictures/mosaic/img4.JPG") no-repeat 10% 10%;
+		background: url("pictures/mosaic/img4.jpg") no-repeat 10% 10%;
 		background-size: 250px;
 	}
 
 	#img-e{
-		background: url("pictures/mosaic/img5.JPG") no-repeat 65% 50%;
+		background: url("pictures/mosaic/img5.jpg") no-repeat 65% 50%;
 		background-size: auto 300px;
 	}
 
 	#img-f{
-		background: url("pictures/mosaic/img6.JPG") no-repeat 100% 0%;
+		background: url("pictures/mosaic/img6.jpg") no-repeat 100% 0%;
 		background-size: auto 150px;
 	}
 
 	#img-g{
-		background: url("pictures/mosaic/img7.JPG") no-repeat 48% 30%;
+		background: url("pictures/mosaic/img7.jpg") no-repeat 48% 30%;
 		background-size: auto 310px;
 	}
 
 	#img-h{
-		background: url("pictures/mosaic/img8.JPG") no-repeat 70% 50%;
+		background: url("pictures/mosaic/img8.jpg") no-repeat 70% 50%;
 		background-size: auto 380px;
 	}
 
 	#img-i{
-		background: url("pictures/mosaic/img9.JPG") no-repeat 67% 0%;
+		background: url("pictures/mosaic/img9.jpg") no-repeat 67% 0%;
 		background-size: auto 270px;
 	}
 
@@ -2283,7 +2269,7 @@ a:link{
 	}
 
 	#img-k{
-		background: url("pictures/mosaic/img11.JPG") no-repeat 50% 25%;
+		background: url("pictures/mosaic/img11.jpg") no-repeat 50% 25%;
 		background-size: auto 400px;
 	}
 
@@ -2298,12 +2284,12 @@ a:link{
 	}
 
 	#img-n{
-		background: url("pictures/mosaic/img14.JPG") no-repeat 15% 0%;
+		background: url("pictures/mosaic/img14.jpg") no-repeat 15% 0%;
 		background-size: auto 270px;
 	}
 
 	#img-o{
-		background: url("pictures/mosaic/img15.JPG") no-repeat 48% 20%;
+		background: url("pictures/mosaic/img15.jpg") no-repeat 48% 20%;
 		background-size: auto 300px;
 	}
 
@@ -2323,22 +2309,22 @@ a:link{
 	}
 
 	#img-s{
-		background: url("pictures/mosaic/img19.JPG") no-repeat 35% 0%;
+		background: url("pictures/mosaic/img19.jpg") no-repeat 35% 0%;
 		background-size: auto 270px;
 	}
 
 	#img-t{
-		background: url("pictures/mosaic/img20.JPG") no-repeat 50% 15%;
+		background: url("pictures/mosaic/img20.jpg") no-repeat 50% 15%;
 		background-size: auto 270px;
 	}
 
 	#img-u{
-		background: url("pictures/mosaic/img21.JPG") no-repeat 67% 0%;
+		background: url("pictures/mosaic/img21.jpg") no-repeat 67% 0%;
 		background-size: auto 270px;
 	}
 
 	#img-v{
-		background: url("pictures/mosaic/img22.JPG") no-repeat 32% 30%;
+		background: url("pictures/mosaic/img22.jpg") no-repeat 32% 30%;
 		background-size: auto 225px;
 	}
 
@@ -2380,17 +2366,17 @@ a:link{
 	}
 
 	#img-b{
-		background: url("pictures/mosaic/img2.JPG") no-repeat 42% 15%;/*first percent is right movement and second percent is down movement*/
+		background: url("pictures/mosaic/img2.jpg") no-repeat 42% 15%;/*first percent is right movement and second percent is down movement*/
 		background-size: auto 160px;
 	}
 
 	#img-d{
-		background: url("pictures/mosaic/img4.JPG") no-repeat 18% 10%;
+		background: url("pictures/mosaic/img4.jpg") no-repeat 18% 10%;
 		background-size: 250px;
 	}
 
 	#img-e{
-		background: url("pictures/mosaic/img5.JPG") no-repeat 67% 50%;
+		background: url("pictures/mosaic/img5.jpg") no-repeat 67% 50%;
 		background-size: auto 300px;
 	}
 
@@ -2398,7 +2384,7 @@ a:link{
 		-ms-grid-column: 3; 
 	    -ms-grid-row: 3;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img6(b).JPG") no-repeat 84% 70%;
+	    background: url("pictures/mosaic/img6(b).jpg") no-repeat 84% 70%;
 		background-size: auto 307px;
 	}
 
@@ -2418,7 +2404,7 @@ a:link{
 		-ms-grid-column: 5; 
 	    -ms-grid-row: 5;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img9.JPG") no-repeat 69% 0%;
+	    background: url("pictures/mosaic/img9.jpg") no-repeat 69% 0%;
 	    background-size: auto 270px;
 	}
 
@@ -2454,7 +2440,7 @@ a:link{
 		-ms-grid-column: 5; 
 	    -ms-grid-row: 9;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img14.JPG") no-repeat 13% 0%;
+	    background: url("pictures/mosaic/img14.jpg") no-repeat 13% 0%;
 		background-size: auto 270px;
 	}
 
@@ -2462,7 +2448,7 @@ a:link{
 		-ms-grid-column: 9; 
 	    -ms-grid-row: 9;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img15.JPG") no-repeat 47% 20%;
+	    background: url("pictures/mosaic/img15.jpg") no-repeat 47% 20%;
 		background-size: auto 300px;
 	}
 
@@ -2498,7 +2484,7 @@ a:link{
 		-ms-grid-column: 9; 
 	    -ms-grid-row: 13;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img20.JPG") no-repeat 48% 15%;
+	    background: url("pictures/mosaic/img20.jpg") no-repeat 48% 15%;
 		background-size: auto 270px;
 	}
 
@@ -2506,7 +2492,7 @@ a:link{
 		-ms-grid-column: 3; 
 	    -ms-grid-row: 15;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img21.JPG") no-repeat 68% 10%;
+	    background: url("pictures/mosaic/img21.jpg") no-repeat 68% 10%;
 		background-size: auto 290px;
 	}
 
@@ -2514,7 +2500,7 @@ a:link{
 		-ms-grid-column: 7; 
 	    -ms-grid-row: 15;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img22.JPG") no-repeat 26% 0%;
+	    background: url("pictures/mosaic/img22.jpg") no-repeat 26% 0%;
 		background-size: auto 290px;
 	}
 
@@ -2539,7 +2525,7 @@ a:link{
 		-ms-grid-column: 9; 
 	    -ms-grid-row: 17;
 	    -ms-grid-row-span: 1;
-	    background: url("pictures/mosaic/img25.JPG") no-repeat 38% 45%;
+	    background: url("pictures/mosaic/img25.jpg") no-repeat 38% 45%;
 		background-size: 240px auto;
 	}
 
@@ -2570,22 +2556,22 @@ a:link{
 	}
 
 	#img-a{
-		background: url("pictures/mosaic/img1.JPG") no-repeat 47% 0%;
+		background: url("pictures/mosaic/img1.jpg") no-repeat 47% 0%;
 		background-size: auto 320px;
 	}
 
 	#img-b{
-		background: url("pictures/mosaic/img2.JPG") no-repeat 25% 20%;/*first percent is right movement and second percent is down movement*/
+		background: url("pictures/mosaic/img2.jpg") no-repeat 25% 20%;/*first percent is right movement and second percent is down movement*/
 		background-size: auto 160px;
 	}
 
 	#img-c{
-		background: url("pictures/mosaic/img3.JPG") no-repeat 50% 10%;
+		background: url("pictures/mosaic/img3.jpg") no-repeat 50% 10%;
 		background-size: auto 280px;
 	}
 
 	#img-d{
-		background: url("pictures/mosaic/img4.JPG") no-repeat 18% 10%;
+		background: url("pictures/mosaic/img4.jpg") no-repeat 18% 10%;
 		background-size: 250px;	
 	}
 
@@ -2593,7 +2579,7 @@ a:link{
 		-ms-grid-column: 3; 
 	    -ms-grid-row: 3;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img5.JPG") no-repeat 64% 20%;
+	    background: url("pictures/mosaic/img5.jpg") no-repeat 64% 20%;
 		background-size: auto 300px;
 	}
 
@@ -2601,7 +2587,7 @@ a:link{
 		-ms-grid-column: 7; 
 	    -ms-grid-row: 3;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img6(b).JPG") no-repeat 85% 100%;
+	    background: url("pictures/mosaic/img6(b).jpg") no-repeat 85% 100%;
 		background-size: auto 215px;
 	}
 
@@ -2609,7 +2595,7 @@ a:link{
 		-ms-grid-column: 1; 
 	    -ms-grid-row: 5;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img7.JPG") no-repeat 32% 25%;
+	    background: url("pictures/mosaic/img7.jpg") no-repeat 32% 25%;
 		background-size: auto 215px;
 	}
 
@@ -2617,7 +2603,7 @@ a:link{
 		-ms-grid-column: 5; 
 	    -ms-grid-row: 5;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img8.JPG") no-repeat 68% 50%;
+	    background: url("pictures/mosaic/img8.jpg") no-repeat 68% 50%;
 		background-size: auto 380px;
 	}
 
@@ -2625,7 +2611,7 @@ a:link{
 		-ms-grid-column: 3; 
 	    -ms-grid-row: 7;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img9.JPG") no-repeat 66% 0%;
+	    background: url("pictures/mosaic/img9.jpg") no-repeat 66% 0%;
 	    background-size: auto 270px;
 	}
 
@@ -2641,7 +2627,7 @@ a:link{
 		-ms-grid-column: 1; 
 	    -ms-grid-row: 9;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img11.JPG") no-repeat 50% 25%;
+	    background: url("pictures/mosaic/img11.jpg") no-repeat 50% 25%;
 		background-size: auto 400px;
 	}
 
@@ -2665,7 +2651,7 @@ a:link{
 		-ms-grid-column: 7; 
 	    -ms-grid-row: 11;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img14.JPG") no-repeat 14% 0%;
+	    background: url("pictures/mosaic/img14.jpg") no-repeat 14% 0%;
 		background-size: auto 270px;
 	}
 
@@ -2673,7 +2659,7 @@ a:link{
 		-ms-grid-column: 1; 
 	    -ms-grid-row: 13;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img15.JPG") no-repeat 47% 20%;
+	    background: url("pictures/mosaic/img15.jpg") no-repeat 47% 20%;
 		background-size: auto 270px;
 	}
 
@@ -2705,7 +2691,7 @@ a:link{
 		-ms-grid-column: 1; 
 	    -ms-grid-row: 17;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img19.JPG") no-repeat 35% 0%;
+	    background: url("pictures/mosaic/img19.jpg") no-repeat 35% 0%;
 		background-size: auto 240px;
 	}
 
@@ -2713,7 +2699,7 @@ a:link{
 		-ms-grid-column: 5; 
 	    -ms-grid-row: 17;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img20.JPG") no-repeat 50% 15%;
+	    background: url("pictures/mosaic/img20.jpg") no-repeat 50% 15%;
 		background-size: auto 215px;
 	}
 
@@ -2721,7 +2707,7 @@ a:link{
 		-ms-grid-column: 3; 
 	    -ms-grid-row: 19;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img21.JPG") no-repeat 68% 10%;
+	    background: url("pictures/mosaic/img21.jpg") no-repeat 68% 10%;
 		background-size: auto 230px;
 	}
 
@@ -2729,7 +2715,7 @@ a:link{
 		-ms-grid-column: 7; 
 	    -ms-grid-row: 19;
 	    -ms-grid-row-span: 3;
-	    background: url("pictures/mosaic/img22.JPG") no-repeat 23% 0%;
+	    background: url("pictures/mosaic/img22.jpg") no-repeat 23% 0%;
 		background-size: auto 230px;
 	}
 
@@ -2780,47 +2766,47 @@ a:link{
 
 
 	#img-a{
-		background: url("pictures/mosaic/img1.JPG") no-repeat 47% 0%;
+		background: url("pictures/mosaic/img1.jpg") no-repeat 47% 0%;
 		background-size: auto 220px;
 	}
 
 	#img-b{
-		background: url("pictures/mosaic/img2.JPG") no-repeat 30% 5%;/*first percent is right movement and second percent is down movement*/
+		background: url("pictures/mosaic/img2.jpg") no-repeat 30% 5%;/*first percent is right movement and second percent is down movement*/
 		background-size: auto 160px;
 	}
 
 	#img-c{
-		background: url("pictures/mosaic/img3.JPG") no-repeat 48% 10%;
+		background: url("pictures/mosaic/img3.jpg") no-repeat 48% 10%;
 		background-size: auto 270px;
 	}
 
 	#img-d{
-		background: url("pictures/mosaic/img4.JPG") no-repeat 18% 10%;
+		background: url("pictures/mosaic/img4.jpg") no-repeat 18% 10%;
 		background-size: 174px;
 	}
 
 	#img-e{
-	    background: url("pictures/mosaic/img5.JPG") no-repeat 63% 20%;
+	    background: url("pictures/mosaic/img5.jpg") no-repeat 63% 20%;
 		background-size: auto 220px;
 	}
 
 	#img-f{
-	    background: url("pictures/mosaic/img6.JPG") no-repeat 98% 0%;
+	    background: url("pictures/mosaic/img6.jpg") no-repeat 98% 0%;
 		background-size: auto 185px;
 	}
 
 	#img-g{
-	    background: url("pictures/mosaic/img7.JPG") no-repeat 34% 35%;
+	    background: url("pictures/mosaic/img7.jpg") no-repeat 34% 35%;
 		background-size: auto 165px;
 	}
 
 	#img-h{
-	    background: url("pictures/mosaic/img8.JPG") no-repeat 68% 50%;
+	    background: url("pictures/mosaic/img8.jpg") no-repeat 68% 50%;
 		background-size: auto 250px;
 	}
 
 	#img-i{
-	    background: url("pictures/mosaic/img9.JPG") no-repeat 66% 0%;
+	    background: url("pictures/mosaic/img9.jpg") no-repeat 66% 0%;
 	    background-size: auto 195px;
 	}
 
@@ -2830,7 +2816,7 @@ a:link{
 	}
 
 	#img-k{
-	    background: url("pictures/mosaic/img11.JPG") no-repeat 50% 25%;
+	    background: url("pictures/mosaic/img11.jpg") no-repeat 50% 25%;
 		background-size: auto 300px;
 	}
 
@@ -2846,12 +2832,12 @@ a:link{
 	}
 
 	#img-n{
-	    background: url("pictures/mosaic/img14.JPG") no-repeat 14% 0%;
+	    background: url("pictures/mosaic/img14.jpg") no-repeat 14% 0%;
 		background-size: auto 200px;
 	}
 
 	#img-o{
-	    background: url("pictures/mosaic/img15.JPG") no-repeat 47% 20%;
+	    background: url("pictures/mosaic/img15.jpg") no-repeat 47% 20%;
 		background-size: auto 200px;
 	}
 
@@ -2872,23 +2858,23 @@ a:link{
 	}
 
 	#img-s{
-	    background: url("pictures/mosaic/img19.JPG") no-repeat 35% 0%;
+	    background: url("pictures/mosaic/img19.jpg") no-repeat 35% 0%;
 		background-size: auto 165px;
 	}
 
 	#img-t{
-	    background: url("pictures/mosaic/img20.JPG") no-repeat 50% 15%;
+	    background: url("pictures/mosaic/img20.jpg") no-repeat 50% 15%;
 		background-size: auto 165px;
 	}
 
 
 	#img-u{
-	    background: url("pictures/mosaic/img21.JPG") no-repeat 68% 10%;
+	    background: url("pictures/mosaic/img21.jpg") no-repeat 68% 10%;
 		background-size: auto 165px;
 	}
 
 	#img-v{
-	    background: url("pictures/mosaic/img22.JPG") no-repeat 23% 0%;
+	    background: url("pictures/mosaic/img22.jpg") no-repeat 23% 0%;
 		background-size: auto 180px;
 	}
 
@@ -2993,7 +2979,7 @@ a:link{
 
 #soup-img{
 	flex-basis: 30%;
-	background: url("pictures/recipes/IMG-2807M.JPG") no-repeat 48% 48%;
+	background: url("pictures/recipes/IMG-2807M.jpg") no-repeat 48% 48%;
 	order: 3;
 }
 
@@ -3011,7 +2997,7 @@ a:link{
 }
 
 #gefilte-img{
-	background: url("pictures/recipes/gefilte.JPEG") no-repeat 62% 20%;
+	background: url("pictures/recipes/gefilte.jpeg") no-repeat 62% 20%;
 	order: 4;
 	flex-basis: 33%;
 }
@@ -3065,7 +3051,7 @@ a:link{
 
 #chocolateBalls-img{
 	flex-basis: 30%;
-	background: url("pictures/recipes/IMG-2327-choclateBalls.JPG") no-repeat 50% 60%;
+	background: url("pictures/recipes/IMG-2327-choclateBalls.jpg") no-repeat 50% 60%;
 	order: 8;
 }
 
@@ -3121,7 +3107,7 @@ a:link{
 
 #cake-img{
 	flex-basis: 100%;
-	background: url("pictures/recipes/IMG-2748-M-wow.JPG") no-repeat 0% 25%;
+	background: url("pictures/recipes/IMG-2748-M-wow.jpg") no-repeat 0% 25%;
 	background-size: cover;
 	min-height: 350px;
 }
@@ -3162,7 +3148,7 @@ a:link{
 	}
 
 	#gefilte-img{
-		background: url("pictures/recipes/gefilte.JPEG") no-repeat 40% 54%;
+		background: url("pictures/recipes/gefilte.jpeg") no-repeat 40% 54%;
 		order: 6;
 		flex-basis: 100%;
 		height: 350px;
@@ -3197,7 +3183,7 @@ a:link{
 	#chocolateBalls-img{
 		flex-basis: 100%;
 		height: 350px;
-		background: url("pictures/recipes/IMG-2327-choclateBalls.JPG") no-repeat 55% 60%;
+		background: url("pictures/recipes/IMG-2327-choclateBalls.jpg") no-repeat 55% 60%;
 	}
 
 	#two-holiday-desserts{
@@ -3249,7 +3235,7 @@ a:link{
 
 	#cake-img{
 		flex-basis: 100%;
-		background: url("pictures/recipes/IMG-2748-M-wow.JPG") no-repeat 0% 25%;
+		background: url("pictures/recipes/IMG-2748-M-wow.jpg") no-repeat 0% 25%;
 		min-height: 350px;
 	}
 
@@ -3258,7 +3244,7 @@ a:link{
 @media screen and (max-width: 983px){
 
 	#gefilte-img{
-		background: url("pictures/recipes/gefilte.JPEG") no-repeat 35% 52%;
+		background: url("pictures/recipes/gefilte.jpeg") no-repeat 35% 52%;
 	}
 }
 
