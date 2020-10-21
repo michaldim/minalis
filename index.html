@@ -12,22 +12,17 @@
 	</head>
 
 
-    <!-- This is a comment -->
 	<body>
 		<header>
 			<h1>סבתא מינה</h1>
 		</header>
 
-		<div id="space-under-the-fixed-title"></div>
-
-
 		<div id="subjects">
 
 			<div id="div-that-help-put-pic-box-savta-in-ie-grid"> 
 			<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
-				<a class="pic-box-savta" href="#movie-header">	
+				<a class="pic-box-savta" href="#movie">	
 						<img id="savta" src="pictures/mySavta.png" alt="תמונות"/>
-						<img id="savta-mobile" src="pictures/Mina-mobile.jpg" alt="תמונות"/>
 						<h1>סבתא מספרת</h1>
 				</a>
 			</div>
@@ -35,18 +30,15 @@
 
 			<div id="div-that-help-put-pic-box-time-in-ie-grid"> 
 			<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
-				<a class="pic-box-time" href="#time_line-header">
+				<a class="pic-box-time" href="#time-line">
 					<img src="pictures/myClock.png" alt="ציר זמן"/>
 					<h1>ציר זמן</h1>
-					<p id="title">ציר הזמן</p>
-					<p id="paragraph">גלו באיזו שנה סבתא נולדה, מתי היא עלתה לארץ ומתי ארעו אירועים שונים בחייה</p>
-					<p id="read-more"><< צפו</p>
 				</a>
 			</div>
 
 
 			<div id="div-that-help-put-pic-box-tree-in-ie-grid"> 
-				<a class="pic-box-tree" href="#familyTree-header">
+				<a class="pic-box-tree" href="#family-tree">
 					<img src="pictures/myTree1.jpg" alt="עץ משפחה"/>
 					<h1>עץ משפחה</h1>
 				</a>	
@@ -54,7 +46,7 @@
 
 
 			<div id="div-that-help-put-pic-box-pictures-in-ie-grid">
-				<a class="pic-box-pictures" href="#Images-header">
+				<a class="pic-box-pictures" href="#gallery">
 					<img src="pictures/camera2.png" alt="תמונות"/>
 					<h1>תמונות</h1>
 				</a>
@@ -62,7 +54,7 @@
 
 
 			<div id="div-that-help-put-pic-box-food-in-ie-grid">
-				<a class="pic-box-food" href="#recipes-header">
+				<a class="pic-box-food" href="#recipes">
 					<img src="pictures/chocolateBalls.png" alt="מתכונים"/>
 					<h1>מתכונים</h1>
 				</a>
@@ -70,7 +62,7 @@
 
 
 			<div id="div-that-help-put-pic-box-music-in-ie-grid">
-				<a class="pic-box-music" href="#music-header">
+				<a class="pic-box-music" href="#music">
 					<img src="pictures/myViolin.png" alt="מוזיקה"/>
 					<h1>מוזיקה אהובה</h1>
 				</a>
@@ -102,21 +94,21 @@
 			}
 		</script>
 		
-		<p id="movie-header">סבתא מספרת</p>
+		<p id="movie">סבתא מספרת</p> <!--This is the movie's header-->
 		<div id="background-of-movie">
 					<iframe width="510" height="315" src="https://www.youtube-nocookie.com/embed/tshhrdR5jSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 
 
-		<p id="familyTree-header">עץ משפחה</p>
-		<div id="family-tree">
+		<p id="family-tree">עץ משפחה</p>
+		<div id="family-tree-container">
 			<img src="FamilyTree/familyTree3.png" width="90%" alt="עץ משפחה"/>
 		</div>
 
 
 		<div id="time-line-father">
-			<p id="time_line-header">ציר זמן</p>
-			<div id="time_line">
+			<p id="time-line">ציר זמן</p> <!--It's is the Time-line's header-->
+			<div id="time-line-container">
 				<div id="horizontal-line"></div>
 
 				<p id="gap-start"></p>
@@ -183,9 +175,8 @@
 		</div>
 
 
-		<p id="Images-header">תמונות</p>
-		<div id="container">
-			<div id="image-gallery">
+		<p id="gallery">תמונות</p> <!--This is the gallery's header-->
+			<div id="gallery-container">
 				<div class="images" id="img-a"></div>
 				<div class="images" id="img-b"></div>
 				<div class="images" id="img-c"></div>
@@ -214,11 +205,10 @@
 				<!--div class="images" id="img-z"></div>
 				<div class="images" id="img-aa"></div-->
 			</div>
-		</div>
 
 
 
-		<p id="recipes-header">מתכונים</p>
+		<p id="recipes">מתכונים</p> <!--This is the recipes header-->
 		<div id="recipes-container">
 
 
@@ -376,7 +366,7 @@
 
 		</div>
 
-		<p id="music-header">מוזיקה אהובה</p>
+		<p id="music">מוזיקה אהובה</p> <!--This is music header-->
 		<div id="music-iframes">
 			<div class="instrument mandolin"></div>
 

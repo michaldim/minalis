@@ -29,11 +29,6 @@ header h1{
 	font-weight: 700;
 }
 
-#space-under-the-fixed-title{
-	height: 60px;
-	min-height: 60px;
-}
-
 #subjects{
 	display: grid;
 	display: -ms-grid;
@@ -42,9 +37,7 @@ header h1{
 	-ms-grid-columns: 2fr 280px 1fr 280px 1fr 280px 2fr;
 	-ms-grid-rows: auto 30px auto 30px auto;
 	max-width: 1800px;
-    margin: 0 auto;
-    margin-bottom: 150px;
-    padding-top: 80px;
+    margin: 140px auto 150px auto;
     /*the next rule center the objects inside the grid*/
     justify-items: center;
     /*the next rule center the grid inside the screen*/
@@ -839,7 +832,7 @@ a:link{
   background: #555; /* Add a dark-grey background on hover */
 }
 
-#movie-header{
+#movie{
 	margin: auto;
 	text-align: center;
 	color: #e9a9cf; /*white;*/
@@ -906,7 +899,7 @@ a:link{
 
 
 
-#familyTree-header{
+#family-tree{
 	margin: auto;
 	text-align: center;
 	color: #e9a9cf; /*white;*/
@@ -918,7 +911,7 @@ a:link{
 }
 
 
-#family-tree img{
+#family-tree-container img{
 	display: block;
 	margin: 0 auto 250px auto;
 	max-width: 1800px;
@@ -929,14 +922,14 @@ a:link{
 
 @media screen and (max-width: 1054px){
 	
-	#family-tree img{
+	#family-tree-container img{
 		margin-bottom: 200px;
 	}
 }
 
 @media screen and (max-width: 700px){
 	
-	#family-tree img{
+	#family-tree-container img{
 		margin-bottom: 150px;
 	}
 }
@@ -952,7 +945,7 @@ a:link{
 	/*margin-bottom: 400px;*/
 }
 
-#time_line-header{
+#time-line{
 	margin: auto;
 	text-align: center;
 	color: #e9a9cf;
@@ -964,7 +957,7 @@ a:link{
 }
 
 
-#time_line{
+#time-line-container{
 	display: grid;
 	display: -ms-grid;
 	grid-template-columns: repeat(90, 1fr);
@@ -989,14 +982,14 @@ a:link{
 
 @media screen and (max-width: 1054px){
 	
-	#time_line{
+	#time-line-container{
 		margin-bottom: 200px;
 	}
 }
 
 @media screen and (max-width: 700px){
 	
-	#time_line{
+	#time-line-container{
 		margin-bottom: 150px;
 	}
 }
@@ -1511,7 +1504,7 @@ a:link{
 
 @media screen and (max-width: 1250px){
 
-	#time_line{
+	#time-line-container{
 		padding: 100px 0 60px 0; 
 	}
 
@@ -1663,7 +1656,7 @@ a:link{
 @media screen and (max-width: 900px){
 
 	
-	#time_line{
+	#time-line-container{
 		display: grid;
 		grid-template-columns: repeat(90, 1fr);
 		grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
@@ -1933,16 +1926,7 @@ a:link{
 
 }
 
-
-#container{
-	width: 90%;
-	max-width: 1800px;
-	/*the next rule center the grid inside the screen*/
-	justify-content: center;
-	margin: 0 auto;
-}
-
-#Images-header{
+#gallery{
 	margin: auto;
 	text-align: center;
 	color: #e9a9cf;
@@ -1954,16 +1938,20 @@ a:link{
 	padding-top: 10px;
 }
 
-#image-gallery{
+#gallery-container{
 	display: grid;
 	display:-ms-grid;
+	width: 90%;
+	max-width: 1800px;
+	/*the next rule center the grid inside the screen*/
+	justify-content: center;
+	margin: 0 auto 250px auto;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(7, 150px);
 	/*There is no grid-gap in internet explorer, that's why I made columns in the size of the gap:*/
 	-ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
 	-ms-grid-rows: 150px 20px 150px 20px 150px 20px 150px 20px 150px 20px 150px 20px 150px;
 	grid-gap: 20px;
-    margin-bottom: 250px;
     grid-template-areas: 
     	"img-a img-b img-c img-d img-e img-f"
     	"img-a img-g img-c img-h img-e img-i"
@@ -1977,16 +1965,16 @@ a:link{
 
 @media screen and (max-width: 1054px){
 	
-	#image-gallery{
-		margin-bottom: 200px;
+	#gallery-container{
+		margin: 0 auto 200px auto;
 	}
 }
 
 
 @media screen and (max-width: 700px){
 	
-	#image-gallery{
-		margin-bottom: 150px;
+	#gallery-container{
+		margin: 0 auto 150px auto;
 	}
 }
 
@@ -2214,7 +2202,7 @@ a:link{
 
 
 @media screen and (max-width: 1550px){
-	#image-gallery{
+	#gallery-container{
 		grid-template-rows: repeat(7, 125px);
 		-ms-grid-rows: 125px 20px 125px 20px 125px 20px 125px 20px 125px 20px 125px 20px 125px;
 	}
@@ -2343,7 +2331,7 @@ a:link{
 @media screen and (max-width: 1400px){
 
 
-	#image-gallery{
+	#gallery-container{
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(9, 125px);
 		-ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
@@ -2535,7 +2523,7 @@ a:link{
 @media screen and (max-width: 1100px){
 
 
-	#image-gallery{
+	#gallery-container{
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(11, 100px);
 		-ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
@@ -2744,7 +2732,7 @@ a:link{
 
 @media screen and (max-width: 800px){
 
-	#image-gallery{
+	#gallery-container{
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(11, 75px);
 		-ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
@@ -2895,7 +2883,7 @@ a:link{
 }
 
 
-#recipes-header{
+#recipes{
 	margin: auto;
 	text-align: center;
 	color: #e9a9cf;
@@ -3256,7 +3244,7 @@ a:link{
 
 }
 
-#music-header{
+#music{
 	margin: auto;
 	text-align: center;
 	color: #e9a9cf; /*white;*/
@@ -3274,7 +3262,7 @@ a:link{
 	margin: 0 auto;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-bottom: 200px;
+	margin-bottom: 225px;
 }
 
 .mandolin{
@@ -3399,7 +3387,7 @@ a:link{
 
 @media screen and (max-width: 1199px){
 
-	#music-header{
+	#music{
 		margin-bottom: 40px;
 	}
 
