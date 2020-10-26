@@ -635,7 +635,7 @@ a:link{
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
 	width: 2px;
-	height: 100%;/*20px;*/
+	height: 100%;
 	background: white;
 	align-self: center;
 	justify-self: end;
@@ -1543,8 +1543,7 @@ a:link{
 	font-family: 'Amatic SC', cursive, Arial, Sans-serif;
 	font-size: 45px;
 	font-weight: 400;
-	margin-bottom: 60px;
-	margin-top: 100px;
+	margin: 100px auto 60px auto;
 	padding-top: 10px;
 }
 
@@ -2515,8 +2514,7 @@ a:link{
 	letter-spacing: 1px;
 	width: 90%;
 	max-width: 1800px;
-	margin: 0 auto;
-	margin-bottom: 250px;
+	margin: 0 auto 250px auto;
 }
 
 
@@ -2612,9 +2610,7 @@ a:link{
 }
 
 .juice-instructions{
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 30px;
+	padding: 30px 0 30px 30px;
 	flex-basis: 30%;
 	order: 6;
 }
@@ -2635,9 +2631,7 @@ a:link{
 #chocolateBalls-ingredients{
 	flex-basis: 33%;
 	order: 6;
-	padding-right: 30px;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding: 30px 30px 30px 0;
 }
 
 #chocolateBalls-instructions{
@@ -2683,11 +2677,8 @@ a:link{
 }
 
 #cake-ingredients{
-	/*flex-basis: 45%;*/
 	background: #ebbe4a;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-right: 5%;
+	padding: 30px 5% 30px 0;	
 }
 
 #cake-ingredients .recipe-header{
@@ -2697,9 +2688,7 @@ a:link{
 #cake-instructions{
 	flex-basis: 45%;
 	background: #ebbe4a;
-	padding-top: 30px;
-	padding-left: 30px;
-	padding-bottom: 30px;
+	padding: 30px 0 30px 30px;
 	align-self: center;
 }
 
@@ -2722,16 +2711,13 @@ a:link{
 	#soup-ingredients{
 		flex-basis: 50%;
 		order: 1;
-		padding-right: 30px;
-		padding-top: 30px;
+		padding: 30px 30px 0 0;
 	}
 
 	#soup-instructions{
 		flex-basis: 50%;
 		order: 2;
-		padding-top: 30px;
-		padding-bottom: 30px;
-		padding-left: 30px;
+		padding: 30px 0 30px 30px;
 	}
 
 	#soup-img{
@@ -2753,8 +2739,7 @@ a:link{
 	}
 
 	.gefilte-instructions{
-		padding-right: 30px;
-		padding-left: 30px;
+		padding: 30px 30px 0 30px;
 		order: 4;
 		flex-basis: 50%;
 	}
@@ -2802,17 +2787,13 @@ a:link{
 	#bubale-ingredients{
 		flex-basis: 50%;
 		order: 1;
-		padding-right: 30px;
-		padding-top: 30px;
-		padding-left: 30px;
+		padding: 30px 30px 0 30px;
 	}
 
 	#bubale-instructions{
 		flex-basis: 50%;
 		order: 2;
-		padding-top: 30px;
-		padding-bottom: 30px;
-		padding-left: 30px;
+		padding: 30px 0 30px 30px;
 	}
 
 	#recipe5{
@@ -2823,8 +2804,7 @@ a:link{
 
 	#cake-ingredients{
 		flex-basis: 50%;
-		padding-left: 30px;
-		padding-right: 30px;
+		padding: 30px 30px 30px 30px;
 	}
 
 	#cake-instructions{
@@ -2835,6 +2815,7 @@ a:link{
 		flex-basis: 100%;
 		background: url("pictures/recipes/IMG-2748-M-wow.jpg") no-repeat 0% 25%;
 		min-height: 350px;
+		background-size: cover;
 	}
 
 }
@@ -2843,6 +2824,10 @@ a:link{
 
 	#gefilte-img{
 		background: url("pictures/recipes/gefilte.jpeg") no-repeat 35% 52%;
+	}
+
+		#cake-img{
+		background-size: auto;
 	}
 }
 
@@ -2855,24 +2840,21 @@ a:link{
 }
 
 #music{
-	margin: auto;
+	margin: 0 auto 50px auto;
 	text-align: center;
-	color: #e9a9cf; /*white;*/
+	color: #e9a9cf;
 	font-family: 'Amatic SC', cursive, Arial, Sans-serif;
 	font-size: 45px;
 	font-weight: 400;
-	/*padding-top: 60px;*/
-	margin-bottom: 50px;
 }
 
 #music-iframes{
 	display: flex;
 	width: 100%;
 	max-width: 1800px;
-	margin: 0 auto;
+	margin: 0 auto 225px auto;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	margin-bottom: 225px;
 }
 
 .mandolin{
@@ -2904,7 +2886,7 @@ a:link{
 }
 
 .song iframe{
-	border: 2px solid #7d7777/*white*/;
+	border: 2px solid #7d7777;
 }
 
 .first-song{
