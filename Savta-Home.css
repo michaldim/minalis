@@ -444,7 +444,13 @@ a:link{
 }
 
 #myBtn:hover {
-  background: #555; /* Add a dark-grey background on hover */
+  background: -webkit-linear-gradient(#555 40%, #777);
+  background: -webkit-gradient(linear, top, bottom, color-stop(40%, #555), color-stop(100%, #777));
+  background: -moz-linear-gradient(#555 40%, #777);
+  background: -o-linear-gradient(#555 40%, #777);
+  background: -ms-linear-gradient(#555 40%, #777);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555', endColorstr='#777',GradientType=0 );
+  background: linear-gradient(#555 40%, #777); /* Add a dark-grey background on hover */
 }
 
 #movie{
