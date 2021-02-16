@@ -3,7 +3,10 @@
 	<head>
 		<!--In Order to let Internet Explorer read the hebrew letters, I needed to had the encoding utf-8-->
 		<meta charset="utf-8" />
+		<!--my CSS -->
 		<link rel="stylesheet" href="./Savta-Home.css" type="text/css">
+		<!-- CSS for the image gallery-->
+	    <link rel="stylesheet" type="text/css" href="scripts/jquery.fancybox.css">
 		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 		<title>סבתא מינה ליס</title>
 		<link rel="icon" href="favicon.png" type="image/png">
@@ -175,33 +178,35 @@
 		</div>
 
 
+		<!--  http://fancyapps.com/fancybox/3/  I used this site's jQuery plugin in order to make an animated gallery  -->
+
 		<p id="gallery">תמונות</p> <!--This is the gallery's header-->
 			<div id="gallery-container">
-				<div class="images" id="img-a"></div>
-				<div class="images" id="img-b"></div>
-				<div class="images" id="img-c"></div>
-				<div class="images" id="img-d"></div>
-				<div class="images" id="img-e"></div>
-				<div class="images" id="img-f"></div>
-				<div class="images" id="img-g"></div>
-				<div class="images" id="img-h"></div>
-				<div class="images" id="img-i"></div>
-				<div class="images" id="img-j"></div>
-				<div class="images" id="img-k"></div>
-				<div class="images" id="img-l"></div>
-				<div class="images" id="img-m"></div>
-				<div class="images" id="img-n"></div>
-				<div class="images" id="img-o"></div>
-				<div class="images" id="img-p"></div>
-				<div class="images" id="img-q"></div>
-				<div class="images" id="img-r"></div>
-				<div class="images" id="img-s"></div>
-				<div class="images" id="img-t"></div>
-				<div class="images" id="img-u"></div>
-				<div class="images" id="img-v"></div>
-				<div class="images" id="img-w"></div>
-				<div class="images" id="img-x"></div>
-				<div class="images" id="img-y"></div>
+				<a class="images" id="img-a" href="pictures/mosaic/img1_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עומדת מימין לאחיה אריה, ולצידם יושבים הוריהם דב ותמר, אחיהם הבכור אפרים, ואחותם בלה"></a>
+				<a class="images" id="img-b" href="pictures/mosaic/img2_Big.jpg" data-fancybox="myGallery" data-caption="משפחת סלונימסקי בהרכב מלא- המשפחה הגרעינית של סבתא מינה. בשורה העליונה מימין: אחיה אריה, אחותה בלה, סבתא מינה, אחיה אפרים. בשורה למטה מימין: אביה דב (בער), אחותה ציפורה, חברת משפחה, אחיה מיכאל ואמה תמר (טמה)"></a>
+				<a class="images" id="img-c" href="pictures/mosaic/img3_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
+				<a class="images" id="img-d" href="pictures/mosaic/img4_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה הבכורה מלי (מלכה)"></a>
+				<a class="images" id="img-e" href="pictures/mosaic/img5_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם בתם השניה, זהבה"></a>
+				<a class="images" id="img-f" href="pictures/mosaic/img6_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה יושבת מימין בתמונה משפחתית עם הדוד מאמריקה (במרכז עם משקפיים) אברהם יודול סלונימסקי"></a>
+				<a class="images" id="img-g" href="pictures/mosaic/img7_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה, סבא שמואל, בנותיהם ואחיו של סבא- ישראל ליס"></a>
+				<a class="images" id="img-h" href="pictures/mosaic/img8_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
+				<a class="images" id="img-i" href="pictures/mosaic/img9_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם זהבה"></a>
+				<a class="images" id="img-j" href="pictures/mosaic/img10_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם מלי (מלכה)"></a>
+				<a class="images" id="img-k" href="pictures/mosaic/img11_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם נכדם הצעיר מתן, וברקע מתחבאת נכדתם מיכל"></a>
+				<a class="images" id="img-l" href="pictures/mosaic/img12_Big.jpg" data-fancybox="myGallery" data-caption="יום נישואים 40 של סבתא מינה וסבא שמואל ומסביבם הבנות, החתנים והנכדים"></a>
+				<a class="images" id="img-m" href="pictures/mosaic/img13_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בבר המצווה של נכדה ג'ואי"></a>
+				<a class="images" id="img-n" href="pictures/mosaic/img14_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחתונת נכדתה מיכל"></a>
+				<a class="images" id="img-o" href="pictures/mosaic/img15_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם המחותנת שלה הינדה (אמו של ישראל), בגן הלאומי אפולוניה"></a>
+				<a class="images" id="img-p" href="pictures/mosaic/img16_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בברית של נכדה הבכור עמית"></a>
+				<a class="images" id="img-q" href="pictures/mosaic/img17_Big.jpg" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה"></a>
+				<a class="images" id="img-r" href="pictures/mosaic/img18_Big.jpg" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה עם הנכדות תמי (משמאל) ומיכל (מימין)"></a>
+				<a class="images" id="img-s" href="pictures/mosaic/img19_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה חוגגת יום הולדת 4 לנכדה הבכור עמית"></a>
+				<a class="images" id="img-t" href="pictures/mosaic/img20_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה מלי, נכדתה תמר ונינתה מעין"></a>
+				<a class="images" id="img-u" href="pictures/mosaic/img21_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בבריתה של נינתה יעל"></a>
+				<a class="images" id="img-v" href="pictures/mosaic/img22_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בטקס קבלת התואר של נכדתה מיכל"></a>
+				<a class="images" id="img-w" href="pictures/mosaic/img23_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה ובנותיה מלי (משמאל) וזהבה (מימין) בטיול בפראג"></a>
+				<a class="images" id="img-x" href="pictures/mosaic/img24_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה במסיבה שנערכה לכבודה, בקפה קפית בגן הבוטני בירושלים"></a>
+				<a class="images" id="img-y" href="pictures/mosaic/img25_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחופשת פסח במלון בתל אביב לצד נכדתה מיכל ונינתה יעל"></a>
 				<!--div class="images" id="img-z"></div>
 				<div class="images" id="img-aa"></div-->
 			</div>
@@ -403,5 +408,10 @@
 		</div>
 
 		<footer>© כל הזכויות שמורות למיכל דימינסקי צרפתי- אין לעשות  שום שימוש בתוכן ואו בתמונות  ללא אישור מראש ובכתב</footer>
+
+		
+		<script src="scripts/jquery-3.5.1.js"></script>
+		<script src="scripts/jquery.fancybox.min.js"></script>
+		<script src="scripts/Savta-Home.js"></script>
 	</body>
 </html>
