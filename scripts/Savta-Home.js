@@ -15,17 +15,34 @@ $(document).ready(function(){
 		 }
 	}
 
-	// When the user clicks the button, the page will be scrolled up to the top of the document
-	mybutton.onclick = topFunction;
+	
+	//The next code uses jQuery plug-in:"scripts/smooth-scroll.polyfills.js". 
+	//It makes the in-page anchors to have a smoothScroll in the speed that I choose. 
+	//Adittional info about this code in https://github.com/cferdinandi/smooth-scroll
 
-	function topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
-		
-	//$('[data-fancybox="gallery"]').fancybox({
-	// Options will go here
-	//});
+	var scroll = new SmoothScroll('a[href="#movie"]', {         //I chose a link to have the smoothScroll
+		speed: 1100												//I added a speed to the scroll
+	});
+
+	var scroll = new SmoothScroll('a[href="#time-line"]', {
+		speed: 450
+	});
+
+	var scroll = new SmoothScroll('a[href="#family-tree"], a[href="#gallery"]', {      //I chose a few links to have the smoothScroll (a comma separates them)   
+		speed: 550													
+	});
+
+	var scroll = new SmoothScroll('a[href="#recipes"], a[href="#music"]', {		
+		speed: 500
+	});
+
+	var scroll = new SmoothScroll('a[href="#header"]', {       //this is the pink top button
+		speed: 500
+	});
+
+	
+	
+
 
 
 });
