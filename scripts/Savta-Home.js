@@ -33,7 +33,7 @@ $(document).ready(function(){
 	});
 
 	var scroll = new SmoothScroll('a[href="#recipes"], a[href="#music"]', {		
-		speed: 500
+		speed: 350
 	});
 
 	var scroll = new SmoothScroll('a[href="#header"]', {       //this is the pink top button
