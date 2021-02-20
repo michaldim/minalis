@@ -469,6 +469,7 @@ body.compensate-for-scrollbar {
         rgba(0, 0, 0, 0) 100%);
     bottom: 0;
     color: #eee;
+    direction: rtl;
     font-family: 'Amatic SC', cursive, Arial, sans-serif; 
     font-size: 22px;
     font-weight: 400;
