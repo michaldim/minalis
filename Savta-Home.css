@@ -3073,9 +3073,9 @@ footer{
 	background-color: #7d7777;
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 740px){
 	
 	body{
-			display: none;
+		display: none;
 	}
 }
