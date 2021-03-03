@@ -51,7 +51,7 @@ header h1{
 	-ms-grid-row: 3;
 }
 
-.pic-box-food img{
+#subjects .buttom-pictures img{
 	border-radius: 10px 10px 0px 0px; /*It starts with top left and moves in a clock direction*/
 	width: 280px;
 	margin-top: 25px;
@@ -84,7 +84,7 @@ header h1{
 	-ms-grid-row: 1;
 }
 
-.pic-box-time img{
+#subjects .top-pictures img{
 	border-radius: 10px 10px 0px 0px;
 	width: 280px;
 	position: relative;
@@ -117,13 +117,6 @@ header h1{
 }
 
 
-.pic-box-tree img{
-	border-radius: 10px 10px 0px 0px;
-	width: 280px;
-	position: relative;
-	top: 4px;
-}
-
 .pic-box-tree h1{
 	width: 280px;
 	background: -webkit-linear-gradient(#818d87 25%, #a0ada7);
@@ -148,13 +141,13 @@ header h1{
 	-ms-grid-row: 3;
 }
 
-.pic-box-pictures img{
+/*.pic-box-pictures img{
 	border-radius: 10px 10px 0px 0px;
 	width: 280px;
 	position: relative;
 	top: 4px;
 	margin-top: 25px;
-}
+}*/
 
 .pic-box-pictures h1{
 	width: 280px;
@@ -179,13 +172,6 @@ header h1{
 	grid-row: 1;
 	-ms-grid-column: 4; 
 	-ms-grid-row: 1;
-}
-
-.pic-box-savta #savta{
-	border-radius: 10px 10px 0px 0px;
-	width: 280px;
-	position: relative;
-	top: 4px;
 }
 
 
@@ -213,13 +199,13 @@ header h1{
 	-ms-grid-row: 3;
 }
 
-.pic-box-music img{
+/*.pic-box-music img{
 	border-radius: 10px 10px 0px 0px;
 	width: 280px;
 	margin-top: 25px;
 	position: relative;
 	top: 4px;
-}
+}*/
 
 
 .pic-box-music h1{
@@ -3073,9 +3059,111 @@ footer{
 	background-color: #7d7777;
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 600px){
 	
-	body{
+	/*body{
+		display: none;
+	}*/
+
+	#subjects{
+		display: block;
+		margin: 60px auto 0px auto;
+		text-align: center;
+		position: static;
+	}
+
+	#subjects .top-pictures img{
+		border-radius: 0px 0px 0px 0px;
+		width: 68%;
+		position: relative;
+		margin: 20px auto 0 auto;
+	}
+
+	#subjects .buttom-pictures img{
+		border-radius: 0px 0px 0px 0px; /*It starts with top left and moves in a clock direction*/
+		width: 68%;
+		position: relative;
+		margin: 20px auto 0 auto;
+	}
+
+	#subjects div{
+		position: relative;
+	}
+
+	#subjects h1{
+		border-radius: 0px 0px 0px 0px;
+		width: 60%;
+		position: absolute;
+	}
+
+	#subjects .oddH1inMobile{
+		background: -webkit-linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
+		background: -webkit-gradient(linear, top, bottom, color-stop(25%, rgba(129, 141, 135, 1)), color-stop(100%, rgba(160, 173, 167, 0.7)));
+		background: -moz-linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
+		background: -o-linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
+		background: -ms-linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(129, 141, 135, 1)', endColorstr='rgba(160, 173, 167, 0.7)',GradientType=0 );
+		background: linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
+		top: 7%;
+		left: 0;
+	}
+
+	#subjects .evenH1inMobile{
+		background: -webkit-linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
+		background: -webkit-gradient(linear, top, bottom, color-stop(25%, rgba(160, 173, 167, 0.7)), color-stop(100%, rgba(129, 141, 135, 1)));
+		background: -moz-linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
+		background: -o-linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
+		background: -ms-linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(160, 173, 167, 0.7)', endColorstr='rgba(129, 141, 135, 1)',GradientType=0 );
+		background: linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
+		top: 7%;
+		left: 40%;
+	}
+
+
+	#subjects .pic-box-savta img{
+		top: 0;
+		left: 0;
+	}
+
+	#subjects .pic-box-time img{
+		width: 55%;
+		right: 15%;
+		top: 0;
+	}
+
+	#subjects .pic-box-tree img{
+		top: 0;
+		width: 60%;
+		right: -8%;
+	}
+
+	#subjects .pic-box-pictures img{
+		top: 0;
+		width: 63%;
+		left: -8%
+	}
+
+	#subjects .pic-box-food img{
+		left: 12%;
+		width: 60%;
+	}
+
+	#subjects .pic-box-music img{
+		width: 66%;
+		right: 8%;
+	}
+
+	#subjects .pic-box-pictures h1,
+	#subjects .pic-box-food h1,
+	#subjects .pic-box-music h1{
+		top: 10%;
+	}
+
+	iframe,
+	#time-line-father{
 		display: none;
 	}
+
+
 }
