@@ -3059,11 +3059,33 @@ footer{
 	background-color: #7d7777;
 }
 
+
+/*@media screen and (max-height: 825px){
+
+	@media (orientation: landscape) {
+	  		body {
+			    height: 100vw;
+			    -webkit-transform: rotate(-90deg);
+			    -moz-transform: rotate(-90deg);
+			    -o-transform: rotate(-90deg);
+			    -ms-transform: rotate(-90deg);
+			    transform: rotate(-90deg);
+			  }
+	}
+}*/
+
 @media screen and (max-width: 600px){
 	
 	/*body{
 		display: none;
 	}*/
+
+	header{
+		position: fixed;
+		top: 0;
+		z-index:95;
+		transition: top 0.8s; /* Transition effect (with javaScript) when sliding down (and up) */
+	}
 
 	#subjects{
 		display: block;
@@ -3104,7 +3126,7 @@ footer{
 		background: -ms-linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
 	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(129, 141, 135, 1)', endColorstr='rgba(160, 173, 167, 0.7)',GradientType=0 );
 		background: linear-gradient(to bottom right, rgba(129, 141, 135, 1) 25%, rgba(160, 173, 167, 0.7));
-		top: 7%;
+		top: 10%;
 		left: 0;
 	}
 
@@ -3116,7 +3138,7 @@ footer{
 		background: -ms-linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
 	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(160, 173, 167, 0.7)', endColorstr='rgba(129, 141, 135, 1)',GradientType=0 );
 		background: linear-gradient(to right top, rgba(160, 173, 167, 0.7) 25%, rgba(129, 141, 135, 1));
-		top: 7%;
+		top: 10%;
 		left: 40%;
 	}
 
@@ -3135,7 +3157,7 @@ footer{
 	#subjects .pic-box-tree img{
 		top: 0;
 		width: 60%;
-		right: -8%;
+		right: -9%;
 	}
 
 	#subjects .pic-box-pictures img{
@@ -3154,10 +3176,20 @@ footer{
 		right: 8%;
 	}
 
-	#subjects .pic-box-pictures h1,
-	#subjects .pic-box-food h1,
+	#subjects .pic-box-time h1{
+		top: 9%;
+	}
+
+	#subjects .pic-box-pictures h1{
+		top: 11%;
+	}
+
+	#subjects .pic-box-food h1{
+		top: 12%;
+	}
+
 	#subjects .pic-box-music h1{
-		top: 10%;
+		top: 14%;
 	}
 
 	iframe,
