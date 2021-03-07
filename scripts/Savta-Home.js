@@ -32,18 +32,20 @@ $(document).ready(function(){
 
 
 	//make the mobile screen portrait at all times
-	window.addEventListener("load", makeTheScreenPortrait);
-	window.addEventListener("orientationchange", makeTheScreenPortrait);
+	//ScreenOrientation.lock("portrait");
+	window.screen.orientation.lock("portrait");
 
-	var body = document.getElementsByTagName("body")[0];
+	// window.addEventListener("load", makeTheScreenPortrait);
+	// window.addEventListener("orientationchange", makeTheScreenPortrait);
 
-	function makeTheScreenPortrait() {
-		if (screen.width < 825 && (window.innerHeight < window.innerWidth)){
-			body.style.height = "100vw";
-			body.style.transform = "rotate(-90deg)";
-			body.style.msTransform = "rotate(-90deg)";
-		}
-	}
+
+	// function makeTheScreenPortrait() {
+	// 	if (screen.width < 825 && (window.innerHeight < window.innerWidth)){
+	// 		document.body.style.height = "100vw";
+	// 		document.body.style.transform = "rotate(+90deg)";
+	// 		document.body.style.msTransform = "rotate(+90deg)";
+	// 	} 
+	// }
 
 
 
