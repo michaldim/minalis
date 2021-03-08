@@ -3060,19 +3060,23 @@ footer{
 }
 
 
-/*@media screen and (max-height: 825px){
 
-	@media (orientation: landscape) {
-	  		body {
-			    height: 100vw;
-			    -webkit-transform: rotate(-90deg);
-			    -moz-transform: rotate(-90deg);
-			    -o-transform: rotate(-90deg);
-			    -ms-transform: rotate(-90deg);
-			    transform: rotate(-90deg);
-			  }
+
+/*@media screen and (max-width: 825px) and (orientation:landscape){
+
+	body {
+			height: 100vw;
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			transform: rotate(-90deg);
 	}
-}*/
+
+	
+}
+*/
+
 
 @media screen and (max-width: 600px){
 	
