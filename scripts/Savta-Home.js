@@ -61,21 +61,5 @@ $(document).ready(function(){
 	
 
 
-	
-
-	//make the mobile screen portrait at all times
-	//ScreenOrientation.lock("portrait");
-	
-	// window.addEventListener("load", lock);
-	// //window.addEventListener("orientationchange", lock);
-
-	// function lock () {
-	//  	if ((screen.width < 601 ) && (window.innerHeight < window.innerWidth) && (navigator.userAgent.indexOf( "Mobile" ) !== -1)) {
-	//  		window.screen.orientation.lock("portrait");
-	//  	// } else if ((screen.width < 825) && (screen.width > 601) && (navigator.userAgent.indexOf( "Mobile" ) !== -1)){
-	//  	// 	window.screen.orientation.lock("portrait");
-	//  	}
-
-
 });
 
