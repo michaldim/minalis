@@ -68,7 +68,7 @@ $(document).ready(function(){
 	
 //
 	window.addEventListener("load", lock);
-	window.addEventListener("orientationchange", lock);
+	//window.addEventListener("orientationchange", lock);
 
 	function lock () {
 	 	if (screen.width < 601) {
