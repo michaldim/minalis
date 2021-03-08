@@ -66,40 +66,15 @@ $(document).ready(function(){
 	//make the mobile screen portrait at all times
 	//ScreenOrientation.lock("portrait");
 	
-//
-	window.addEventListener("load", lock);
-	//window.addEventListener("orientationchange", lock);
+	// window.addEventListener("load", lock);
+	// //window.addEventListener("orientationchange", lock);
 
-	function lock () {
-	 	if (screen.width < 601) {
-	 		window.screen.orientation.lock("portrait");
-	 	// } else if ((screen.width < 825) && (screen.width > 601) && (navigator.userAgent.indexOf( "Mobile" ) !== -1)){
-	 	// 	window.screen.orientation.lock("portrait");
-	 	}
-	}
-	 	// } else if((screen.width < 825) && (window.innerHeight < window.innerWidth) && (navigator.userAgent.indexOf( "Mobile" ) !== -1) ) {
-	 	// 	window.screen.orientation.lock("portrait");
-	 	
-	
-//&& (window.innerHeight > window.innerWidth)
-	// function makeTheScreenPortrait() {
-	// 	if (screen.width < 825 && (window.innerHeight < window.innerWidth)){
-	// 		document.body.style.height = "100vw";
-	// 		document.body.style.transform = "rotate(+90deg)";
-	// 		document.body.style.msTransform = "rotate(+90deg)";
-	// 	} 
-	// }
-
-
-	///////////////&& (navigator.userAgent.indexOf( "Mobile" ) !== -1) 
-	// body {
-	// 		    height: 100vw;
-	// 		    -webkit-transform: rotate(-90deg);
-	// 		    -moz-transform: rotate(-90deg);
-	// 		    -o-transform: rotate(-90deg);
-	// 		    -ms-transform: rotate(-90deg);
-	// 		    transform: rotate(-90deg);
-	// 		  }
+	// function lock () {
+	//  	if ((screen.width < 601 ) && (window.innerHeight < window.innerWidth) && (navigator.userAgent.indexOf( "Mobile" ) !== -1)) {
+	//  		window.screen.orientation.lock("portrait");
+	//  	// } else if ((screen.width < 825) && (screen.width > 601) && (navigator.userAgent.indexOf( "Mobile" ) !== -1)){
+	//  	// 	window.screen.orientation.lock("portrait");
+	//  	}
 
 
 });
