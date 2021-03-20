@@ -96,8 +96,13 @@ $(document).ready(function(){
  	 	e.preventDefault();
   // 2
   		const href = $(this).attr("href");
+
+  		function cancelGrey(){
+  			$("header").trigger('click');
+  		}
   // 3
-  		$("html, body").animate({ scrollTop: $(href).offset().top }, 600, "swing");
+  		$("html, body").animate({ scrollTop: $(href).offset().top }, 600, "swing", cancelGrey);
+  		
 	});
 
 	// $("#div-that-help-put-pic-box-savta-in-ie-grid a picture").click(function(){
