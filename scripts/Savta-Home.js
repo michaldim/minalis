@@ -2,12 +2,12 @@ $(document).ready(function(){
 
 
 	//There is more than one "scroll" event on window, so we have to use addEventListener, because it's preventing same events to override one another
-	window.addEventListener("scroll", headerDisappearsFunction);
-	window.addEventListener("scroll", buttonScrollFunction);
+	window.addEventListener("scroll", headerDisappears);
+	window.addEventListener("scroll", scrollButtonAppears);
 
 	/* When the user scrolls down in mobile, hide the header. When the user scrolls to the top of the page, show the header */
 	var startingScrollPos = 0; 
-	function headerDisappearsFunction() {
+	function headerDisappears() {
 	  var currentScrollPos = window.pageYOffset; //pageYOffset tells us how much the screen was scrolled on the Y axis (0 means it wasn't scrolled)
 	  if (screen.width < 601 && (startingScrollPos < currentScrollPos)) {
 	    document.getElementsByTagName("header")[0].style.top = "-60px";
@@ -35,8 +35,8 @@ $(document).ready(function(){
 	//Get the button
 	var mybutton = document.getElementById("myBtn");
 
-	//When someone scrolls down more than 600px from the top of the document, than the button will appear, but it won't appear in mobile screens (that are 600px wide or less) and it also won't work in mobile screens that were rotated to landscape view (their max-size in landscape view is 825px)
-	function buttonScrollFunction() {
+	//When someone scrolls down more than 600px from the top of the document, than the top-button will appear, but it won't appear in mobile screens (that are 600px wide or less) and it also won't work in mobile screens that were rotated to landscape view (their max-size in landscape view is 825px)
+	function scrollButtonAppears() {
 		 if (screen.width > 600 && screen.width < 825 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
 		    mybutton.style.display = "block"; //this rule is good for tablets
 		 } else if (screen.width > 600 && screen.width < 825 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
@@ -48,6 +48,10 @@ $(document).ready(function(){
 		 }
 	}
 
+	// document.body.scrollTop = 0; // For Safari
+ //  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+
 	// function buttonScrollFunction() {
 	// 	 if (screen.width > 600 && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
 	// 	    mybutton.style.display = "block";
@@ -56,7 +60,6 @@ $(document).ready(function(){
 	// 	 }
 	// }
 
-	
 
 
 
@@ -82,12 +85,20 @@ $(document).ready(function(){
 		speed: 350
 	});
 
-	var scroll = new SmoothScroll('a[href="#header"]', {       //this is the pink top button
-		speed: 500
+	// var scroll = new SmoothScroll('a[href="#header"]', {       //this is the pink top button
+	// 	speed: 500
+	// });
+
+
+	//since the top-button turned grey after clicking it in tablets, I decided not to use the plug-in for it and to write a different jquery code:
+	$("#myBtnAnchor").on("click", function (e) {
+  // 1
+ 	 	e.preventDefault();
+  // 2
+  		const href = $(this).attr("href");
+  // 3
+  		$("html, body").animate({ scrollTop: $(href).offset().top }, 600, "swing");
 	});
-
-	
-
 
 	// $("#div-that-help-put-pic-box-savta-in-ie-grid a picture").click(function(){
 	// 	("#background-of-movie iframe").css({
