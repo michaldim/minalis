@@ -3060,10 +3060,11 @@ footer{
 }
 
 
+/*Now the mobile design will start!*/
 
 /*The first line is good for mobile phones with landscape orientation and the second line is good for mobile phones with portrait orientation*/
 @media screen and (max-width: 825px) and (orientation: landscape),
-screen and (max-width: 600px){
+screen and (max-width: 600px) and (orientation: portrait){
 	
 	/*body{
 		display: none;
@@ -3181,10 +3182,103 @@ screen and (max-width: 600px){
 		top: 14%;
 	}
 
-	iframe,
+	#music-iframes iframe,
 	#time-line-father{
 		display: none;
 	}
 
+	#myBtn{
+		display: none;
+	}
+
+	/*The next rules are for savta's movie. javaScript will use click event on it:*/
+	#background-of-movie {
+		display: none;
+		position: relative;
+	}
+
+	#background-of-movie iframe {
+		top: calc(50% - 157px);
+		left: calc(50% - 255px);
+		position: fixed;
+		z-index: 97;
+	}
+
+	#background-of-movie::before{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		right: 0;
+		transform: skew(0);
+		z-index: 96;
+	} 
 
 }
+
+
+/*Because the movie should be on landscape view, I rotated it in portrait screens:*/
+@media screen and (max-width: 600px) and (orientation: portrait){
+
+	#background-of-movie iframe {
+		transform: rotateZ(90deg);
+	}
+
+}
+
+
+
+/*Because the pictures in this screen size are the laptop pictures (short and wide), the h1 location needed some changes*/
+@media screen and (min-width: 601px) and (max-width: 825px) and (orientation: landscape){
+
+	#subjects .top-pictures img{
+		width: 60%;
+	}
+
+	#subjects .buttom-pictures img{
+		width: 60%;
+	}
+
+	#subjects .pic-box-tree img{
+		right: -11%;
+	}
+
+	#subjects .pic-box-savta h1{
+		width: 45%;
+		top: 16%;
+	}
+
+	#subjects .pic-box-time h1{
+		width: 50%;
+		top: 18%;
+		left: 50%;
+	}
+
+	#subjects .pic-box-tree h1{
+		width: 45%;
+		top: 18%;
+	}
+
+	#subjects .pic-box-pictures h1{
+		width: 45%;
+		top: 18%;
+		left: 55%;
+	}
+
+	#subjects .pic-box-food h1{
+		width: 45%;
+		top: 18%;
+	}
+
+	#subjects .pic-box-music h1{
+		width: 47%;
+		top: 18%;
+		left: 53%;
+	}
+
+
+}
+
+
+
+

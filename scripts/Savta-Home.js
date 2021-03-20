@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
+
 	//There is more than one "scroll" event on window, so we have to use addEventListener, because it's preventing same events to override one another
 	window.addEventListener("scroll", headerDisappearsFunction);
 	window.addEventListener("scroll", buttonScrollFunction);
 
-	/* When the user scrolls down, hide the header. When the user scrolls to the top of the page, show the header */
+	/* When the user scrolls down in mobile, hide the header. When the user scrolls to the top of the page, show the header */
 	var startingScrollPos = 0; 
 	function headerDisappearsFunction() {
 	  var currentScrollPos = window.pageYOffset; //pageYOffset tells us how much the screen was scrolled on the Y axis (0 means it wasn't scrolled)
@@ -15,18 +16,45 @@ $(document).ready(function(){
 	  }
 	}
 
+	//This function also hides the header in cases that the mobile screen is rotated to landscape view:
+	// function headerDisappearsFunction() {
+	//   var currentScrollPos = window.pageYOffset; //pageYOffset tells us how much the screen was scrolled on the Y axis (0 means it wasn't scrolled)
+	//   if(screen.width >= 601 && screen.width < 825 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (startingScrollPos < currentScrollPos)){ //this rule is good for rotated mobile screens
+	//   	document.getElementsByTagName("header")[0].style.top = "-60px";
+	//   } else if (screen.width < 601 && (startingScrollPos < currentScrollPos)) {
+	//     document.getElementsByTagName("header")[0].style.top = "-60px";
+	//   } else {
+	//     document.getElementsByTagName("header")[0].style.top = "0";
+	//   }
+	// }
+
+
+
+
 
 	//Get the button
 	var mybutton = document.getElementById("myBtn");
 
-	//The screen needs to be bigger than 600px and when someone scrolls down more than 600px from the top of the document, than the button will appear
+	//When someone scrolls down more than 600px from the top of the document, than the button will appear, but it won't appear in mobile screens (that are 600px wide or less) and it also won't work in mobile screens that were rotated to landscape view (their max-size in landscape view is 825px)
 	function buttonScrollFunction() {
-		 if (screen.width > 600 && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
-		    mybutton.style.display = "block";
+		 if (screen.width > 600 && screen.width < 825 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
+		    mybutton.style.display = "block"; //this rule is good for tablets
+		 } else if (screen.width > 600 && screen.width < 825 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
+		 	mybutton.style.display = "none"; //this rule is good for mobile screen that was rotated
+		 } else if(screen.width >= 825 && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
+		 	mybutton.style.display = "block"; //this rule is good for tablets and computers
 		 } else {
-		    mybutton.style.display = "none";
+		 	mybutton.style.display = "none"; //this rule is good for mobile
 		 }
 	}
+
+	// function buttonScrollFunction() {
+	// 	 if (screen.width > 600 && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
+	// 	    mybutton.style.display = "block";
+	// 	 } else {
+	// 	 	mybutton.style.display = "none";
+	// 	 }
+	// }
 
 	
 
@@ -59,6 +87,18 @@ $(document).ready(function(){
 	});
 
 	
+
+
+	// $("#div-that-help-put-pic-box-savta-in-ie-grid a picture").click(function(){
+	// 	("#background-of-movie iframe").css({
+	// 		"display": "block",
+	// 		"position": "fixed",
+	// 		"top": "0"
+
+	// 	});
+	// });
+
+
 
 
 });
