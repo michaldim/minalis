@@ -85,25 +85,11 @@ $(document).ready(function(){
 		speed: 350
 	});
 
-	// var scroll = new SmoothScroll('a[href="#header"]', {       //this is the pink top button
-	// 	speed: 500
-	// });
-
-
-	//since the top-button turned grey after clicking it in tablets, I decided not to use the plug-in for it and to write a different jquery code:
-	$("#myBtnAnchor").on("click", function (e) {
-  // 1
- 	 	e.preventDefault();
-  // 2
-  		const href = $(this).attr("href");
-
-  		function cancelGrey(){
-  			$("header").trigger('click');
-  		}
-  // 3
-  		$("html, body").animate({ scrollTop: $(href).offset().top }, 600, "swing", cancelGrey);
-  		
+	var scroll = new SmoothScroll('a[href="#header"]', {       //this is the pink top button
+		speed: 500
 	});
+
+
 
 	// $("#div-that-help-put-pic-box-savta-in-ie-grid a picture").click(function(){
 	// 	("#background-of-movie iframe").css({
