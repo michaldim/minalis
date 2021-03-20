@@ -405,7 +405,7 @@ a:link{
 }
 	
 
-#myBtn {
+#myBtn, #myBtn:visited {
 
   display: none; /* Hidden by default */
   direction: ltr;
@@ -430,7 +430,7 @@ a:link{
   font-size: 18px; /* Increase font size */
 }
 
-#myBtn:hover {
+#myBtn:hover, #myBtn:active {
   background: -webkit-linear-gradient(#555 40%, #777);
   background: -webkit-gradient(linear, top, bottom, color-stop(40%, #555), color-stop(100%, #777));
   background: -moz-linear-gradient(#555 40%, #777);
