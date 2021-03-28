@@ -3225,6 +3225,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		right: 0;
 		transform: skew(0);
 		z-index: 96;
+		background: #000000;
 	} 
 
 }
