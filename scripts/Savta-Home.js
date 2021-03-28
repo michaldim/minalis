@@ -103,5 +103,42 @@ $(document).ready(function(){
 
 
 
+	const mainLinks = $("#subjects").find("a");
+
+	//Cancelling the internal links in mobile:
+	mainLinks.click(function(e){
+		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
+			e.preventDefault();
+		}
+	});
+
+
+
+	 
+
+	const movieImg = $("#subjects picture").first();
+
+	//When someone clicks on the picture of savta on mobile screens, then the iframe of her movie and the "X" that closes the movie will appear
+	movieImg.on("click", function(){
+		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
+			$("#background-of-movie").css("display", "block"); //it was "display: none" in the mobile media query (inside the css)
+			$("#background-of-movie img").css("display", "block"); //it was "display: none" in the main css section
+		}
+	});
+
+	//When someone clicks the "X" sign near savta's movie, while the movie is open, than the iframe will disappear and the user will see the home screen again
+	$("#background-of-movie>img").on("click", function(){
+		$("#background-of-movie").css("display", "none");
+		$("#background-of-movie img").css("display", "none");
+	});
+
+
+
+
+
+
+
+
+
 });
 

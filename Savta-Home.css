@@ -450,7 +450,6 @@ a:link{
 	margin-bottom: 30px;
 }
 
-
 #background-of-movie{
 	position: relative;
 	background-color: #484444;
@@ -458,6 +457,7 @@ a:link{
 	height: 375px;
 	margin-bottom: 200px;
 }
+
 
 @media screen and (max-width: 1054px){
 	
@@ -504,7 +504,19 @@ a:link{
 	z-index: -1;
 }
 
-
+/*The next image is the "X" that closes the movie in mobiles*/
+#background-of-movie img{
+	display: none;
+	color: white;
+	border: 1px solid white;
+	border-radius: 2px;
+	position: fixed;
+	direction: rtl;
+	top: 20px;
+	right: 20px;
+	padding: 0;
+	z-index: 98;
+}
 
 #family-tree{
 	margin: auto;
@@ -3223,6 +3235,34 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	#background-of-movie iframe {
 		transform: rotateZ(90deg);
+	}
+
+	#background-of-movie img {
+		bottom: 20px;
+		top: unset;
+	}
+
+}
+
+
+/*in small screens the close-outline (the X) covers the movie, so it needed to move a little*/
+@media screen and (max-width: 600px) and (orientation: landscape){
+
+	#background-of-movie img {
+		top: 5px;
+		right: 5px;
+	}
+
+}
+
+
+/*in small screens the close-outline (the X) covers the movie, so it needed to move a little*/
+@media screen and (max-height: 600px) and (orientation: portrait){
+
+	#background-of-movie img {
+		bottom: 5px;
+		top: unset;
+		right: 5px;
 	}
 
 }
