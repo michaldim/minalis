@@ -118,33 +118,30 @@ $(document).ready(function(){
 
 	const movieImg = $("#subjects picture").first();
 
-	//When someone clicks on the picture of savta on mobile screens, then the iframe of her movie and the "X" that closes the movie will appear
-	// movieImg.on("click", function(){
-	// 	if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-	// 		$("#background-of-movie").css("display", "block"); //it was "display: none" in the mobile media query (inside the css)
-	// 		$("#background-of-movie img").css("display", "block"); //it was "display: none" in the main css section
-	// 	}
-	// });
-
-
+	//When someone clicks the picture of savta on mobile screens, 
+	//then the iframe of her movie and the "X" that closes the movie will appear.
+	//The second "if" sentence exists, because I change the src each time someone leaves this screen.
 	movieImg.on("click", function(){
 		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-			$("#background-of-movie").css("visibility", "visible"); //it was "visibility: hidden" in the mobile media query (inside the css)
-			$("#background-of-movie img").css("visibility", "visible"); //it was "display: none" in the main css section and "visibility: hidden" in the mobile media query
+			$("#background-of-movie").css("display", "block"); //it was "display: none" in the mobile media query (inside the css)
+			$("#background-of-movie img").css("display", "block"); //it was "display: none" in the main css section
+			if($("#background-of-movie iframe").attr("src") != "https://www.youtube-nocookie.com/embed/tshhrdR5jSM"){
+				$("#background-of-movie iframe").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM");
+			} 
 		}
 	});
 
-	//When someone clicks the "X" sign near savta's movie, while the movie is open, than the iframe will disappear and the user will see the home screen again
-	// $("#background-of-movie>img").on("click", function(){
-	// 	$("#background-of-movie").css("display", "none");
-	// 	$("#background-of-movie img").css("display", "none");
-	// });
 
 
+	//When someone clicks the "X" sign near savta's movie, while the movie is open, 
+	//than the iframe will disappear and the user will see the home screen again.
+	//I'm changing the src, because otherwise the video continues playing (It's a way to make the video stops).
 	$("#background-of-movie>img").on("click", function(){
-		$("#background-of-movie").css("visibility", "hidden");
-		$("#background-of-movie img").css("visibility", "hidden");
+		$("#background-of-movie").css("display", "none");
+		$("#background-of-movie img").css("display", "none");
+		$("#background-of-movie iframe").attr("src", "");
 	});
+
 
 
 

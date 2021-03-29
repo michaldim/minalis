@@ -3206,8 +3206,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	/*The next rules are for savta's movie. javaScript will use click event on it:*/
 	#background-of-movie {
-		display: block;
-		visibility: hidden;
+		display: none;
 		position: relative;
 	}
 
@@ -3228,11 +3227,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		z-index: 96;
 		background: #000000;
 	} 
-
-	#background-of-movie img{
-		display: block;
-		visibility: hidden;
-	}
 
 }
 
