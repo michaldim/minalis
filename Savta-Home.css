@@ -192,6 +192,11 @@ header h1{
 	font-weight: 400;
 }
 
+#movieForMobile{
+	display: none;
+}
+
+
 #div-that-help-put-pic-box-music-in-ie-grid{
 	grid-column: 2 / span 2;
 	grid-row: 2;
@@ -505,7 +510,7 @@ a:link{
 }
 
 /*The next image is the "X" that closes the movie in mobiles*/
-#background-of-movie img{
+/*#background-of-movie img{
 	display: none;
 	color: white;
 	border: 1px solid white;
@@ -516,6 +521,10 @@ a:link{
 	right: 20px;
 	padding: 0;
 	z-index: 98;
+}*/
+
+#xThatBringsBackSavtaImgInMobile{
+	display: none;
 }
 
 #family-tree{
@@ -3094,7 +3103,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		display: block;
 		margin: 60px auto 0px auto;
 		text-align: center;
-		position: static;
+		position: relative;
 	}
 
 	#subjects .top-pictures img{
@@ -3102,6 +3111,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		width: 68%;
 		position: relative;
 		margin: 20px auto 0 auto;
+		z-index: 4;
 	}
 
 	#subjects .buttom-pictures img{
@@ -3109,6 +3119,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		width: 68%;
 		position: relative;
 		margin: 20px auto 0 auto;
+		z-index: 4;
 	}
 
 	#subjects div{
@@ -3119,6 +3130,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		border-radius: 0px 0px 0px 0px;
 		width: 60%;
 		position: absolute;
+		z-index: 5;
 	}
 
 	#subjects .oddH1inMobile{
@@ -3204,13 +3216,49 @@ screen and (max-width: 600px) and (orientation: portrait){
 		display: none;
 	}
 
-	/*The next rules are for savta's movie. javaScript will use click event on it:*/
+
+	#movieForMobile{
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 16%;
+		width: 68%;
+		height: 100%;
+		padding-top: 20px;
+		transform: rotateY(90deg);
+	}
+
+
+	#xThatBringsBackSavtaImgInMobile{
+		display: none;
+		position: absolute;
+		color: white;
+		border: 1px solid white;
+		border-radius: 2px;
+		direction: rtl;
+		top: 20px;
+		right: calc(16% - 40px);
+		padding: 0;
+		z-index: 10;
+	}
+
+	@keyframes twirl{
+		0%{ transform: rotateY(0deg) }
+		100%{ transform: rotateY(90deg) }
+	}
+
+	/*All the html rules under #movie are good only for desktop,*/
+	/*so for mobile they are "display: none;" */
+	#movie{
+		display: none;
+	}
+
 	#background-of-movie {
 		display: none;
 		position: relative;
 	}
 
-	#background-of-movie iframe {
+	/*#background-of-movie iframe {
 		top: calc(50% - 157px);
 		left: calc(50% - 255px);
 		position: fixed;
@@ -3226,13 +3274,14 @@ screen and (max-width: 600px) and (orientation: portrait){
 		transform: skew(0);
 		z-index: 96;
 		background: #000000;
-	} 
+	} */
+	
 
 }
 
 
 /*Because the movie should be on landscape view, I rotated it in portrait screens:*/
-@media screen and (max-width: 600px) and (orientation: portrait){
+/*@media screen and (max-width: 600px) and (orientation: portrait){
 
 	#background-of-movie iframe {
 		transform: rotateZ(90deg);
@@ -3243,22 +3292,22 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: unset;
 	}
 
-}
+}*/
 
 
 /*in small screens the close-outline (the X) covers the movie, so it needed to move a little*/
-@media screen and (max-width: 600px) and (orientation: landscape){
+/*@media screen and (max-width: 600px) and (orientation: landscape){
 
 	#background-of-movie img {
 		top: 5px;
 		right: 5px;
 	}
 
-}
+}*/
 
 
 /*in small screens the close-outline (the X) covers the movie, so it needed to move a little*/
-@media screen and (max-height: 600px) and (orientation: portrait){
+/*@media screen and (max-height: 600px) and (orientation: portrait){
 
 	#background-of-movie img {
 		bottom: 5px;
@@ -3266,7 +3315,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		right: 5px;
 	}
 
-}
+}*/
 
 
 
