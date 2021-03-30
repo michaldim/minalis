@@ -141,7 +141,7 @@ $(document).ready(function(){
 		$("#xThatBringsBackSavtaImgInMobile").fadeOut(500);
 		$("#movieForMobile").css({"animation": "twirl 0.5s ease-in forwards"});
 		$("#savta").css({"animation": "twirlBack 1.2s 0.6s ease-out forwards"});
-		setTimeout(delaySrcChange, 1800);
+		setTimeout(delaySrcChange, 600);
 	});
 
 
