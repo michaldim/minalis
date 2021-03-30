@@ -3233,11 +3233,12 @@ screen and (max-width: 600px) and (orientation: portrait){
 		display: none;
 		position: absolute;
 		color: white;
-		border: 1px solid white;
-		border-radius: 2px;
+		background: rgba(129, 141, 135);
+		border: 2px solid white;
+		border-radius: 50%;
 		direction: rtl;
-		top: 20px;
-		right: calc(16% - 40px);
+		top: 25px;
+		right: calc(16% + 5px);
 		padding: 0;
 		z-index: 10;
 	}

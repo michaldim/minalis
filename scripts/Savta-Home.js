@@ -115,16 +115,17 @@ $(document).ready(function(){
 
 
 	 
-	//When someone clicks the picture of savta on mobile screens, 
-	//then the iframe of her movie and the "X" that closes the movie will appear.
+	//When someone clicks the picture of savta on mobile screens, it disappears
+	//and then the iframe of her movie appears and also the "X" that closes the movie appear.
 	//The second "if" sentence exists, because I change the src each time someone leaves this screen.
 	$("#savta").on("click", function(){
 		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
 			$(this).css({"animation": "twirl 0.5s ease-in forwards"}); //
 			$("#movieForMobile").css({"animation": "twirl 1s 0.5s ease-out forwards reverse"}); //
-			if($("#movieForMobile").attr("src") != "https://www.youtube-nocookie.com/embed/tshhrdR5jSM"){
-				$("#movieForMobile").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM");
-			} 
+			$("#xThatBringsBackSavtaImgInMobile").delay(2000).fadeIn(1000);
+			// if($("#movieForMobile").attr("src") != "https://www.youtube-nocookie.com/embed/tshhrdR5jSM"){
+			// 	$("#movieForMobile").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM");
+			// } 
 		}
 	});
 
@@ -133,10 +134,12 @@ $(document).ready(function(){
 	//When someone clicks the "X" sign near savta's movie, while the movie is open, 
 	//than the iframe will disappear and the user will see the home screen again.
 	//I'm changing the src, because otherwise the video continues playing (It's a way to make the video stops).
-	$("#subjects>#xThatBringsBackSavtaImgInMobile").on("click", function(){
-		$("#movieForMobile").animate({"transform": "rotateY(90deg)"}, 1000);
-		$(movieImg).animate({"transform": "rotateY(0deg)"}, 1000);
+	$("#xThatBringsBackSavtaImgInMobile").on("click", function(){
+		$("#xThatBringsBackSavtaImgInMobile").fadeOut(1000);
+		$("#movieForMobile").css({"animation": "twirl 0.5s 1s ease-in forwards"});
+		$("#savta").css({"animation": "twirl 1s 0.5s ease-out forwards reverse"});
 		$("#movieForMobile").attr("src", "");
+		$("#movieForMobile").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM");
 	});
 
 
