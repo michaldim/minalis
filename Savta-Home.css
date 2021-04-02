@@ -1550,6 +1550,10 @@ a:link{
 
 }
 
+#time-line-container-for-mobile{
+	display: none;
+}
+
 #gallery{
 	margin: auto;
 	text-align: center;
@@ -3221,8 +3225,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 		display: block;
 		position: absolute;
 		top: 0px;
-		left: 16%;
-		width: 68%;
+		left: 10%/*16%*/;
+		width: 80%/*68%*/;
 		height: 100%;
 		padding-top: 20px;
 		transform: rotateY(90deg);
@@ -3234,11 +3238,11 @@ screen and (max-width: 600px) and (orientation: portrait){
 		position: absolute;
 		color: white;
 		background: rgba(129, 141, 135);
-		border: 2px solid white;
+		/*border: 3px solid white;*/
 		border-radius: 50%;
 		direction: rtl;
-		top: 25px;
-		right: calc(16% + 5px);
+		top: 31px;
+		right: calc(10% + 11px);
 		padding: 0;
 		z-index: 10;
 	}
@@ -3264,64 +3268,37 @@ screen and (max-width: 600px) and (orientation: portrait){
 		position: relative;
 	}
 
-	/*#background-of-movie iframe {
-		top: calc(50% - 157px);
-		left: calc(50% - 255px);
-		position: fixed;
-		z-index: 97;
+	#time-line-container-for-mobile{
+		display: none;
+		background: -webkit-linear-gradient(#484444 20%, #a0ada7);
+		background: -webkit-gradient(linear, top, bottom, color-stop(20%, #484444), color-stop(100%, #a0ada7));
+		background: -moz-linear-gradient(#484444 20%, #a0ada7);
+		background: -o-linear-gradient(#484444 20%, #a0ada7);
+		background: -ms-linear-gradient(#484444 20%, #a0ada7);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484444', endColorstr='#a0ada7',GradientType=0 );
+		background: linear-gradient(45deg, #484444 20%, #a0ada7);
+		grid-template-columns: repeat(90, 1fr);
+		grid-template-rows: 20% 20% 20% 20% 20%;
+		width: 80%;
+		/*padding: 120px 0 60px 0; */
+	    margin: 0 auto 0 auto;
+	    /*the next rule center the objects inside the grid*/
+	    justify-items: center;
+	    /*the next rule center the grid inside the screen*/
+	    justify-content: center;
+		color: #fff;
+		text-align: center;
+		font-family: 'Amatic SC', cursive, Arial, Sans-serif;
+		font-weight: 400;
+		font-size: 24px;
 	}
 
-	#background-of-movie::before{
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		bottom: 0;
-		right: 0;
-		transform: skew(0);
-		z-index: 96;
-		background: #000000;
-	} */
-	
+
+
+
 
 }
 
-
-/*Because the movie should be on landscape view, I rotated it in portrait screens:*/
-/*@media screen and (max-width: 600px) and (orientation: portrait){
-
-	#background-of-movie iframe {
-		transform: rotateZ(90deg);
-	}
-
-	#background-of-movie img {
-		bottom: 20px;
-		top: unset;
-	}
-
-}*/
-
-
-/*in small screens the close-outline (the X) covers the movie, so it needed to move a little*/
-/*@media screen and (max-width: 600px) and (orientation: landscape){
-
-	#background-of-movie img {
-		top: 5px;
-		right: 5px;
-	}
-
-}*/
-
-
-/*in small screens the close-outline (the X) covers the movie, so it needed to move a little*/
-/*@media screen and (max-height: 600px) and (orientation: portrait){
-
-	#background-of-movie img {
-		bottom: 5px;
-		top: unset;
-		right: 5px;
-	}
-
-}*/
 
 
 

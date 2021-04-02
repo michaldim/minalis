@@ -119,8 +119,9 @@ $(document).ready(function(){
 	//and then the iframe of her movie appears and also the "X" that closes the movie appears.
 	$("#savta").on("click", function(){
 		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-			$(this).css({"animation": "twirl 0.5s ease-in forwards", "transform": "rotateY(90deg)"}); //
+			$("#savta").css({"animation": "twirl 0.5s ease-in forwards", "transform": "rotateY(90deg)"}); //
 			$("#movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
+			$("#subjects h1").first().delay(1000).fadeOut(1000);
 			$("#xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
 		}
 	});
@@ -141,6 +142,7 @@ $(document).ready(function(){
 		$("#xThatBringsBackSavtaImgInMobile").fadeOut(500);
 		$("#movieForMobile").css({"animation": "twirl 0.5s ease-in forwards"});
 		$("#savta").css({"animation": "twirlBack 1.2s 0.6s ease-out forwards"});
+		$("#subjects h1").first().delay(1200).fadeIn(1000);
 		setTimeout(delaySrcChange, 600);
 	});
 
