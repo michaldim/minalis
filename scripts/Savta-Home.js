@@ -61,6 +61,27 @@ $(document).ready(function(){
 	// }
 
 
+	// window.addEventListener("scroll", addingHashToGallery);
+
+	// var startingScrollPos = 0; 
+	// function addingHashToGallery() {
+	//   if ((document.documentElement.scrollTop > 2516) || (document.body.scrollTop > 2516)) {
+	//     window.location.hash = "gallery";
+	//   } 
+	// }
+
+
+	//When the gallery is closed, the page jumps to the place where the https address were before (like: #movie, #family-tree,  etc.).
+	//In order to prevent this jump I wrote this function 
+	$("#gallery-container").click(function(){
+			if(history.pushState) {       //If the browser supports "history.pushState" ( = the browser let us plant history in the browser)
+	    		history.pushState(null, null, '#gallery'); //then the browser will remember the hash "#gallery" as the last location that I was on the website. This code prevents the jump!
+			}
+			else {
+	  			window.location.hash = 'gallery'; //If the browser don't support "history.pushState" then this code will be executed (but it will make a jump) 
+			}
+	});
+
 
 
 
