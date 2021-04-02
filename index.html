@@ -21,42 +21,90 @@
 			<h1 id="header">סבתא מינה</h1>
 		</header>
 
-		<div id="subjects">
+
+		<div id="desktop">
+			<div id="subjects">
 
 
-			<div id="div-that-help-put-pic-box-savta-in-ie-grid"> 
-			<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
-				<a class="pic-box-savta top-pictures" href="#movie">	
-					<picture>
-						<source media="(max-width:600px)" srcset="mobile/pictures-header/mySavta-mobile.jpg">
-						<img id="savta" src="pictures/mySavta.png" alt="סרט"/>
-					</picture>
-					<h1 class="oddH1inMobile">סבתא מספרת</h1><!--I use this sentence also in desktop-->
-					<iframe id="movieForMobile" width="510" height="315" src="https://www.youtube-nocookie.com/embed/tshhrdR5jSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-					</iframe>
-				</a>
+				<div id="div-that-help-put-pic-box-savta-in-ie-grid"> 
+				<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
+					<a class="pic-box-savta top-pictures" href="#movie">	
+							<img id="savta" src="pictures/mySavta.png" alt="סרט"/>
+						<h1>סבתא מספרת</h1>
+					</a>
+				</div>
+				
+
+
+				<div id="div-that-help-put-pic-box-time-in-ie-grid"> 
+				<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
+					<a class="pic-box-time top-pictures" href="#time-line">
+							<img src="pictures/myClock.png" alt="ציר זמן"/>
+						<h1>ציר זמן</h1>
+					</a>
+				</div>
+
+
+				<div id="div-that-help-put-pic-box-tree-in-ie-grid"> 
+					<a class="pic-box-tree top-pictures" href="#family-tree">
+							<img src="pictures/myTree2.jpg" alt="עץ משפחה"/>
+						<h1>עץ משפחה</h1>
+					</a>	
+				</div>
+
+
+				<div id="div-that-help-put-pic-box-pictures-in-ie-grid">
+					<a class="pic-box-pictures buttom-pictures" href="#gallery">
+							<img src="pictures/camera.jpg" alt="תמונות"/>
+						<h1>תמונות</h1>
+					</a>
+				</div>
+
+
+				<div id="div-that-help-put-pic-box-food-in-ie-grid">
+					<a class="pic-box-food buttom-pictures" href="#recipes">
+							<img src="pictures/chocolateBalls.jpg" alt="מתכונים"/>
+						<h1>מתכונים</h1>
+					</a>
+				</div>
+
+
+				<div id="div-that-help-put-pic-box-music-in-ie-grid">
+					<a class="pic-box-music buttom-pictures" href="#music">
+							<img src="pictures/myViolin.jpg" alt="מוזיקה"/>
+						<h1>מוזיקה אהובה</h1>
+					</a>
+				</div>
+
 			</div>
-			<img id="xThatBringsBackSavtaImgInMobile" src="./close-circle-outline.svg" title="החזרת תמונת המקור" name="close-circle-outline" />
 
 
+			<a href="#header"><img id="myBtn" src="./arrow-up-outline-white.SVG" title="חזור לראש העמוד" name="arrow-up-outline" /></a>
+			
+			
+			<p id="movie">סבתא מספרת</p> <!--This is the movie's header-->
+			<div id="background-of-movie">
+						<iframe width="510" height="315" src="https://www.youtube-nocookie.com/embed/tshhrdR5jSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 
-			<div id="div-that-help-put-pic-box-time-in-ie-grid"> 
-			<!--Because Internet Explorer won't put anchor in a grid, I needed to create this Div, that will act as the anchor's father-->
-				<a class="pic-box-time top-pictures" href="#time-line">
-					<picture>
-						<source media="(max-width:600px)" srcset="mobile/pictures-header/timeLine-mobile.jpg">
-						<img src="pictures/myClock.png" alt="ציר זמן"/>
-					</picture>
-					<h1 class="evenH1inMobile">ציר זמן</h1>
-				</a>
 
-				<div id="time-line-container-for-mobile">
-					<div id="vertical-line"></div>
+			<p id="family-tree">עץ משפחה</p>
+			<div id="family-tree-container">
+				<img src="FamilyTree/familyTree3.png" width="90%" alt="עץ משפחה"/>
+			</div>
+
+
+			<div id="time-line-father">
+				<p id="time-line">ציר זמן</p> <!--It's is the Time-line's header-->
+				<div id="time-line-container">
+					<div id="horizontal-line"></div>
 
 					<p id="gap-start"></p>
 
-					<p id="year1929">1929</p>
-					<p id="text1929">נולדה בפרוז'אני ברוסיה-לבנה</p>
+					<p id="year1929a">19</p>
+					<p id="year1929b">29</p>
+					<p id="text1929a">נולדה ברוסיה</p>
+					<p id="text1929b">בפרוז'אני -לבנה</p>
 					<p id="line1929"></p>
 
 					<p id="gap-middle19295"></p>
@@ -65,8 +113,10 @@
 					<p id="text1935">עלתה לארץ</p>
 					<p id="line1935"></p>
 
-					<p id="year1948">1948</p>
-					<p id="text1948">נפגשה לראשונה עם סבא</p>
+					<p id="year1948a">19</p>
+					<p id="year1948b">48</p>
+					<p id="text1948a">&nbsp;נפגשה עם</p>
+					<p id="text1948b">לראשונה &nbsp;סבא</p>
 					<p id="line1948"></p>
 
 					<p id="gap-middle19485"></p>
@@ -77,393 +127,701 @@
 
 					<p id="gap-middle19495"></p>
 
-					<p id="year1950">1950</p>
-					<p id="text1950">ילדה את בתה הבכורה</p>
+					<p id="year1950a">19</p>
+					<p id="year1950b">50</p>
+					<p id="text1950a">ילד<br>בתה</p>
+					<p id="text1950b">ה את &nbsp;הבכורה</p>
 					<p id="line1950"></p>
 
 					<p id="gap-middle1952"></p>
 
-					<p id="year1954">1954</p>
-					<p id="text1954">ילדה את בתה השניה</p>
+					<p id="year1954a">19</p>
+					<p id="year1954b">54</p>
+					<p id="text1954a">ילד בתה</p>
+					<p id="text1954b">ה את  &nbsp;השניה</p>
 					<p id="line1954"></p>
 
 					<p id="year1980">1980</p>
 					<p id="text1980">הפכה לסבתא</p>
 					<p id="line1980"></p>
 
-					<p id="year2007">2007</p>
-					<p id="text2007">הפכה לסבתא רבתא</p>
+					<p id="year2007a">20</p>
+					<p id="year2007b">07</p>
+					<p id="text2007a">	&nbsp;הפכה  רב</p><!--The phrase &nbsp; makes a gap between words without breaking the line-->
+					<p id="text2007b">לסבתא תא</p>
 					<p id="line2007"></p>
 
-					<p id="year2014">2014</p>
-					<p id="text2014">הלכה לעולמה</p>
+					<p id="year2014a">20</p>
+					<p id="year2014b">14</p>
+					<p id="text2014a">הל<br>לעו</p>
+					<p id="text2014b">כה למה</p>
 					<p id="line2014"></p>
 
 					<p id="gap-end"></p>
+
+				</div>
+			</div>
+
+
+
+			<!--  http://fancyapps.com/fancybox/3/  I used this site's jQuery plugin in order to make an animated gallery  -->
+
+			<p id="gallery">תמונות</p> <!--This is the gallery's header-->
+				<div id="gallery-container">
+					<a class="images" id="img-a" href="pictures/mosaic/img1_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עומדת מימין לאחיה אריה, ולצידם יושבים הוריהם דב ותמר, אחיהם הבכור אפרים, ואחותם בלה"></a>
+					<a class="images" id="img-b" href="pictures/mosaic/img2_Big.jpg" data-fancybox="myGallery" data-caption="משפחת סלונימסקי בהרכב מלא- המשפחה הגרעינית של סבתא מינה. בשורה העליונה מימין: אחיה אריה, אחותה בלה, סבתא מינה, אחיה אפרים. בשורה למטה מימין: אביה דב (בער), אחותה ציפורה, חברת משפחה, אחיה מיכאל ואמה תמר (טמה)"></a>
+					<a class="images" id="img-c" href="pictures/mosaic/img3_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
+					<a class="images" id="img-d" href="pictures/mosaic/img4_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה הבכורה מלי (מלכה)"></a>
+					<a class="images" id="img-e" href="pictures/mosaic/img5_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם בתם השניה, זהבה"></a>
+					<a class="images" id="img-f" href="pictures/mosaic/img6_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה יושבת מימין בתמונה משפחתית עם הדוד מאמריקה (במרכז עם משקפיים) אברהם יודול סלונימסקי"></a>
+					<a class="images" id="img-g" href="pictures/mosaic/img7_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה, סבא שמואל, בנותיהם ואחיו של סבא- ישראל ליס"></a>
+					<a class="images" id="img-h" href="pictures/mosaic/img8_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
+					<a class="images" id="img-i" href="pictures/mosaic/img9_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם זהבה"></a>
+					<a class="images" id="img-j" href="pictures/mosaic/img10_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם מלי (מלכה)"></a>
+					<a class="images" id="img-k" href="pictures/mosaic/img11_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם נכדם הצעיר מתן, וברקע מתחבאת נכדתם מיכל"></a>
+					<a class="images" id="img-l" href="pictures/mosaic/img12_Big.JPG" data-fancybox="myGallery" data-caption="יום נישואים 40 של סבתא מינה וסבא שמואל ומסביבם הבנות, החתנים והנכדים"></a>
+					<a class="images" id="img-m" href="pictures/mosaic/img13_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה בבר המצווה של נכדה ג'ואי"></a>
+					<a class="images" id="img-n" href="pictures/mosaic/img14_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחתונת נכדתה מיכל"></a>
+					<a class="images" id="img-o" href="pictures/mosaic/img15_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם המחותנת שלה הינדה (אמו של ישראל), בגן הלאומי אפולוניה"></a>
+					<a class="images" id="img-p" href="pictures/mosaic/img16_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה בברית של נכדה הבכור עמית"></a>
+					<a class="images" id="img-q" href="pictures/mosaic/img17_Big.JPG" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה"></a>
+					<a class="images" id="img-r" href="pictures/mosaic/img18_Big.JPG" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה עם הנכדות תמי (משמאל) ומיכל (מימין)"></a>
+					<a class="images" id="img-s" href="pictures/mosaic/img19_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה חוגגת יום הולדת 4 לנינה הבכור עמית"></a>
+					<a class="images" id="img-t" href="pictures/mosaic/img20_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה מלי, נכדתה תמר ונינתה טליה"></a>
+					<a class="images" id="img-u" href="pictures/mosaic/img21_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בבריתה של נינתה יעל"></a>
+					<a class="images" id="img-v" href="pictures/mosaic/img22_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בטקס קבלת התואר של נכדתה מיכל"></a>
+					<a class="images" id="img-w" href="pictures/mosaic/img23_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה ובנותיה מלי (משמאל) וזהבה (מימין) בטיול בפראג"></a>
+					<a class="images" id="img-x" href="pictures/mosaic/img24_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה במסיבה שנערכה לכבודה, בקפה קפית בגן הבוטני בירושלים"></a>
+					<a class="images" id="img-y" href="pictures/mosaic/img25_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחופשת פסח במלון בתל אביב לצד נכדתה מיכל ונינתה יעל"></a>
+					<!--div class="images" id="img-z"></div>
+					<div class="images" id="img-aa"></div-->
 				</div>
 
-			</div>
 
 
-			<div id="div-that-help-put-pic-box-tree-in-ie-grid"> 
-				<a class="pic-box-tree top-pictures" href="#family-tree">
-					<picture>
-						<source media="(max-width:600px)" srcset="mobile/pictures-header/tree-mobile.jpg">
-						<img src="pictures/myTree2.jpg" alt="עץ משפחה"/>
-					</picture>
-					<h1 class="oddH1inMobile">עץ משפחה</h1>
-				</a>	
-			</div>
+			<p id="recipes">מתכונים</p> <!--This is the recipes header-->
+			<div id="recipes-container">
 
 
-			<div id="div-that-help-put-pic-box-pictures-in-ie-grid">
-				<a class="pic-box-pictures buttom-pictures" href="#gallery">
-					<picture>
-						<source media="(max-width:600px)" srcset="mobile/pictures-header/camera-mobile.jpg">
-						<img src="pictures/camera.jpg" alt="תמונות"/>
-					</picture>
-					<h1 class="evenH1inMobile">תמונות</h1>
-				</a>
-			</div>
+				<div id="recipe1" class="recipe">
 
+					<div id="soup-img"></div>
 
-			<div id="div-that-help-put-pic-box-food-in-ie-grid">
-				<a class="pic-box-food buttom-pictures" href="#recipes">
-					<picture>
-						<source media="(max-width:600px)" srcset="mobile/pictures-header/recipe-mobile.jpg">
-						<img src="pictures/chocolateBalls.jpg" alt="מתכונים"/>
-					</picture>
-					<h1 class="oddH1inMobile">מתכונים</h1>
-				</a>
-			</div>
+					<div id="soup-ingredients">
+						<p class="recipe-header">מרק תירס</p><br>
+						<p><ins class="products">רכיבים:</ins><br><br> <!--<ins> makes underline--> 
+							2 בצלים בינוניים<br>
+							6 כפות שמן<br>
+							1 קופסת שימורים של תירס<br>
+							2 כפות מרק עוף<br>
+							4 כפות קמח<br>
+							10 כוסות מים רותחים<br>
+							מלח ופלפל<br><br>
+					    </p>
+					</div>
+					
+					<div id="soup-instructions">    
+						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							קוצצים את הבצלים ומטגנים אותם בסיר עם השמן עד להזהבתם. כשהם מזהיבים יש להכניס לסיר את גרגירי התירס (לאחר שסוננו ונשטפו) ולערבב את הכל יחד. 
+							לאחר מכן יש להוסיף לסיר מלח ופלפל על פי הטעם, ואת שתי כפות מרק העוף. מערבבים הכל ומוסיפים את כפות הקמח (אחת-אחת). 
+							לאחר שהכל עורבב היטב שופכים לסיר את כוסות המים הרתוחים, מערבבים שוב ונותנים למרק לרתוח במשך 5 דקות.<br><br>
+							<span>מקררים ואוכלים בהנאה.<br>
+							בתאבון!</span>
+						</p>
+					</div>	
 
-
-			<div id="div-that-help-put-pic-box-music-in-ie-grid">
-				<a class="pic-box-music buttom-pictures" href="#music">
-					<picture>
-						<source media="(max-width:600px)" srcset="mobile/pictures-header/music-mobile.jpg">
-						<img src="pictures/myViolin.jpg" alt="מוזיקה"/>
-					</picture>
-					<h1 class="evenH1inMobile">מוזיקה אהובה</h1>
-				</a>
-			</div>
-
-		</div>
-
-
-		<a href="#header"><img id="myBtn" src="./arrow-up-outline-white.SVG" title="חזור לראש העמוד" name="arrow-up-outline" /></a>
-		
-		
-		<p id="movie">סבתא מספרת</p> <!--This is the movie's header-->
-		<div id="background-of-movie">
-					<iframe width="510" height="315" src="https://www.youtube-nocookie.com/embed/tshhrdR5jSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-
-
-		<p id="family-tree">עץ משפחה</p>
-		<div id="family-tree-container">
-			<img src="FamilyTree/familyTree3.png" width="90%" alt="עץ משפחה"/>
-		</div>
-
-
-		<div id="time-line-father">
-			<p id="time-line">ציר זמן</p> <!--It's is the Time-line's header-->
-			<div id="time-line-container">
-				<div id="horizontal-line"></div>
-
-				<p id="gap-start"></p>
-
-				<p id="year1929a">19</p>
-				<p id="year1929b">29</p>
-				<p id="text1929a">נולדה ברוסיה</p>
-				<p id="text1929b">בפרוז'אני -לבנה</p>
-				<p id="line1929"></p>
-
-				<p id="gap-middle19295"></p>
-
-				<p id="year1935">1935</p>
-				<p id="text1935">עלתה לארץ</p>
-				<p id="line1935"></p>
-
-				<p id="year1948a">19</p>
-				<p id="year1948b">48</p>
-				<p id="text1948a">&nbsp;נפגשה עם</p>
-				<p id="text1948b">לראשונה &nbsp;סבא</p>
-				<p id="line1948"></p>
-
-				<p id="gap-middle19485"></p>
-
-				<p id="year1949">1949</p>
-				<p id="text1949">התחתנה עם סבא</p>
-				<p id="line1949"></p>
-
-				<p id="gap-middle19495"></p>
-
-				<p id="year1950a">19</p>
-				<p id="year1950b">50</p>
-				<p id="text1950a">ילד<br>בתה</p>
-				<p id="text1950b">ה את &nbsp;הבכורה</p>
-				<p id="line1950"></p>
-
-				<p id="gap-middle1952"></p>
-
-				<p id="year1954a">19</p>
-				<p id="year1954b">54</p>
-				<p id="text1954a">ילד בתה</p>
-				<p id="text1954b">ה את  &nbsp;השניה</p>
-				<p id="line1954"></p>
-
-				<p id="year1980">1980</p>
-				<p id="text1980">הפכה לסבתא</p>
-				<p id="line1980"></p>
-
-				<p id="year2007a">20</p>
-				<p id="year2007b">07</p>
-				<p id="text2007a">	&nbsp;הפכה  רב</p><!--The phrase &nbsp; makes a gap between words without breaking the line-->
-				<p id="text2007b">לסבתא תא</p>
-				<p id="line2007"></p>
-
-				<p id="year2014a">20</p>
-				<p id="year2014b">14</p>
-				<p id="text2014a">הל<br>לעו</p>
-				<p id="text2014b">כה למה</p>
-				<p id="line2014"></p>
-
-				<p id="gap-end"></p>
-
-			</div>
-		</div>
-
-
-
-		<!--  http://fancyapps.com/fancybox/3/  I used this site's jQuery plugin in order to make an animated gallery  -->
-
-		<p id="gallery">תמונות</p> <!--This is the gallery's header-->
-			<div id="gallery-container">
-				<a class="images" id="img-a" href="pictures/mosaic/img1_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עומדת מימין לאחיה אריה, ולצידם יושבים הוריהם דב ותמר, אחיהם הבכור אפרים, ואחותם בלה"></a>
-				<a class="images" id="img-b" href="pictures/mosaic/img2_Big.jpg" data-fancybox="myGallery" data-caption="משפחת סלונימסקי בהרכב מלא- המשפחה הגרעינית של סבתא מינה. בשורה העליונה מימין: אחיה אריה, אחותה בלה, סבתא מינה, אחיה אפרים. בשורה למטה מימין: אביה דב (בער), אחותה ציפורה, חברת משפחה, אחיה מיכאל ואמה תמר (טמה)"></a>
-				<a class="images" id="img-c" href="pictures/mosaic/img3_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
-				<a class="images" id="img-d" href="pictures/mosaic/img4_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה הבכורה מלי (מלכה)"></a>
-				<a class="images" id="img-e" href="pictures/mosaic/img5_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם בתם השניה, זהבה"></a>
-				<a class="images" id="img-f" href="pictures/mosaic/img6_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה יושבת מימין בתמונה משפחתית עם הדוד מאמריקה (במרכז עם משקפיים) אברהם יודול סלונימסקי"></a>
-				<a class="images" id="img-g" href="pictures/mosaic/img7_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה, סבא שמואל, בנותיהם ואחיו של סבא- ישראל ליס"></a>
-				<a class="images" id="img-h" href="pictures/mosaic/img8_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
-				<a class="images" id="img-i" href="pictures/mosaic/img9_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם זהבה"></a>
-				<a class="images" id="img-j" href="pictures/mosaic/img10_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם מלי (מלכה)"></a>
-				<a class="images" id="img-k" href="pictures/mosaic/img11_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם נכדם הצעיר מתן, וברקע מתחבאת נכדתם מיכל"></a>
-				<a class="images" id="img-l" href="pictures/mosaic/img12_Big.JPG" data-fancybox="myGallery" data-caption="יום נישואים 40 של סבתא מינה וסבא שמואל ומסביבם הבנות, החתנים והנכדים"></a>
-				<a class="images" id="img-m" href="pictures/mosaic/img13_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה בבר המצווה של נכדה ג'ואי"></a>
-				<a class="images" id="img-n" href="pictures/mosaic/img14_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחתונת נכדתה מיכל"></a>
-				<a class="images" id="img-o" href="pictures/mosaic/img15_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם המחותנת שלה הינדה (אמו של ישראל), בגן הלאומי אפולוניה"></a>
-				<a class="images" id="img-p" href="pictures/mosaic/img16_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה בברית של נכדה הבכור עמית"></a>
-				<a class="images" id="img-q" href="pictures/mosaic/img17_Big.JPG" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה"></a>
-				<a class="images" id="img-r" href="pictures/mosaic/img18_Big.JPG" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה עם הנכדות תמי (משמאל) ומיכל (מימין)"></a>
-				<a class="images" id="img-s" href="pictures/mosaic/img19_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה חוגגת יום הולדת 4 לנינה הבכור עמית"></a>
-				<a class="images" id="img-t" href="pictures/mosaic/img20_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה מלי, נכדתה תמר ונינתה טליה"></a>
-				<a class="images" id="img-u" href="pictures/mosaic/img21_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בבריתה של נינתה יעל"></a>
-				<a class="images" id="img-v" href="pictures/mosaic/img22_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בטקס קבלת התואר של נכדתה מיכל"></a>
-				<a class="images" id="img-w" href="pictures/mosaic/img23_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה ובנותיה מלי (משמאל) וזהבה (מימין) בטיול בפראג"></a>
-				<a class="images" id="img-x" href="pictures/mosaic/img24_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה במסיבה שנערכה לכבודה, בקפה קפית בגן הבוטני בירושלים"></a>
-				<a class="images" id="img-y" href="pictures/mosaic/img25_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחופשת פסח במלון בתל אביב לצד נכדתה מיכל ונינתה יעל"></a>
-				<!--div class="images" id="img-z"></div>
-				<div class="images" id="img-aa"></div-->
-			</div>
-
-
-
-		<p id="recipes">מתכונים</p> <!--This is the recipes header-->
-		<div id="recipes-container">
-
-
-			<div id="recipe1" class="recipe">
-
-				<div id="soup-img"></div>
-
-				<div id="soup-ingredients">
-					<p class="recipe-header">מרק תירס</p><br>
-					<p><ins class="products">רכיבים:</ins><br><br> <!--<ins> makes underline--> 
-						2 בצלים בינוניים<br>
-						6 כפות שמן<br>
-						1 קופסת שימורים של תירס<br>
-						2 כפות מרק עוף<br>
-						4 כפות קמח<br>
-						10 כוסות מים רותחים<br>
-						מלח ופלפל<br><br>
-				    </p>
 				</div>
-				
-				<div id="soup-instructions">    
-					<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-						קוצצים את הבצלים ומטגנים אותם בסיר עם השמן עד להזהבתם. כשהם מזהיבים יש להכניס לסיר את גרגירי התירס (לאחר שסוננו ונשטפו) ולערבב את הכל יחד. 
-						לאחר מכן יש להוסיף לסיר מלח ופלפל על פי הטעם, ואת שתי כפות מרק העוף. מערבבים הכל ומוסיפים את כפות הקמח (אחת-אחת). 
-						לאחר שהכל עורבב היטב שופכים לסיר את כוסות המים הרתוחים, מערבבים שוב ונותנים למרק לרתוח במשך 5 דקות.<br><br>
-						<span>מקררים ואוכלים בהנאה.<br>
-						בתאבון!</span>
-					</p>
-				</div>	
 
-			</div>
+				<div id="recipe2" class="recipe">
 
-			<div id="recipe2" class="recipe">
+	                <div id="gefilte-img"></div>
 
-                <div id="gefilte-img"></div>
+					<div class="gefilte-instructions">
+						<p class="recipe-header">גפילטע פיש</p><br>
+							<p><ins class="products">רכיבי הקציצות:</ins><br><br>
+								2.4 קילו ברוטו קרפיון טרי וטחון (לשמור את העצמות בצד ולחצות לשניים את הראשים- עבור הציר)<br>
+								1 כף סוכר<br>
+								1/3 כף פלפל לבן<br>
+								3/4 כף מלח<br>
+								1/2 שקית של כריך מלאה בבצל קצוץ שטוגן לצבע מוזהב<br>
+								3 ביצים<br>
+								מעט קמח מצה<br><br>					
+								<ins class="instructions">הוראות הכנה של הקציצות:</ins><br><br>
+								בקערה גדולה שמים את דגי הקרפיון הטחונים, ומעליהם שמים את הסוכר, הפלפל הלבן והמלח ומערבבים. מוסיפים את הבצל המטוגן ואת הביצים ושוב מערבבים. מוסיפים מעט מאד קמח מצה ומערבבים בפעם האחרונה (התחושה של הקציצות צריכה להיות של ג׳לי רך).<br><br>
+							</p>
+						</p>
+					</div>
 
-				<div class="gefilte-instructions">
-					<p class="recipe-header">גפילטע פיש</p><br>
-						<p><ins class="products">רכיבי הקציצות:</ins><br><br>
-							2.4 קילו ברוטו קרפיון טרי וטחון (לשמור את העצמות בצד ולחצות לשניים את הראשים- עבור הציר)<br>
+
+					<div class="juice-instructions">
+						<p><ins class="products">רכיבי הציר:</ins><br><br>
+							עצמות וראשי קרפיון חצויים<br>
+							2 גזרים חתוכים לפרוסות<br>
+							1 בצל לבן גדול חתוך לפרוסות<br>
 							1 כף סוכר<br>
-							1/3 כף פלפל לבן<br>
-							3/4 כף מלח<br>
-							1/2 שקית של כריך מלאה בבצל קצוץ שטוגן לצבע מוזהב<br>
-							3 ביצים<br>
-							מעט קמח מצה<br><br>					
-							<ins class="instructions">הוראות הכנה של הקציצות:</ins><br><br>
-							בקערה גדולה שמים את דגי הקרפיון הטחונים, ומעליהם שמים את הסוכר, הפלפל הלבן והמלח ומערבבים. מוסיפים את הבצל המטוגן ואת הביצים ושוב מערבבים. מוסיפים מעט מאד קמח מצה ומערבבים בפעם האחרונה (התחושה של הקציצות צריכה להיות של ג׳לי רך).<br><br>
+							1/4 כף פלפל לבן<br>
+							1/4 כף מלח<br>
+							מים<br><br>
+							<ins class="instructions">הוראות הכנה של הציר:</ins><br><br>
+							שמים בבסיס סיר גדול את העצמות והראשים, מעליהם מניחים את פרוסות הגזר ואת פרוסות הבצל. מפזרים מעל את הסוכר, הפלפל הלבן והמלח.
+							ממלאים את הסיר במים עד 1/3 מגובהו. שמים על הכיריים, ולאחר שהציר רותח מרטיבים את הידיים ומכניסים את קציצות הדגים לסיר (יש להרטיב את הידיים בין קציצה לקציצה). אחרי שכל הקציצות בסיר, סוגרים את המכסה, ממתינים ששוב המים בסיר ירתחו, ואז מנמיכים את האש לאש קטנה ומבשלים את הקציצות במשך שעתיים.
+							אחרי שעתיים מכבים את הגז ומחכים שהדגים יתקררו.<br>
+							מסדרים כל קציצת דג עם פרוסת גזר מעל ומתחילים לזלול.<br><br>
+							 <span>בתאבון! </span>
 						</p>
-					</p>
+					</div>
+
 				</div>
 
 
-				<div class="juice-instructions">
-					<p><ins class="products">רכיבי הציר:</ins><br><br>
-						עצמות וראשי קרפיון חצויים<br>
-						2 גזרים חתוכים לפרוסות<br>
-						1 בצל לבן גדול חתוך לפרוסות<br>
-						1 כף סוכר<br>
-						1/4 כף פלפל לבן<br>
-						1/4 כף מלח<br>
-						מים<br><br>
-						<ins class="instructions">הוראות הכנה של הציר:</ins><br><br>
-						שמים בבסיס סיר גדול את העצמות והראשים, מעליהם מניחים את פרוסות הגזר ואת פרוסות הבצל. מפזרים מעל את הסוכר, הפלפל הלבן והמלח.
-						ממלאים את הסיר במים עד 1/3 מגובהו. שמים על הכיריים, ולאחר שהציר רותח מרטיבים את הידיים ומכניסים את קציצות הדגים לסיר (יש להרטיב את הידיים בין קציצה לקציצה). אחרי שכל הקציצות בסיר, סוגרים את המכסה, ממתינים ששוב המים בסיר ירתחו, ואז מנמיכים את האש לאש קטנה ומבשלים את הקציצות במשך שעתיים.
-						אחרי שעתיים מכבים את הגז ומחכים שהדגים יתקררו.<br>
-						מסדרים כל קציצת דג עם פרוסת גזר מעל ומתחילים לזלול.<br><br>
-						 <span>בתאבון! </span>
-					</p>
+				<div id="recipe3" class="recipe">
+					
+					<div id="chocolateBalls-img"></div>
+
+					<div id="chocolateBalls-ingredients">
+						<p class="recipe-header">כדורי שוקולד בסגנון סניקרס</p><br>
+						<p><ins class="products">רכיבים:</ins><br><br>
+							100 גרם קקאו<br>
+							1/2 1 כוסות סוכר<br>
+							1 חבילת מרגרינה מומסת<br>
+							1 כוס יין פטישים (לקידוש)<br>
+							1 כוס מיץ תפוזים<br>
+							2-3 כפות מיץ לימון<br>
+							500 גרם בוטנים טבעיים קצוצים<br>
+							ביסקוויטים טחונים<br>
+							קוקוס טחון<br><br>
+					    </p>
+					</div> 
+
+					<div id="chocolateBalls-instructions">
+						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							מערבבים את כל הרכיבים יחד (פרט לשניים האחרונים). מוסיפים ביסקוויטים טחונים, עד שמגיעים למרקם שמאפשר גלגול של העיסה לכדורים. את הכדורים שמכינים עוטפים בקוקוס ואוכלים בתאבון.<br><br>
+							<span>לבריאות!</span>
+						</p>
+					</div>
+
+				</div>
+
+
+				<div id="two-holiday-desserts">					
+
+					<div id="recipe4" class="recipe">
+						<div id="bubale-ingredients">
+							<p class="recipe-header">בובל'ה מתוקה</p><br>
+							<p><ins class="products">רכיבים:</ins><br><br>
+								1 ביצה<br>
+								2 כפות סוכר<br>
+								1 כף קמח מצה<br>
+								אבקת סוכר<br><br><br>
+							</p>
+						</div>
+
+						<div id="bubale-instructions">
+							<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							מפרידים את הביצה לחלמון ולחלבון. מקציפים את חלבון הביצה עם כף סוכר עד להיווצרות קצף יציב ורך.  סוגרים את המיקסר ומוסיפים לקצף את החלמון וכף קמח מצה בתנועות עדינות, כדי שהקצף לא ישבר. מטגנים את התערובת כמו חביתה משני הצדדים. לאחר שהבובל'ה קיבלה צבע חום יפה, מורידים אותה מהכיריים ומפזרים מעל את אבקת הסוכר.<br><br>
+							<span>מנה טעימה ופשוטה להכנה.<br>
+							בתאבון!</span>
+							</p>
+						</div>
+					</div>
+
+					<div id="recipe5" class="recipe">
+						<div id="cake-ingredients">
+							<p class="recipe-header">עוגת דבש</p><br>
+							<p><ins class="products">רכיבים:</ins><br><br>
+								4 כוסות קמח<br>
+								2 כפיות שטוחות של סודה לשתיה<br>
+								1 כוס סוכר<br>
+								3 כפות מלאות ריבה (עם בטן) או 1 כוס דבש<br>
+								1 כף נס קפה<br>
+								4 ביצים<br>
+								1/2 כוס שמן<br>
+								1 כוס מיץ תפוזים	<br><br>
+							</p>
+						</div>
+
+						<div id="cake-instructions">		
+							<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+								שמים בקערה את הסוכר, הריבה, הביצים והקפה ומערבבים היטב. לאחר מכן מוסיפים את השמן ומיץ התפוזים ושוב מערבבים. לבסוף שמים את הקמח, ומוסיפים סודה לשתיה דרך מסננת (כדי למנוע היווצרות גושים). מערבבים הכל, מכניסים לתבנית ואופים על 180 מעלות עד שמתקבל צבע חום יפה.<br><br>
+								<span>לללקק את האצבעות,<br>
+								ובתאבון! </span>
+							</p>
+						</div>
+
+						<div id="cake-img"></div>
+
+					</div>
+
+
 				</div>
 
 			</div>
 
+			<p id="music">מוזיקה אהובה</p> <!--This is music header-->
+			<div id="music-iframes">
+				<div class="instrument mandolin"></div>
 
-			<div id="recipe3" class="recipe">
+				<div class="instrument piano"></div>
+
+				<div class="instrument violin"></div>
+
+				<div class="instrument second-piano"></div>
+
+				<div class="song first-song"> <!--ג'ו עמר - שיר השיכור -->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/vYs-BHkMV_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song second-song"> <!--א ידיישע מאמא -->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/Akk2zwoA80s?start=46" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song third-song"> <!-- לו הייתי רוטשילד - שמואל רודנסקי -->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/mqokFDOE4AQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song fourth-song"> <!--ג'ו עמר - ברצלונה -->
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/xejh9WAJEHg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song fifth-song"> <!-- Bay Mir Bistu Shein-->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/ZUVEq6NC7mM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
 				
-				<div id="chocolateBalls-img"></div>
-
-				<div id="chocolateBalls-ingredients">
-					<p class="recipe-header">כדורי שוקולד בסגנון סניקרס</p><br>
-					<p><ins class="products">רכיבים:</ins><br><br>
-						100 גרם קקאו<br>
-						1/2 1 כוסות סוכר<br>
-						1 חבילת מרגרינה מומסת<br>
-						1 כוס יין פטישים (לקידוש)<br>
-						1 כוס מיץ תפוזים<br>
-						2-3 כפות מיץ לימון<br>
-						500 גרם בוטנים טבעיים קצוצים<br>
-						ביסקוויטים טחונים<br>
-						קוקוס טחון<br><br>
-				    </p>
-				</div> 
-
-				<div id="chocolateBalls-instructions">
-					<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-						מערבבים את כל הרכיבים יחד (פרט לשניים האחרונים). מוסיפים ביסקוויטים טחונים, עד שמגיעים למרקם שמאפשר גלגול של העיסה לכדורים. את הכדורים שמכינים עוטפים בקוקוס ואוכלים בתאבון.<br><br>
-						<span>לבריאות!</span>
-					</p>
+				<div class="song sixth-song"> <!--Dudu Fisher "A Tree Stands by the Road" (Oyf'n veg shteyt a boym)-->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/nJ1ERiGhpmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
 			</div>
-
-
-			<div id="two-holiday-desserts">					
-
-				<div id="recipe4" class="recipe">
-					<div id="bubale-ingredients">
-						<p class="recipe-header">בובל'ה מתוקה</p><br>
-						<p><ins class="products">רכיבים:</ins><br><br>
-							1 ביצה<br>
-							2 כפות סוכר<br>
-							1 כף קמח מצה<br>
-							אבקת סוכר<br><br><br>
-						</p>
-					</div>
-
-					<div id="bubale-instructions">
-						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-						מפרידים את הביצה לחלמון ולחלבון. מקציפים את חלבון הביצה עם כף סוכר עד להיווצרות קצף יציב ורך.  סוגרים את המיקסר ומוסיפים לקצף את החלמון וכף קמח מצה בתנועות עדינות, כדי שהקצף לא ישבר. מטגנים את התערובת כמו חביתה משני הצדדים. לאחר שהבובל'ה קיבלה צבע חום יפה, מורידים אותה מהכיריים ומפזרים מעל את אבקת הסוכר.<br><br>
-						<span>מנה טעימה ופשוטה להכנה.<br>
-						בתאבון!</span>
-						</p>
-					</div>
-				</div>
-
-				<div id="recipe5" class="recipe">
-					<div id="cake-ingredients">
-						<p class="recipe-header">עוגת דבש</p><br>
-						<p><ins class="products">רכיבים:</ins><br><br>
-							4 כוסות קמח<br>
-							2 כפיות שטוחות של סודה לשתיה<br>
-							1 כוס סוכר<br>
-							3 כפות מלאות ריבה (עם בטן) או 1 כוס דבש<br>
-							1 כף נס קפה<br>
-							4 ביצים<br>
-							1/2 כוס שמן<br>
-							1 כוס מיץ תפוזים	<br><br>
-						</p>
-					</div>
-
-					<div id="cake-instructions">		
-						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-							שמים בקערה את הסוכר, הריבה, הביצים והקפה ומערבבים היטב. לאחר מכן מוסיפים את השמן ומיץ התפוזים ושוב מערבבים. לבסוף שמים את הקמח, ומוסיפים סודה לשתיה דרך מסננת (כדי למנוע היווצרות גושים). מערבבים הכל, מכניסים לתבנית ואופים על 180 מעלות עד שמתקבל צבע חום יפה.<br><br>
-							<span>לללקק את האצבעות,<br>
-							ובתאבון! </span>
-						</p>
-					</div>
-
-					<div id="cake-img"></div>
-
-				</div>
-
-
-			</div>
-
 		</div>
 
-		<p id="music">מוזיקה אהובה</p> <!--This is music header-->
-		<div id="music-iframes">
-			<div class="instrument mandolin"></div>
 
-			<div class="instrument piano"></div>
 
-			<div class="instrument violin"></div>
+		<div id="mobile">
+			<div id="subjects">
 
-			<div class="instrument second-piano"></div>
 
-			<div class="song first-song"> <!--ג'ו עמר - שיר השיכור -->
-				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/vYs-BHkMV_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
+				<div class="pic-box-savta top-pictures"> 
+						<picture>
+							<source media="(max-width:600px)" srcset="mobile/pictures-header/mySavta-mobile.jpg">
+							<img id="savta" src="pictures/mySavta.png" alt="סרט"/>
+						</picture>
+						<h1 class="oddH1inMobile">סבתא מספרת</h1><!--I use this sentence also in desktop-->
+						<iframe id="movieForMobile" width="510" height="315" src="https://www.youtube-nocookie.com/embed/tshhrdR5jSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						</iframe>
+				</div>
+				<img id="xThatBringsBackSavtaImgInMobile" src="./close-circle-outline.svg" title="החזרת תמונת המקור" name="close-circle-outline" />
 
-			<div class="song second-song"> <!--א ידיישע מאמא -->
-				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/Akk2zwoA80s?start=46" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
 
-			<div class="song third-song"> <!-- לו הייתי רוטשילד - שמואל רודנסקי -->
-				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/mqokFDOE4AQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
 
-			<div class="song fourth-song"> <!--ג'ו עמר - ברצלונה -->
-			<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/xejh9WAJEHg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
 
-			<div class="song fifth-song"> <!-- Bay Mir Bistu Shein-->
-				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/ZUVEq6NC7mM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="pic-box-time top-pictures"> 
+					<picture>
+						<source media="(max-width:600px)" srcset="mobile/pictures-header/timeLine-mobile.jpg">
+						<img src="pictures/myClock.png" alt="ציר זמן"/>
+					</picture>
+					<h1 class="evenH1inMobile">ציר זמן</h1>
+
+					<div id="time-line-container-for-mobile">
+						<div id="vertical-line"></div>
+
+						<p id="gap-start"></p>
+
+						<p id="year1929">1929</p>
+						<p id="text1929">נולדה בפרוז'אני ברוסיה-לבנה</p>
+						<p id="line1929"></p>
+
+						<p id="gap-middle19295"></p>
+
+						<p id="year1935">1935</p>
+						<p id="text1935">עלתה לארץ</p>
+						<p id="line1935"></p>
+
+						<p id="year1948">1948</p>
+						<p id="text1948">נפגשה לראשונה עם סבא</p>
+						<p id="line1948"></p>
+
+						<p id="gap-middle19485"></p>
+
+						<p id="year1949">1949</p>
+						<p id="text1949">התחתנה עם סבא</p>
+						<p id="line1949"></p>
+
+						<p id="gap-middle19495"></p>
+
+						<p id="year1950">1950</p>
+						<p id="text1950">ילדה את בתה הבכורה</p>
+						<p id="line1950"></p>
+
+						<p id="gap-middle1952"></p>
+
+						<p id="year1954">1954</p>
+						<p id="text1954">ילדה את בתה השניה</p>
+						<p id="line1954"></p>
+
+						<p id="year1980">1980</p>
+						<p id="text1980">הפכה לסבתא</p>
+						<p id="line1980"></p>
+
+						<p id="year2007">2007</p>
+						<p id="text2007">הפכה לסבתא רבתא</p>
+						<p id="line2007"></p>
+
+						<p id="year2014">2014</p>
+						<p id="text2014">הלכה לעולמה</p>
+						<p id="line2014"></p>
+
+						<p id="gap-end"></p>
+					</div>
+
+				</div>
+
+
+				<div class="pic-box-tree top-pictures"> 
+						<picture>
+							<source media="(max-width:600px)" srcset="mobile/pictures-header/tree-mobile.jpg">
+							<img src="pictures/myTree2.jpg" alt="עץ משפחה"/>
+						</picture>
+						<h1 class="oddH1inMobile">עץ משפחה</h1>
+				</div>
+
+
+				<div class="pic-box-pictures buttom-pictures">
+						<picture>
+							<source media="(max-width:600px)" srcset="mobile/pictures-header/camera-mobile.jpg">
+							<img src="pictures/camera.jpg" alt="תמונות"/>
+						</picture>
+						<h1 class="evenH1inMobile">תמונות</h1>
+				</div>
+
+
+				<div class="pic-box-food buttom-pictures">
+						<picture>
+							<source media="(max-width:600px)" srcset="mobile/pictures-header/recipe-mobile.jpg">
+							<img src="pictures/chocolateBalls.jpg" alt="מתכונים"/>
+						</picture>
+						<h1 class="oddH1inMobile">מתכונים</h1>
+				</div>
+
+
+				<div class="pic-box-music buttom-pictures">
+						<picture>
+							<source media="(max-width:600px)" srcset="mobile/pictures-header/music-mobile.jpg">
+							<img src="pictures/myViolin.jpg" alt="מוזיקה"/>
+						</picture>
+						<h1 class="evenH1inMobile">מוזיקה אהובה</h1>
+				</div>
+
 			</div>
 			
-			<div class="song sixth-song"> <!--Dudu Fisher "A Tree Stands by the Road" (Oyf'n veg shteyt a boym)-->
-				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/nJ1ERiGhpmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+
+
+			<p id="family-tree">עץ משפחה</p>
+			<div id="family-tree-container">
+				<img src="FamilyTree/familyTree3.png" width="90%" alt="עץ משפחה"/>
 			</div>
 
+
+			<div id="time-line-father">
+				<p id="time-line">ציר זמן</p> <!--It's is the Time-line's header-->
+				<div id="time-line-container">
+					<div id="horizontal-line"></div>
+
+					<p id="gap-start"></p>
+
+					<p id="year1929a">19</p>
+					<p id="year1929b">29</p>
+					<p id="text1929a">נולדה ברוסיה</p>
+					<p id="text1929b">בפרוז'אני -לבנה</p>
+					<p id="line1929"></p>
+
+					<p id="gap-middle19295"></p>
+
+					<p id="year1935">1935</p>
+					<p id="text1935">עלתה לארץ</p>
+					<p id="line1935"></p>
+
+					<p id="year1948a">19</p>
+					<p id="year1948b">48</p>
+					<p id="text1948a">&nbsp;נפגשה עם</p>
+					<p id="text1948b">לראשונה &nbsp;סבא</p>
+					<p id="line1948"></p>
+
+					<p id="gap-middle19485"></p>
+
+					<p id="year1949">1949</p>
+					<p id="text1949">התחתנה עם סבא</p>
+					<p id="line1949"></p>
+
+					<p id="gap-middle19495"></p>
+
+					<p id="year1950a">19</p>
+					<p id="year1950b">50</p>
+					<p id="text1950a">ילד<br>בתה</p>
+					<p id="text1950b">ה את &nbsp;הבכורה</p>
+					<p id="line1950"></p>
+
+					<p id="gap-middle1952"></p>
+
+					<p id="year1954a">19</p>
+					<p id="year1954b">54</p>
+					<p id="text1954a">ילד בתה</p>
+					<p id="text1954b">ה את  &nbsp;השניה</p>
+					<p id="line1954"></p>
+
+					<p id="year1980">1980</p>
+					<p id="text1980">הפכה לסבתא</p>
+					<p id="line1980"></p>
+
+					<p id="year2007a">20</p>
+					<p id="year2007b">07</p>
+					<p id="text2007a">	&nbsp;הפכה  רב</p><!--The phrase &nbsp; makes a gap between words without breaking the line-->
+					<p id="text2007b">לסבתא תא</p>
+					<p id="line2007"></p>
+
+					<p id="year2014a">20</p>
+					<p id="year2014b">14</p>
+					<p id="text2014a">הל<br>לעו</p>
+					<p id="text2014b">כה למה</p>
+					<p id="line2014"></p>
+
+					<p id="gap-end"></p>
+
+				</div>
+			</div>
+
+
+
+			<!--  http://fancyapps.com/fancybox/3/  I used this site's jQuery plugin in order to make an animated gallery  -->
+
+			<p id="gallery">תמונות</p> <!--This is the gallery's header-->
+				<div id="gallery-container">
+					<a class="images" id="img-a" href="pictures/mosaic/img1_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עומדת מימין לאחיה אריה, ולצידם יושבים הוריהם דב ותמר, אחיהם הבכור אפרים, ואחותם בלה"></a>
+					<a class="images" id="img-b" href="pictures/mosaic/img2_Big.jpg" data-fancybox="myGallery" data-caption="משפחת סלונימסקי בהרכב מלא- המשפחה הגרעינית של סבתא מינה. בשורה העליונה מימין: אחיה אריה, אחותה בלה, סבתא מינה, אחיה אפרים. בשורה למטה מימין: אביה דב (בער), אחותה ציפורה, חברת משפחה, אחיה מיכאל ואמה תמר (טמה)"></a>
+					<a class="images" id="img-c" href="pictures/mosaic/img3_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
+					<a class="images" id="img-d" href="pictures/mosaic/img4_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה הבכורה מלי (מלכה)"></a>
+					<a class="images" id="img-e" href="pictures/mosaic/img5_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם בתם השניה, זהבה"></a>
+					<a class="images" id="img-f" href="pictures/mosaic/img6_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה יושבת מימין בתמונה משפחתית עם הדוד מאמריקה (במרכז עם משקפיים) אברהם יודול סלונימסקי"></a>
+					<a class="images" id="img-g" href="pictures/mosaic/img7_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה, סבא שמואל, בנותיהם ואחיו של סבא- ישראל ליס"></a>
+					<a class="images" id="img-h" href="pictures/mosaic/img8_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל"></a>
+					<a class="images" id="img-i" href="pictures/mosaic/img9_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם זהבה"></a>
+					<a class="images" id="img-j" href="pictures/mosaic/img10_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל בחתונת בתם מלי (מלכה)"></a>
+					<a class="images" id="img-k" href="pictures/mosaic/img11_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה וסבא שמואל עם נכדם הצעיר מתן, וברקע מתחבאת נכדתם מיכל"></a>
+					<a class="images" id="img-l" href="pictures/mosaic/img12_Big.JPG" data-fancybox="myGallery" data-caption="יום נישואים 40 של סבתא מינה וסבא שמואל ומסביבם הבנות, החתנים והנכדים"></a>
+					<a class="images" id="img-m" href="pictures/mosaic/img13_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה בבר המצווה של נכדה ג'ואי"></a>
+					<a class="images" id="img-n" href="pictures/mosaic/img14_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחתונת נכדתה מיכל"></a>
+					<a class="images" id="img-o" href="pictures/mosaic/img15_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם המחותנת שלה הינדה (אמו של ישראל), בגן הלאומי אפולוניה"></a>
+					<a class="images" id="img-p" href="pictures/mosaic/img16_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה בברית של נכדה הבכור עמית"></a>
+					<a class="images" id="img-q" href="pictures/mosaic/img17_Big.JPG" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה"></a>
+					<a class="images" id="img-r" href="pictures/mosaic/img18_Big.JPG" data-fancybox="myGallery" data-caption="יום הולדת 80 לסבתא מינה עם הנכדות תמי (משמאל) ומיכל (מימין)"></a>
+					<a class="images" id="img-s" href="pictures/mosaic/img19_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה חוגגת יום הולדת 4 לנינה הבכור עמית"></a>
+					<a class="images" id="img-t" href="pictures/mosaic/img20_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה עם בתה מלי, נכדתה תמר ונינתה טליה"></a>
+					<a class="images" id="img-u" href="pictures/mosaic/img21_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בבריתה של נינתה יעל"></a>
+					<a class="images" id="img-v" href="pictures/mosaic/img22_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בטקס קבלת התואר של נכדתה מיכל"></a>
+					<a class="images" id="img-w" href="pictures/mosaic/img23_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה ובנותיה מלי (משמאל) וזהבה (מימין) בטיול בפראג"></a>
+					<a class="images" id="img-x" href="pictures/mosaic/img24_Big.JPG" data-fancybox="myGallery" data-caption="סבתא מינה במסיבה שנערכה לכבודה, בקפה קפית בגן הבוטני בירושלים"></a>
+					<a class="images" id="img-y" href="pictures/mosaic/img25_Big.jpg" data-fancybox="myGallery" data-caption="סבתא מינה בחופשת פסח במלון בתל אביב לצד נכדתה מיכל ונינתה יעל"></a>
+					<!--div class="images" id="img-z"></div>
+					<div class="images" id="img-aa"></div-->
+				</div>
+
+
+
+			<p id="recipes">מתכונים</p> <!--This is the recipes header-->
+			<div id="recipes-container">
+
+
+				<div id="recipe1" class="recipe">
+
+					<div id="soup-img"></div>
+
+					<div id="soup-ingredients">
+						<p class="recipe-header">מרק תירס</p><br>
+						<p><ins class="products">רכיבים:</ins><br><br> <!--<ins> makes underline--> 
+							2 בצלים בינוניים<br>
+							6 כפות שמן<br>
+							1 קופסת שימורים של תירס<br>
+							2 כפות מרק עוף<br>
+							4 כפות קמח<br>
+							10 כוסות מים רותחים<br>
+							מלח ופלפל<br><br>
+					    </p>
+					</div>
+					
+					<div id="soup-instructions">    
+						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							קוצצים את הבצלים ומטגנים אותם בסיר עם השמן עד להזהבתם. כשהם מזהיבים יש להכניס לסיר את גרגירי התירס (לאחר שסוננו ונשטפו) ולערבב את הכל יחד. 
+							לאחר מכן יש להוסיף לסיר מלח ופלפל על פי הטעם, ואת שתי כפות מרק העוף. מערבבים הכל ומוסיפים את כפות הקמח (אחת-אחת). 
+							לאחר שהכל עורבב היטב שופכים לסיר את כוסות המים הרתוחים, מערבבים שוב ונותנים למרק לרתוח במשך 5 דקות.<br><br>
+							<span>מקררים ואוכלים בהנאה.<br>
+							בתאבון!</span>
+						</p>
+					</div>	
+
+				</div>
+
+				<div id="recipe2" class="recipe">
+
+	                <div id="gefilte-img"></div>
+
+					<div class="gefilte-instructions">
+						<p class="recipe-header">גפילטע פיש</p><br>
+							<p><ins class="products">רכיבי הקציצות:</ins><br><br>
+								2.4 קילו ברוטו קרפיון טרי וטחון (לשמור את העצמות בצד ולחצות לשניים את הראשים- עבור הציר)<br>
+								1 כף סוכר<br>
+								1/3 כף פלפל לבן<br>
+								3/4 כף מלח<br>
+								1/2 שקית של כריך מלאה בבצל קצוץ שטוגן לצבע מוזהב<br>
+								3 ביצים<br>
+								מעט קמח מצה<br><br>					
+								<ins class="instructions">הוראות הכנה של הקציצות:</ins><br><br>
+								בקערה גדולה שמים את דגי הקרפיון הטחונים, ומעליהם שמים את הסוכר, הפלפל הלבן והמלח ומערבבים. מוסיפים את הבצל המטוגן ואת הביצים ושוב מערבבים. מוסיפים מעט מאד קמח מצה ומערבבים בפעם האחרונה (התחושה של הקציצות צריכה להיות של ג׳לי רך).<br><br>
+							</p>
+						</p>
+					</div>
+
+
+					<div class="juice-instructions">
+						<p><ins class="products">רכיבי הציר:</ins><br><br>
+							עצמות וראשי קרפיון חצויים<br>
+							2 גזרים חתוכים לפרוסות<br>
+							1 בצל לבן גדול חתוך לפרוסות<br>
+							1 כף סוכר<br>
+							1/4 כף פלפל לבן<br>
+							1/4 כף מלח<br>
+							מים<br><br>
+							<ins class="instructions">הוראות הכנה של הציר:</ins><br><br>
+							שמים בבסיס סיר גדול את העצמות והראשים, מעליהם מניחים את פרוסות הגזר ואת פרוסות הבצל. מפזרים מעל את הסוכר, הפלפל הלבן והמלח.
+							ממלאים את הסיר במים עד 1/3 מגובהו. שמים על הכיריים, ולאחר שהציר רותח מרטיבים את הידיים ומכניסים את קציצות הדגים לסיר (יש להרטיב את הידיים בין קציצה לקציצה). אחרי שכל הקציצות בסיר, סוגרים את המכסה, ממתינים ששוב המים בסיר ירתחו, ואז מנמיכים את האש לאש קטנה ומבשלים את הקציצות במשך שעתיים.
+							אחרי שעתיים מכבים את הגז ומחכים שהדגים יתקררו.<br>
+							מסדרים כל קציצת דג עם פרוסת גזר מעל ומתחילים לזלול.<br><br>
+							 <span>בתאבון! </span>
+						</p>
+					</div>
+
+				</div>
+
+
+				<div id="recipe3" class="recipe">
+					
+					<div id="chocolateBalls-img"></div>
+
+					<div id="chocolateBalls-ingredients">
+						<p class="recipe-header">כדורי שוקולד בסגנון סניקרס</p><br>
+						<p><ins class="products">רכיבים:</ins><br><br>
+							100 גרם קקאו<br>
+							1/2 1 כוסות סוכר<br>
+							1 חבילת מרגרינה מומסת<br>
+							1 כוס יין פטישים (לקידוש)<br>
+							1 כוס מיץ תפוזים<br>
+							2-3 כפות מיץ לימון<br>
+							500 גרם בוטנים טבעיים קצוצים<br>
+							ביסקוויטים טחונים<br>
+							קוקוס טחון<br><br>
+					    </p>
+					</div> 
+
+					<div id="chocolateBalls-instructions">
+						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							מערבבים את כל הרכיבים יחד (פרט לשניים האחרונים). מוסיפים ביסקוויטים טחונים, עד שמגיעים למרקם שמאפשר גלגול של העיסה לכדורים. את הכדורים שמכינים עוטפים בקוקוס ואוכלים בתאבון.<br><br>
+							<span>לבריאות!</span>
+						</p>
+					</div>
+
+				</div>
+
+
+				<div id="two-holiday-desserts">					
+
+					<div id="recipe4" class="recipe">
+						<div id="bubale-ingredients">
+							<p class="recipe-header">בובל'ה מתוקה</p><br>
+							<p><ins class="products">רכיבים:</ins><br><br>
+								1 ביצה<br>
+								2 כפות סוכר<br>
+								1 כף קמח מצה<br>
+								אבקת סוכר<br><br><br>
+							</p>
+						</div>
+
+						<div id="bubale-instructions">
+							<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+							מפרידים את הביצה לחלמון ולחלבון. מקציפים את חלבון הביצה עם כף סוכר עד להיווצרות קצף יציב ורך.  סוגרים את המיקסר ומוסיפים לקצף את החלמון וכף קמח מצה בתנועות עדינות, כדי שהקצף לא ישבר. מטגנים את התערובת כמו חביתה משני הצדדים. לאחר שהבובל'ה קיבלה צבע חום יפה, מורידים אותה מהכיריים ומפזרים מעל את אבקת הסוכר.<br><br>
+							<span>מנה טעימה ופשוטה להכנה.<br>
+							בתאבון!</span>
+							</p>
+						</div>
+					</div>
+
+					<div id="recipe5" class="recipe">
+						<div id="cake-ingredients">
+							<p class="recipe-header">עוגת דבש</p><br>
+							<p><ins class="products">רכיבים:</ins><br><br>
+								4 כוסות קמח<br>
+								2 כפיות שטוחות של סודה לשתיה<br>
+								1 כוס סוכר<br>
+								3 כפות מלאות ריבה (עם בטן) או 1 כוס דבש<br>
+								1 כף נס קפה<br>
+								4 ביצים<br>
+								1/2 כוס שמן<br>
+								1 כוס מיץ תפוזים	<br><br>
+							</p>
+						</div>
+
+						<div id="cake-instructions">		
+							<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+								שמים בקערה את הסוכר, הריבה, הביצים והקפה ומערבבים היטב. לאחר מכן מוסיפים את השמן ומיץ התפוזים ושוב מערבבים. לבסוף שמים את הקמח, ומוסיפים סודה לשתיה דרך מסננת (כדי למנוע היווצרות גושים). מערבבים הכל, מכניסים לתבנית ואופים על 180 מעלות עד שמתקבל צבע חום יפה.<br><br>
+								<span>לללקק את האצבעות,<br>
+								ובתאבון! </span>
+							</p>
+						</div>
+
+						<div id="cake-img"></div>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+			<p id="music">מוזיקה אהובה</p> <!--This is music header-->
+			<div id="music-iframes">
+				<div class="instrument mandolin"></div>
+
+				<div class="instrument piano"></div>
+
+				<div class="instrument violin"></div>
+
+				<div class="instrument second-piano"></div>
+
+				<div class="song first-song"> <!--ג'ו עמר - שיר השיכור -->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/vYs-BHkMV_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song second-song"> <!--א ידיישע מאמא -->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/Akk2zwoA80s?start=46" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song third-song"> <!-- לו הייתי רוטשילד - שמואל רודנסקי -->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/mqokFDOE4AQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song fourth-song"> <!--ג'ו עמר - ברצלונה -->
+				<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/xejh9WAJEHg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="song fifth-song"> <!-- Bay Mir Bistu Shein-->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/ZUVEq6NC7mM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				
+				<div class="song sixth-song"> <!--Dudu Fisher "A Tree Stands by the Road" (Oyf'n veg shteyt a boym)-->
+					<iframe width="400" height="225" src="https://www.youtube-nocookie.com/embed/nJ1ERiGhpmA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+			</div>
 		</div>
+
 
 		<footer>© כל הזכויות שמורות למיכל דימינסקי צרפתי- אין לעשות  שום שימוש בתוכן ואו בתמונות  ללא אישור מראש ובכתב</footer>
 

@@ -27,6 +27,11 @@ header h1{
 	font-weight: 700;
 }
 
+
+#mobile{
+	display: none;
+}
+
 #subjects{
 	display: grid;
 	display: -ms-grid;
@@ -192,9 +197,6 @@ header h1{
 	font-weight: 400;
 }
 
-#movieForMobile{
-	display: none;
-}
 
 
 #div-that-help-put-pic-box-music-in-ie-grid{
@@ -509,23 +511,6 @@ a:link{
 	z-index: -1;
 }
 
-/*The next image is the "X" that closes the movie in mobiles*/
-/*#background-of-movie img{
-	display: none;
-	color: white;
-	border: 1px solid white;
-	border-radius: 2px;
-	position: fixed;
-	direction: rtl;
-	top: 20px;
-	right: 20px;
-	padding: 0;
-	z-index: 98;
-}*/
-
-#xThatBringsBackSavtaImgInMobile{
-	display: none;
-}
 
 #family-tree{
 	margin: auto;
@@ -3092,9 +3077,13 @@ footer{
 @media screen and (max-width: 825px) and (orientation: landscape),
 screen and (max-width: 600px) and (orientation: portrait){
 	
-	/*body{
+	#desktop{
 		display: none;
-	}*/
+	}
+
+	#mobile{
+		display: block;
+	}
 
 	header{
 		position: fixed;
@@ -3216,10 +3205,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		display: none;
 	}
 
-	#myBtn{
-		display: none;
-	}
-
 
 	#movieForMobile{
 		display: block;
@@ -3257,16 +3242,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		100%{ transform: rotateY(0deg) }
 	}
 
-	/*All the html rules under #movie are good only for desktop,*/
-	/*so for mobile they are "display: none;" */
-	#movie{
-		display: none;
-	}
-
-	#background-of-movie {
-		display: none;
-		position: relative;
-	}
 
 	#time-line-container-for-mobile{
 		display: none;

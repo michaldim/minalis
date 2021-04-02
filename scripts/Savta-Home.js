@@ -103,26 +103,26 @@ $(document).ready(function(){
 
 
 
-	const mainLinks = $("#subjects").find("a");
+	// const mainLinks = $("#subjects").find("a");
 
-	//Cancelling the internal links in mobile:
-	mainLinks.click(function(e){
-		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-			e.preventDefault();
-		}
-	});
+	// //Cancelling the internal links in mobile:
+	// mainLinks.click(function(e){
+	// 	if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
+	// 		e.preventDefault();
+	// 	}
+	// });
 
 
 
 	 
 	//When someone clicks the picture of savta on mobile screens, it disappears
 	//and then the iframe of her movie appears and also the "X" that closes the movie appears.
-	$("#savta").on("click", function(){
+	$("#mobile #subjects #savta").on("click", function(){
 		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-			$("#savta").css({"animation": "twirl 0.5s ease-in forwards", "transform": "rotateY(90deg)"}); //
-			$("#movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
-			$("#subjects h1").first().delay(1000).fadeOut(1000);
-			$("#xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
+			$(this).css({"animation": "twirl 0.5s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
+			$("#mobile #subjects h1").first().delay(1000).fadeOut(1000);
+			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
 		}
 	});
 
@@ -139,10 +139,10 @@ $(document).ready(function(){
 	//then the iframe will disappear and the user will see savta's image again.
 	//I'm changing the src, because otherwise the video continues playing (It's a way to make the video stops).
 	$("#xThatBringsBackSavtaImgInMobile").on("click", function(){
-		$("#xThatBringsBackSavtaImgInMobile").fadeOut(500);
-		$("#movieForMobile").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#savta").css({"animation": "twirlBack 1.2s 0.6s ease-out forwards"});
-		$("#subjects h1").first().delay(1200).fadeIn(1000);
+		$(this).fadeOut(500);
+		$("#mobile #movieForMobile").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #savta").css({"animation": "twirlBack 1.2s 0.6s ease-out forwards"});
+		$("#mobile #subjects h1").first().delay(1200).fadeIn(1000);
 		setTimeout(delaySrcChange, 600);
 	});
 
