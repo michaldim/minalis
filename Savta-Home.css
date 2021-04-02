@@ -3242,7 +3242,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		border-radius: 50%;
 		direction: rtl;
 		top: 31px;
-		right: calc(10% + 11px);
+		right: calc(10% + 12px);
 		padding: 0;
 		z-index: 10;
 	}
