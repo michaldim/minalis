@@ -59,16 +59,7 @@ $(document).ready(function(){
 	// 	 	mybutton.style.display = "none";
 	// 	 }
 	// }
-
-
-	// window.addEventListener("scroll", addingHashToGallery);
-
-	// var startingScrollPos = 0; 
-	// function addingHashToGallery() {
-	//   if ((document.documentElement.scrollTop > 2516) || (document.body.scrollTop > 2516)) {
-	//     window.location.hash = "gallery";
-	//   } 
-	// }
+		
 
 
 	//When the gallery is closed, the page jumps to the place where the https address were before (like: #movie, #family-tree,  etc.).
@@ -112,30 +103,8 @@ $(document).ready(function(){
 
 
 
-	// $("#div-that-help-put-pic-box-savta-in-ie-grid a picture").click(function(){
-	// 	("#background-of-movie iframe").css({
-	// 		"display": "block",
-	// 		"position": "fixed",
-	// 		"top": "0"
-
-	// 	});
-	// });
-
-
-
-
-	// const mainLinks = $("#subjects").find("a");
-
-	// //Cancelling the internal links in mobile:
-	// mainLinks.click(function(e){
-	// 	if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-	// 		e.preventDefault();
-	// 	}
-	// });
-
-
-
 	 
+
 	//When someone clicks the picture of savta on mobile screens, it disappears
 	//and then the iframe of her movie appears and also the "X" that closes the movie appears.
 	$("#mobile #subjects #savta").on("click", function(){
@@ -169,6 +138,31 @@ $(document).ready(function(){
 
 
 
+
+
+
+	//When someone clicks the picture of time-line on mobile screens, it disappears
+	//and then the transformed div appears and also the "X" that closes the movie appears.
+	$("#mobile #subjects #clockImg").on("click", function(){
+		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile #time-line-container-for-mobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
+			$("#mobile #subjects .pic-box-time h1").fadeOut(1000);
+			$("#mobile #xThatBringsBackImgInMobile").delay(1200).fadeIn(1000);
+		}
+	});
+
+
+	//When someone clicks the "X" sign near savta's time-line,  
+	//then the time-line will disappear and the user will see the clock image again.
+	$("#xThatBringsBackImgInMobile").on("click", function(){
+		$(this).fadeOut(500);
+		$("#mobile #time-line-container-for-mobile").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #clockImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #subjects .pic-box-time h1").delay(1200).fadeIn(1000);
+	});
 
 
 

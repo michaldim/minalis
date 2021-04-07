@@ -146,13 +146,6 @@ header h1{
 	-ms-grid-row: 3;
 }
 
-/*.pic-box-pictures img{
-	border-radius: 10px 10px 0px 0px;
-	width: 280px;
-	position: relative;
-	top: 4px;
-	margin-top: 25px;
-}*/
 
 .pic-box-pictures h1{
 	width: 280px;
@@ -205,14 +198,6 @@ header h1{
 	-ms-grid-column: 2; 
 	-ms-grid-row: 3;
 }
-
-/*.pic-box-music img{
-	border-radius: 10px 10px 0px 0px;
-	width: 280px;
-	margin-top: 25px;
-	position: relative;
-	top: 4px;
-}*/
 
 
 .pic-box-music h1{
@@ -3200,8 +3185,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 14%;
 	}
 
-	#music-iframes iframe,
-	#time-line-father{
+	#music-iframes iframe{
 		display: none;
 	}
 
@@ -3243,32 +3227,81 @@ screen and (max-width: 600px) and (orientation: portrait){
 	}
 
 
-	#time-line-container-for-mobile{
-		display: none;
-		background: -webkit-linear-gradient(#484444 20%, #a0ada7);
-		background: -webkit-gradient(linear, top, bottom, color-stop(20%, #484444), color-stop(100%, #a0ada7));
-		background: -moz-linear-gradient(#484444 20%, #a0ada7);
-		background: -o-linear-gradient(#484444 20%, #a0ada7);
-		background: -ms-linear-gradient(#484444 20%, #a0ada7);
-	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484444', endColorstr='#a0ada7',GradientType=0 );
-		background: linear-gradient(45deg, #484444 20%, #a0ada7);
-		grid-template-columns: repeat(90, 1fr);
-		grid-template-rows: 20% 20% 20% 20% 20%;
+	.pic-box-time{
+		position: relative;
+		visibility: visible;/*************/
+	}
+
+
+	.pic-box-time #time-line-container-for-mobile{
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 10%;
+		background: -webkit-linear-gradient(65deg, #484444 5%, #a0ada7);
+		background: -webkit-gradient(linear, left bottom, right top, color-stop(5%, #484444), color-stop(100%, #a0ada7));
+		background: -moz-linear-gradient(65deg, #484444 5%, #a0ada7);
+		background: -o-linear-gradient(65deg, #484444 5%, #a0ada7);
+		background: -ms-linear-gradient(65deg, #484444 5%, #a0ada7);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484444', endColorstr='#a0ada7',GradientType=1 );
+		background: linear-gradient(65deg, #484444 5%, #a0ada7);
 		width: 80%;
-		/*padding: 120px 0 60px 0; */
+		height: calc(100% - 24px);
 	    margin: 0 auto 0 auto;
-	    /*the next rule center the objects inside the grid*/
-	    justify-items: center;
-	    /*the next rule center the grid inside the screen*/
-	    justify-content: center;
 		color: #fff;
 		text-align: center;
 		font-family: 'Amatic SC', cursive, Arial, Sans-serif;
 		font-weight: 400;
 		font-size: 24px;
+		overflow: scroll;
+		transform: rotateY(90deg);
 	}
 
+	#time-line-header-horizontal{
+		display: none;
+	}
 
+	#subjects .pic-box-time #time-line-header-vertical{
+		color: #ffffff;
+		font-size: 48px;
+		margin: 10px auto 30px auto;
+		font-weight: bold;
+
+	}
+
+	.pic-box-time #time-line-container-for-mobile #year{
+		font-size: 28px;
+	}
+
+	.pic-box-time #time-line-container-for-mobile #text{
+		font-size: 36px;
+	}
+
+	.pic-box-time #time-line-container-for-mobile #line{
+		width: 2px;
+		height: 45px;
+		background: #ffffff;
+		margin: 0 auto 0 auto;
+	}
+
+	#subjects .top-pictures #xThatBringsBackImgInMobile{
+		display: none; 
+		position: absolute;
+		border-radius: 0px 0px 0px 0px;
+		position: absolute;
+		margin: 20px auto 0 auto;
+		color: white;
+		background: transparent;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		direction: rtl;
+		top: 11px;
+		right: calc(10% + 12px);
+		padding: 0;
+		z-index: 10;
+	}
+	
 
 
 
@@ -3281,7 +3314,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 @media screen and (min-width: 601px) and (max-width: 825px) and (orientation: landscape){
 
 	#subjects .top-pictures img{
-		width: 60%;
+		width: 60%;	
 	}
 
 	#subjects .buttom-pictures img{
@@ -3323,6 +3356,65 @@ screen and (max-width: 600px) and (orientation: portrait){
 		width: 47%;
 		top: 18%;
 		left: 53%;
+	}
+
+	#time-line-container-for-mobile #wider-container{
+		width: 450%;
+		direction: rtl;
+		text-align: right;
+		margin-right: 10px;
+	}
+
+	.pic-box-time #time-line-container-for-mobile #year{
+		font-size: 28px;
+		text-align: center;
+	}
+
+	.pic-box-time #time-line-container-for-mobile #text{
+		font-size: 36px;
+		text-align: center;
+	}
+
+	#time-line-container-for-mobile #time-line-header-vertical{
+		display: none;
+	}
+
+	.pic-box-time #time-line-container-for-mobile{
+		overflow-x: scroll;
+		direction: rtl;
+	}
+
+	.pic-box-time #time-line-header-horizontal{
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		color: #ffffff;
+		font-family: 'Amatic SC', cursive, Arial, Sans-serif;
+		font-size: 48px;
+		font-weight: bold;
+		z-index: 1;
+		transform: rotateY(90deg);
+	}
+
+
+	#time-line-container-for-mobile p:nth-child(1) {
+		margin-top: 110px;
+	}
+
+
+	.pic-box-time #time-line-container-for-mobile #line{
+		width: 65px;
+		height: 2px;
+		background: #ffffff;
+		margin: 0px 15px 20px 15px;
+	}
+
+
+	#time-line-container-for-mobile div{
+		display: inline-block;
 	}
 
 
