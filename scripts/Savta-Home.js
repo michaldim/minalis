@@ -110,7 +110,7 @@ $(document).ready(function(){
 			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
 			$("#mobile #subjects h1").first().delay(1000).fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
-			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(2200).css("display", "block");
+			// $("#mobile #xThatBringsBackSavtaImgInMobile").delay(2200).css("display", "block");
 		}
 	});
 
