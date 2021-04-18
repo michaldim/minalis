@@ -3199,6 +3199,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		height: 100%;
 		padding-top: 20px;
 		transform: rotateY(90deg);
+		z-index: 0; //without it the X won't appear in Safari
 	}
 
 
