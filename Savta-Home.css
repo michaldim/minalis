@@ -3089,7 +3089,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		width: 68%;
 		position: relative;
 		margin: 20px auto 0 auto;
-		z-index: 4;
+		z-index: 0;
 	}
 
 	#subjects .buttom-pictures img{
@@ -3358,9 +3358,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		left: 53%;
 	}
 
-	#clockImg{
-		z-index: 0;
-	}
 
 	#time-line-container-for-mobile #wider-container{
 		width: 450%;
