@@ -3358,6 +3358,10 @@ screen and (max-width: 600px) and (orientation: portrait){
 		left: 53%;
 	}
 
+	#clockImg{
+		z-index: 0;
+	}
+
 	#time-line-container-for-mobile #wider-container{
 		width: 450%;
 		direction: rtl;
