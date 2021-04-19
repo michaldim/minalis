@@ -3109,8 +3109,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		width: 60%;
 		position: absolute;
 		z-index: 6;
-		-webkit-transform: translate3d(0,0,1px);
-		transform: translate3d(0,0,1px);
 	}
 
 	#subjects .oddH1inMobile{
@@ -3201,7 +3199,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		height: 100%;
 		padding-top: 20px;
 		transform: rotateY(90deg);
-		z-index: 0; //without it the X won't appear in Safari
+		z-index: 0; /*without it the X won't appear in Safari*/
 	}
 
 
@@ -3218,7 +3216,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		padding: 0;
 		z-index: 6;
 		-webkit-transform: translate3d(0,0,1px);
-		transform: translate3d(0,0,1px);
+		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 
 	@keyframes twirl{
@@ -3305,6 +3303,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 		right: calc(10% + 12px);
 		padding: 0;
 		z-index: 10;
+		-webkit-transform: translate3d(0,0,1px);
+		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 	
 
@@ -3313,6 +3313,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 }
 
 
+
+/*the next rules doesn't work on firefox for mobile, so maybe I should try @media only screen and (min-device-width : ... ) and (max-device-width : ... )*/
 
 
 /*Because the pictures in this screen size are the laptop pictures (short and wide), the h1 location needed some changes*/

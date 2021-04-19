@@ -110,7 +110,6 @@ $(document).ready(function(){
 			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
 			$("#mobile #subjects h1").first().delay(1000).fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
-			// $("#mobile #xThatBringsBackSavtaImgInMobile").delay(2200).css("display", "block");
 		}
 	});
 
@@ -155,8 +154,8 @@ $(document).ready(function(){
 	//When someone clicks the picture of time-line on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the movie appears.
 	$("#mobile #subjects #clockImg").on("click", function(){
-		if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)")))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #time-line-container-for-mobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
 			$("#mobile #subjects .pic-box-time h1").fadeOut(1000);
