@@ -3214,7 +3214,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 31px;
 		right: calc(10% + 12px);
 		padding: 0;
-		z-index: 10;
+		z-index: 6;
 	}
 
 	@keyframes twirl{
