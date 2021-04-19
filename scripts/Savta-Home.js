@@ -103,30 +103,14 @@ $(document).ready(function(){
 
 
 
-	//trial for Safari
 	$("#mobile #subjects #savta").on("click", function(){
 		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)"))) ){
-			$(this).css({"animation": "twirl 0.5s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
-			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects h1").first().fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
 		}
 	});
-
-
-
-	//When someone clicks the picture of savta on mobile screens, it disappears
-	//and then the iframe of her movie appears and also the "X" that closes the movie appears.
-	// $("#mobile #subjects #savta").on("click", function(){
-	// 	if((screen.width < 601 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")) || (screen.width < 826 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary"))){
-	// 		$(this).css({"animation": "twirl 0.5s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
-	// 		$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.5s ease-out forwards"}); //
-	// 		$("#mobile #subjects h1").first().delay(1000).fadeOut(1000);
-	// 		$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
-	// 	}
-	// });
-
-
 
 	//I made a function, that changes the src of the video and then brings it back,
 	//because otherwise the video continues playing even when someone leaves the video's screen. 
@@ -145,8 +129,6 @@ $(document).ready(function(){
 		$("#mobile #subjects h1").first().delay(1200).fadeIn(1000);
 		setTimeout(delaySrcChange, 600);
 	});
-
-
 
 
 
