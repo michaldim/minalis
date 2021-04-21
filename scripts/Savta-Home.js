@@ -144,7 +144,7 @@ $(document).ready(function(){
 			$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
 			$("#mobile #subjects .pic-box-time h1").fadeOut(1000);
 			$("#mobile #xThatBringsBackImgInMobile").delay(1200).fadeIn(1000);
-			alert("piip");
+			alert("paap");
 		}
 	});
 
