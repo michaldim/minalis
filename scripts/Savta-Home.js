@@ -105,9 +105,9 @@ $(document).ready(function(){
 
 	$("#mobile #subjects #savta").on("click", function(){
 		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)"))) ){
-			$("#mobile #subjects h1").first().fadeOut(800);
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile #subjects h1").first().fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
 		}
 	});
