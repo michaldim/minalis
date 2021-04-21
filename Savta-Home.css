@@ -3367,7 +3367,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 
 	#time-line-container-for-mobile #wider-container{
-		width: 480%;
+		width: 470%;
 		direction: rtl;
 		text-align: right;
 		margin-right: 10px;
