@@ -3185,6 +3185,10 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 14%;
 	}
 
+	#subjects .pic-box-tree h1{
+		z-index: 10;
+	}
+
 	#music-iframes iframe{    /*--------------------------------------------------------*/
 		display: none;
 	}
@@ -3305,16 +3309,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 	
-	/*--------------------------------------------------------------------------------*/
-
-/*	#subjects .top-pictures .pic-box-tree{
-		position: relative;
-		border-radius: 0px 0px 0px 0px;
-		width: 68%;
-		position: relative;
-		margin: 20px auto 0 auto;
-		z-index: 0;
-	}*/
 
 	#mobile #subjects .pic-box-tree{
 		position: relative;
