@@ -3185,7 +3185,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 14%;
 	}
 
-	#music-iframes iframe{
+	#music-iframes iframe{    /*--------------------------------------------------------*/
 		display: none;
 	}
 
@@ -3289,7 +3289,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 	#subjects .top-pictures #xThatBringsBackClockImgInMobile{
 		display: none; 
 		position: absolute;
-		border-radius: 0px 0px 0px 0px;
 		position: absolute;
 		margin: 20px auto 0 auto;
 		color: white;
@@ -3306,20 +3305,27 @@ screen and (max-width: 600px) and (orientation: portrait){
 		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 	
-	#subjects .top-pictures .pic-box-tree{
+	/*--------------------------------------------------------------------------------*/
+
+/*	#subjects .top-pictures .pic-box-tree{
 		position: relative;
 		border-radius: 0px 0px 0px 0px;
 		width: 68%;
 		position: relative;
 		margin: 20px auto 0 auto;
 		z-index: 0;
+	}*/
+
+	#mobile #subjects .pic-box-tree{
+		position: relative;
 	}
 
-	#mobile #subjects .pic-box-tree #family-tree-container{
+
+	#mobile #subjects .pic-box-tree #family-tree-mobile-container{
 		display: flex;
 		align-items: center;
 		position: absolute;
-		top: 19px;
+		top: 20px;
 		right: 10%;
 		background: -webkit-linear-gradient(65deg, #484444 5%, #a0ada7);
 		background: -webkit-gradient(linear, left bottom, right top, color-stop(5%, #484444), color-stop(100%, #a0ada7));
@@ -3329,29 +3335,25 @@ screen and (max-width: 600px) and (orientation: portrait){
 	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484444', endColorstr='#a0ada7',GradientType=1 );
 		background: linear-gradient(65deg, #484444 5%, #a0ada7);
 		width: 80%;
-		height: calc(100% - 22px);
+		height: calc(100% - 24px);
 	    margin: 0 auto 0 auto;
 		color: #fff;
 		overflow: scroll;
 		transform: rotateY(90deg);
-		padding: 0;
-		margin: 0;
-		z-index: -1;
 	}
 
 
-	#mobile #subjects .pic-box-tree #family-tree-container #familyTreeMobileImg{
+	#mobile #subjects .pic-box-tree #family-tree-mobile-container #familyTreeMobileImg{
 		flex-basis: 95%;
-		position: relative;
 		right: 0;
-		overflow: scroll;
+		left: 0;
+		z-index: 0;
 	}
 
 
-	.pic-box-tree #xThatBringsBackTreeImgInMobile{
+	#mobile #subjects .pic-box-tree #xThatBringsBackTreeImgInMobile{
 		display: none; 
 		position: absolute;
-		border-radius: 0px 0px 0px 0px;
 		margin: 20px auto 0 auto;
 		color: white;
 		background: transparent;
@@ -3362,8 +3364,9 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 11px;
 		right: calc(10% + 12px);
 		padding: 0;
-		-webkit-transform: translate3d(calc(43.5% - 11px),10px,1px);
-		transform: translate3d(calc(43.5% - 11px),10px,1px);
+		z-index: 10;
+		-webkit-transform: translate3d(0,0,1px);
+		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 
 

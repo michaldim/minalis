@@ -169,7 +169,7 @@ $(document).ready(function(){
 	$("#mobile #subjects #treeMobileImg").on("click", function(){
 		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)")))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
-			$("#mobile #family-tree-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile #family-tree-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-tree h1").fadeOut(1000);
 			$("#mobile #xThatBringsBackTreeImgInMobile").delay(1200).fadeIn(1000);
 		}
@@ -180,7 +180,7 @@ $(document).ready(function(){
 	//then the time-line will disappear and the user will see the clock image again.
 	$("#xThatBringsBackTreeImgInMobile").on("click", function(){
 		$(this).fadeOut(500);
-		$("#mobile #family-tree-container").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #family-tree-mobile-container").css({"animation": "twirl 0.5s ease-in forwards"});
 		$("#mobile #subjects #treeMobileImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
 		$("#mobile #subjects .pic-box-tree h1").delay(1200).fadeIn(1000);
 	});
