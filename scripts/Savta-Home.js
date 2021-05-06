@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 
 	$("#mobile #subjects #savta").on("click", function(){
-		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)"))) ){
+		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)) ){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects h1").first().fadeOut(1000);
@@ -138,7 +138,7 @@ $(document).ready(function(){
 	//When someone clicks the picture of time-line on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the time-line appears.
 	$("#mobile #subjects #clockImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)")))){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #time-line-container-for-mobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
@@ -167,7 +167,7 @@ $(document).ready(function(){
 	//When someone clicks the tree picture on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #treeMobileImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)"))) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)")))){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #family-tree-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-tree h1").fadeOut(1000);
@@ -198,7 +198,27 @@ $(document).ready(function(){
 	familyTreeContainerInsideContainer.animate({ scrollLeft:  scrollto});
 
 
+	
+	//The family-tree img will be changed on mobile, if the orientation is landscape
+	if(window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)){ //We need the word "matches" in order to make it work!!!
+		$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
+		$("#familyTreeMobileImg").css("marginTop","20px");
+	}
 
+
+	window.addEventListener("orientationchange", treeOrientation);
+
+	function treeOrientation(){
+		console.log("dddddddddddd");
+		console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+  		if(window.innerWidth < 826 && ((event.target.screen.orientation.angle = 90) || (event.target.screen.orientation.angle = 270))) { //We need the word "matches" in order to make it work!!!
+			$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
+			$("#familyTreeMobileImg").css("marginTop","20px");
+		}
+	    else if(window.innerWidth < 601 && ((event.target.screen.orientation.angle = 0) || (event.target.screen.orientation.angle = 360))) {
+	    	$("#familyTreeMobileImg").attr("src", "FamilyTree/mobileFamilyTree.png");
+	    }
+	}
 
 
 
