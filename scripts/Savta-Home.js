@@ -200,25 +200,25 @@ $(document).ready(function(){
 
 	
 	//The family-tree img will be changed on mobile, if the orientation is landscape
-	if(window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)){ //We need the word "matches" in order to make it work!!!
-		$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
-		$("#familyTreeMobileImg").css("marginTop","20px");
-	}
+	// if(window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)){ //We need the word "matches" in order to make it work!!!
+	// 	$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
+	// 	$("#familyTreeMobileImg").css("marginTop","20px");
+	// }
 
 
-	window.addEventListener("orientationchange", treeOrientation);
+	// window.addEventListener("orientationchange", treeOrientation);
 
-	function treeOrientation(){
-		console.log("dddddddddddd");
-		console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
-  		if(window.innerWidth < 826 && ((event.target.screen.orientation.angle = 90) || (event.target.screen.orientation.angle = 270))) { //We need the word "matches" in order to make it work!!!
-			$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
-			$("#familyTreeMobileImg").css("marginTop","20px");
-		}
-	    else if(window.innerWidth < 601 && ((event.target.screen.orientation.angle = 0) || (event.target.screen.orientation.angle = 360))) {
-	    	$("#familyTreeMobileImg").attr("src", "FamilyTree/mobileFamilyTree.png");
-	    }
-	}
+	// function treeOrientation(){
+	// 	console.log("dddddddddddd");
+	// 	console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+ //  		if(window.innerWidth < 826 && ((event.target.screen.orientation.angle = 90) || (event.target.screen.orientation.angle = 270))) { //We need the word "matches" in order to make it work!!!
+	// 		$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
+	// 		$("#familyTreeMobileImg").css("marginTop","20px");
+	// 	}
+	//     else if(window.innerWidth < 601 && ((event.target.screen.orientation.angle = 0) || (event.target.screen.orientation.angle = 360))) {
+	//     	$("#familyTreeMobileImg").attr("src", "FamilyTree/mobileFamilyTree.png");
+	//     }
+	// }
 
 
 
