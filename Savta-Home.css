@@ -3527,6 +3527,10 @@ screen and (max-width: 600px) and (orientation: portrait){
 		display: inline-block;
 	}
 
+	#familyTreeMobileImg{
+		margin-top: 20px;
+	}
+
 
 }
 
