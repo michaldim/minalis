@@ -189,6 +189,14 @@ $(document).ready(function(){
 
 
 
+	//The familyTreeMobileImg wasn't centered inside its scrolled container
+	//so I took the img's width and devided it to 3.6 (I tried different numbers from 2 and above)
+	//until I reached its center
+	var familyTreeContainerInsideContainer = $("#containerInsideContainer");
+	var familyTreeMobileImg = $("#familyTreeMobileImg");
+	var scrollto = familyTreeMobileImg.width() / 3.6;
+	familyTreeContainerInsideContainer.animate({ scrollLeft:  scrollto});
+
 
 
 

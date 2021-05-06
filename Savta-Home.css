@@ -3077,19 +3077,43 @@ screen and (max-width: 600px) and (orientation: portrait){
 		transition: top 0.8s; /* Transition effect (with javaScript) when sliding down (and up) */
 	}
 
-	#subjects{
+	#mobile #subjects{
 		display: block;
 		margin: 60px auto 0px auto;
 		text-align: center;
 		position: relative;
 	}
 
-	#subjects .top-pictures img{ /*/////////////////////////////////////////////////////////*/
+	#mobile #subjects .top-pictures #savta{ 
 		border-radius: 0px 0px 0px 0px;
 		width: 68%;
 		position: relative;
 		margin: 20px auto 0 auto;
 		z-index: 0;
+	}
+
+	#mobile #subjects .top-pictures #clockImg{
+		width: 55%;
+		right: 15%;
+		top: 0;
+		border-radius: 0px 0px 0px 0px;
+		position: relative;
+		margin: 20px auto 0 auto;
+		z-index: 0;
+	}
+
+	#mobile #subjects .top-pictures .pic-box-tree{ 
+		border-radius: 0px 0px 0px 0px;
+		width: 68%;
+		position: relative;
+		margin: 20px auto 0 auto;
+		z-index: 0;
+	}
+
+	#mobile #subjects .top-pictures #treeMobileImg{
+		top: 0;
+		width: 60%;
+		right: -9%;
 	}
 
 	#subjects .buttom-pictures img{
@@ -3147,10 +3171,13 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 0;
 	}
 
-	#subjects .pic-box-tree img{
+	#subjects .pic-box-tree #treeMobileImg{
 		top: 0;
 		width: 60%;
+		position: relative;
 		right: -9%;
+		margin: 20px auto 0 auto;
+		z-index: 0;
 	}
 
 	#subjects .pic-box-pictures img{
@@ -3183,10 +3210,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	#subjects .pic-box-music h1{
 		top: 14%;
-	}
-
-	#subjects .pic-box-tree h1{
-		z-index: 10;
 	}
 
 	#music-iframes iframe{    /*--------------------------------------------------------*/
@@ -3337,13 +3360,23 @@ screen and (max-width: 600px) and (orientation: portrait){
 	}
 
 
-	#mobile #subjects .pic-box-tree #family-tree-mobile-container #familyTreeMobileImg{
+	#mobile #subjects .pic-box-tree #family-tree-mobile-container #containerInsideContainer{
 		flex-basis: 95%;
 		right: 0;
 		left: 0;
+		margin: auto;
 		z-index: 0;
+		overflow: scroll;
+		/*text-align: center;*/
 	}
 
+
+	#mobile #subjects .pic-box-tree #family-tree-mobile-container #containerInsideContainer #familyTreeMobileImg{
+		width: 220%;
+		/*margin-left: -110%;
+    	margin-right: -110%;*/
+    	right: 0px;
+	}
 
 	#mobile #subjects .pic-box-tree #xThatBringsBackTreeImgInMobile{
 		display: none; 
@@ -3379,6 +3412,18 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	#subjects .top-pictures img{
 		width: 60%;	
+	}
+
+	#mobile #subjects .top-pictures #savta{
+		width: 60%;
+	}
+
+	#mobile #subjects .top-pictures #clockImg{
+		width: 60%;
+	}
+
+	#subjects .pic-box-tree #treeMobileImg{
+		right: -11%;
 	}
 
 	#subjects .buttom-pictures img{
