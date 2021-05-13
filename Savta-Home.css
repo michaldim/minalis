@@ -3284,6 +3284,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		font-size: 24px;
 		overflow: scroll;
 		transform: rotateY(90deg);
+		border: 2px solid #c2b3b3;
 	}
 
 	#time-line-header-horizontal{
@@ -3291,7 +3292,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 	}
 
 	#subjects .pic-box-time #time-line-header-vertical{
-		color: #ffffff;
+		color: #fff;
 		font-size: 48px;
 		margin: 10px auto 30px auto;
 		font-weight: bold;
@@ -3300,6 +3301,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	.pic-box-time #time-line-container-for-mobile #year{
 		font-size: 28px;
+		color: #e4ede9;
 	}
 
 	.pic-box-time #time-line-container-for-mobile #text{
@@ -3309,7 +3311,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 	.pic-box-time #time-line-container-for-mobile #line{
 		width: 2px;
 		height: 45px;
-		background: #ffffff;
+		background: #e4ede9;
 		margin: 0 auto 0 auto;
 	}
 
