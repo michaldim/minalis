@@ -3284,7 +3284,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		font-size: 24px;
 		overflow: scroll;
 		transform: rotateY(90deg);
-		border: 2px solid #c2b3b3;
+		border: 2px solid #a0ada7/*#c2b3b3*/;
 	}
 
 	#time-line-header-horizontal{
