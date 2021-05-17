@@ -207,19 +207,19 @@ $(document).ready(function(){
 	 	var containerSize = document.getElementById("mobile-gallery-wider-container").offsetWidth; //offsetWidth shows the width of an element (it doesn't work with jquery)
 		if( ($(this).scrollLeft() > containerSize/8) && ($(this).scrollLeft() < containerSize/2.6666)  ){
 			var quarter = containerSize / 4;
-			$("#mobile-gallery-regular-container").animate({ scrollLeft: quarter}, 500);
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: quarter}, 0);
 
 		} else if ( ($(this).scrollLeft() > containerSize/2.6666) && ($(this).scrollLeft() < containerSize/1.6)  ){
 			var half = containerSize / 2;
-			$("#mobile-gallery-regular-container").animate({ scrollLeft: half}, 500);
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: half}, 0);
 
 		} else if ( ($(this).scrollLeft() > containerSize/1.6) && ($(this).scrollLeft() < containerSize/1.144)  ){
 			var threeQuarters = containerSize / 1.3333;
-			$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 500);
-			
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 0);
+
 		} else {
 			var theBeginning = 0;
-			$("#mobile-gallery-regular-container").animate({ scrollLeft: theBeginning}, 500);
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: theBeginning}, 0);
 		}
 
 	});
