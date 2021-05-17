@@ -219,7 +219,7 @@ $(document).ready(function(){
 			
 		} else {
 			var theBeginning = 0;
-			$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 500);
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: theBeginning}, 500);
 		}
 
 	});
