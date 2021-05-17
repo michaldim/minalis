@@ -3451,8 +3451,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	#firstCircle{
 		border-radius: 50%;
-		background: #ffffff;
-		opacity: 0.6;
+		background: rgba(255, 255, 255, 1);
 		width: 12px;
 		height: 12px;
 		display: inline-block;
@@ -3462,8 +3461,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 	#thirdCircle,
 	#fourthCircle{
 		border-radius: 50%;
-		background: #7d7777;
-		opacity: 0.6;
+		background: rgba(125, 119, 119, 0.6);
 		width: 12px;
 		height: 12px;
 		display: inline-block;
