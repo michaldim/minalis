@@ -3440,16 +3440,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 		border: 2px solid #7d7777;
 	}
 
-/*	#firstCircle{
-		border-radius: 50%;
-		background: #ffffff;
-		width: 12px;
-		height: 12px;
-		display: inline-block;
-		margin-top: 3%;
-	}*/
-
-
 	#bulletsContainer{
 		position: absolute;
 		bottom: 4px;
@@ -3459,7 +3449,15 @@ screen and (max-width: 600px) and (orientation: portrait){
 	}
 
 
-	#firstCircle,
+	#firstCircle{
+		border-radius: 50%;
+		background: #ffffff;
+		opacity: 0.6;
+		width: 12px;
+		height: 12px;
+		display: inline-block;
+	}
+
 	#secondCircle,
 	#thirdCircle,
 	#fourthCircle{
