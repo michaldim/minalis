@@ -16,18 +16,6 @@ $(document).ready(function(){
 	  }
 	}
 
-	//This function also hides the header in cases that the mobile screen is rotated to landscape view:
-	// function headerDisappearsFunction() {
-	//   var currentScrollPos = window.pageYOffset; //pageYOffset tells us how much the screen was scrolled on the Y axis (0 means it wasn't scrolled)
-	//   if(screen.width >= 601 && screen.width < 825 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (startingScrollPos < currentScrollPos)){ //this rule is good for rotated mobile screens
-	//   	document.getElementsByTagName("header")[0].style.top = "-60px";
-	//   } else if (screen.width < 601 && (startingScrollPos < currentScrollPos)) {
-	//     document.getElementsByTagName("header")[0].style.top = "-60px";
-	//   } else {
-	//     document.getElementsByTagName("header")[0].style.top = "0";
-	//   }
-	// }
-
 
 
 
@@ -48,17 +36,7 @@ $(document).ready(function(){
 		 }
 	}
 
-	// document.body.scrollTop = 0; // For Safari
- //  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
-
-	// function buttonScrollFunction() {
-	// 	 if (screen.width > 600 && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
-	// 	    mybutton.style.display = "block";
-	// 	 } else {
-	// 	 	mybutton.style.display = "none";
-	// 	 }
-	// }
 		
 
 
@@ -162,8 +140,6 @@ $(document).ready(function(){
 
 
 
-
-
 	//When someone clicks the tree picture on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #treeMobileImg").on("click", function(){
@@ -187,8 +163,6 @@ $(document).ready(function(){
 
 
 
-
-
 	//The familyTreeMobileImg wasn't centered inside its scrolled container
 	//so I took the img's width and devided it to 3.6 (I tried different numbers from 2 and above)
 	//until I reached its center
@@ -198,28 +172,49 @@ $(document).ready(function(){
 	familyTreeContainerInsideContainer.animate({ scrollLeft:  scrollto});
 
 
-	
-	//The family-tree img will be changed on mobile, if the orientation is landscape
-	// if(window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)){ //We need the word "matches" in order to make it work!!!
-	// 	$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
-	// 	$("#familyTreeMobileImg").css("marginTop","20px");
-	// }
 
 
-	// window.addEventListener("orientationchange", treeOrientation);
 
-	// function treeOrientation(){
-	// 	console.log("dddddddddddd");
-	// 	console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
- //  		if(window.innerWidth < 826 && ((event.target.screen.orientation.angle = 90) || (event.target.screen.orientation.angle = 270))) { //We need the word "matches" in order to make it work!!!
-	// 		$("#familyTreeMobileImg").attr("src", "FamilyTree/familyTree3.png");
-	// 		$("#familyTreeMobileImg").css("marginTop","20px");
-	// 	}
-	//     else if(window.innerWidth < 601 && ((event.target.screen.orientation.angle = 0) || (event.target.screen.orientation.angle = 360))) {
-	//     	$("#familyTreeMobileImg").attr("src", "FamilyTree/mobileFamilyTree.png");
-	//     }
-	// }
+	//When someone clicks the picture with the camera on mobile screens, it disappears
+	//and then the transformed div appears and also the "X" that closes the family-tree appears.
+	$("#mobile #subjects #galleryFrontImg").on("click", function(){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile #mobile-gallery-regular-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile #subjects .pic-box-pictures h1").fadeOut(1000);
+			$("#mobile #xThatBringsBackGalleryInMobile").delay(1200).fadeIn(1000);
+		}
+	});
 
+
+	//When someone clicks the "X" sign near the gallery,  
+	//then the time-line will disappear and the user will see the clock image again.
+	$("#xThatBringsBackGalleryInMobile").on("click", function(){
+		$(this).fadeOut(500);
+		$("#mobile #mobile-gallery-regular-container").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #galleryFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #subjects .pic-box-pictures h1").delay(1200).fadeIn(1000);
+	});
+
+
+
+
+	//I devided the gallery to 4 different sections on the x-axis. When someone scrolls the gallery around the second section and
+	//releases his finger, then the gallery will move exactly to the beginning of the second section. 
+	$("#mobile-gallery-regular-container").on("touchend", function(){ 
+	 	console.log($(this).scrollLeft()); //shows us how many pixels we scrolled on x axis
+	 	var containerSize = document.getElementById("mobile-gallery-wider-container").offsetWidth; //offsetWidth shows the width of an element (it doesn't work with jquery)
+		if( ($(this).scrollLeft() > containerSize/8) && ($(this).scrollLeft() < containerSize/2.6666)  ){
+			var quarter = containerSize.offsetWidth / 4;
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: quarter}, 500);
+			// document.getElementById("mobile-gallery-regular-container").scrollTo(quarter, 0);
+		}
+	});
+
+	// var familyTreeContainerInsideContainer = $("#containerInsideContainer");
+	// var familyTreeMobileImg = $("#familyTreeMobileImg");
+	// var scrollto = familyTreeMobileImg.width() / 3.6;
+	// familyTreeContainerInsideContainer.animate({ scrollLeft:  scrollto});
 
 
 

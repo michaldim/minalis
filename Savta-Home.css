@@ -3116,15 +3116,27 @@ screen and (max-width: 600px) and (orientation: portrait){
 		right: -9%;
 	}
 
-	#subjects .buttom-pictures img{
+
+	#mobile #subjects .buttom-pictures .buttom-pictures-frontImg{
 		border-radius: 0px 0px 0px 0px; /*It starts with top left and moves in a clock direction*/
-		width: 68%;
 		position: relative;
 		margin: 20px auto 0 auto;
 		z-index: 4;
 	}
 
-	#subjects div{
+	#mobile #subjects .buttom-pictures #galleryFrontImg{
+		width: 63%;
+	}
+
+	#mobile #subjects .buttom-pictures #recipesFrontImg{
+		width: 60%;
+	}
+
+	#mobile #subjects .buttom-pictures #musicFrontImg{
+		width: 66%;
+	}
+
+	#subjects > div{
 		position: relative;
 	}
 
@@ -3180,7 +3192,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		z-index: 0;
 	}
 
-	#subjects .pic-box-pictures img{
+	#subjects .pic-box-pictures #galleryFrontImg{
 		top: 0;
 		width: 63%;
 		left: -8%
@@ -3284,7 +3296,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		font-size: 24px;
 		overflow: scroll;
 		transform: rotateY(90deg);
-		border: 2px solid #a0ada7/*#c2b3b3*/;
+		border: 2px solid #a0ada7;
 	}
 
 	#time-line-header-horizontal{
@@ -3398,8 +3410,86 @@ screen and (max-width: 600px) and (orientation: portrait){
 		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 
+	#mobile #subjects .pic-box-pictures #mobile-gallery-regular-container{
+		/*width: 400%;*/
+		width: 80%;
+		height: calc(100% - 24px);
+		position: absolute;
+		top: 20px;
+		left: 10%;
+		overflow: scroll;
+		transform: rotateY(90deg);
+		/*scroll-snap-type: x mandatory;*/
+	}
+
+	#mobile #subjects .pic-box-pictures #mobile-gallery-regular-container #mobile-gallery-wider-container{
+		display:grid;
+		width: 400%;
+		height: 94%;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-gap: 10px;
+	    grid-template-areas: 
+	    	"img-a img-a img-b img-g img-h img-h img-m img-m img-n img-s img-t img-t"
+	    	"img-c img-d img-d img-i img-i img-j img-o img-p img-p img-u img-u img-v"
+	    	"img-e img-e img-f img-k img-l img-l img-q img-q img-r img-w img-x img-x";
+	}
 
 
+	#mobile-gallery-container .images{
+		border: 2px solid #7d7777;
+	}
+
+/*	#firstCircle{
+		border-radius: 50%;
+		background: #ffffff;
+		width: 12px;
+		height: 12px;
+		display: inline-block;
+		margin-top: 3%;
+	}*/
+
+
+	#bulletsContainer{
+		position: absolute;
+		bottom: 4px;
+		right: 0;
+		left: 0;
+		margin: 0 auto 0 auto;
+	}
+
+
+	#firstCircle,
+	#secondCircle,
+	#thirdCircle,
+	#fourthCircle{
+		border-radius: 50%;
+		background: #7d7777;
+		opacity: 0.6;
+		width: 12px;
+		height: 12px;
+		display: inline-block;
+	}
+
+
+	#mobile #subjects .pic-box-pictures #xThatBringsBackGalleryInMobile{
+		display: none; 
+		position: absolute;
+		margin: 20px auto 0 auto;
+		color: white;
+		background: transparent;
+		/*background: #7d7777;*/
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		direction: rtl;
+		top: 11px;
+		left: calc(90% - 52px);
+		padding: 0;
+		z-index: 10;
+		-webkit-transform: translate3d(0,0,1px);
+		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
+	}
 
 
 }
