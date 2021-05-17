@@ -229,7 +229,7 @@ $(document).ready(function(){
 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
 			document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)";
 
-		} else {
+		} else if ($(this).scrollLeft() <= containerSize/1.6){
 			var theBeginning = 0;
 			$("#mobile-gallery-regular-container").animate({ scrollLeft: theBeginning}, 500);
 			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)";
