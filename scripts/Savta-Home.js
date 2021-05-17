@@ -202,13 +202,26 @@ $(document).ready(function(){
 	//I devided the gallery to 4 different sections on the x-axis. When someone scrolls the gallery around the second section and
 	//releases his finger, then the gallery will move exactly to the beginning of the second section. 
 	$("#mobile-gallery-regular-container").on("touchend", function(){ 
+
 	 	console.log($(this).scrollLeft()); //shows us how many pixels we scrolled on x axis
 	 	var containerSize = document.getElementById("mobile-gallery-wider-container").offsetWidth; //offsetWidth shows the width of an element (it doesn't work with jquery)
 		if( ($(this).scrollLeft() > containerSize/8) && ($(this).scrollLeft() < containerSize/2.6666)  ){
 			var quarter = containerSize / 4;
 			$("#mobile-gallery-regular-container").animate({ scrollLeft: quarter}, 500);
-			// document.getElementById("mobile-gallery-regular-container").scrollTo(quarter, 0);
+
+		} else if ( ($(this).scrollLeft() > containerSize/2.6666) && ($(this).scrollLeft() < containerSize/1.6)  ){
+			var half = containerSize / 2;
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: half}, 500);
+
+		} else if ( ($(this).scrollLeft() > containerSize/1.6) && ($(this).scrollLeft() < containerSize/1.144)  ){
+			var threeQuarters = containerSize / 1.3333;
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 500);
+			
+		} else {
+			var theBeginning = 0;
+			$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 500);
 		}
+
 	});
 
 	// var familyTreeContainerInsideContainer = $("#containerInsideContainer");
