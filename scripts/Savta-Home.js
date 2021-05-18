@@ -205,7 +205,7 @@ $(document).ready(function(){
 	// //releases his finger, then the gallery will move exactly to the beginning of the third section, etc.
 	// $("#mobile-gallery-regular-container").on("touchend", function(){ 
 
-	//  	console.log($(this).scrollLeft()); //shows us how many pixels we scrolled on x axis
+	//  	console.log($(this).scrollLeft()); //shows us how many pixels we scrolled on x axis (from the begining of the container)
 	//  	var containerSize = document.getElementById("mobile-gallery-wider-container").offsetWidth; //offsetWidth shows the width of an element (it doesn't work with jquery)
 	// 	if( ($(this).scrollLeft() > containerSize/8) && ($(this).scrollLeft() < containerSize/2.6666)  ){
 	// 		var quarter = containerSize / 4;
@@ -251,20 +251,20 @@ $(document).ready(function(){
 	let lastTouchLocation;
 	let currentLocation;
 
-	$("#mobile-gallery-regular-container").on("touchstart", function(e){
-		lastTouchLocation = e.clientX;
-		console.log(lastLocation);
-	}
+	$("#mobile-gallery-regular-container").on("touchstart", function(e){  //touchstart
+		lastTouchLocation = e.touches[0].clientX;
+		console.log(lastTouchLocation);
+	});
 
-	$("#mobile-gallery-regular-container").on("touchmove", function(e){ 
-		currentLocation = e.clientX;
+	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
+		currentLocation = e.touches[0].clientX;
 		console.log(currentLocation);
 		const widerGalleryContainer = document.getElementById("#mobile-gallery-wider-container");
 
-		if( (lastTouchLocation - currentLocation) > 0 ){
-			widerGalleryContainer.style.transform = "translateX(-25%)"
+		if( (lastTouchLocation - currentLocation) > 10 ){
+			widerGalleryContainer.style.transform = "translateX(-25%)";
 		} 
-	}
+	});
 
 
 	// $("#mobile-gallery-regular-container").on("touchmove", function(){ 
