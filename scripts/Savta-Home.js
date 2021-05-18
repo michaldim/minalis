@@ -224,7 +224,7 @@ $(document).ready(function(){
 		let id = $(e.changedTouches[0].target).attr("id");
 
 		//rules to move the first section to the second section
-		if( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
+		if( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
 			widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
@@ -233,7 +233,7 @@ $(document).ready(function(){
 		} 
 
 			//rules to move the second section to the third section
-			else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
+			else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
 			widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
@@ -242,7 +242,7 @@ $(document).ready(function(){
 		}
 
 			//rules to move the third section to the fourth section
-			else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
+			else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
 			widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
@@ -251,7 +251,7 @@ $(document).ready(function(){
 	 	}
 
 			//rules to move the fourth section back to the third section	 		
-	 		else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
+	 		else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
 			widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
@@ -260,7 +260,7 @@ $(document).ready(function(){
 	 	}
 
 	 		//rules to move the third section back to the second section
-	 		else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
+	 		else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
 			widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
@@ -269,7 +269,7 @@ $(document).ready(function(){
 	 	}
 
 	 		//rules to move the second section back to the first section
-	 		else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
+	 		else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
 			widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
