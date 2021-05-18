@@ -3417,9 +3417,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 		position: absolute;
 		top: 20px;
 		left: 10%;
-		overflow: scroll;
+		overflow: hidden; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 		transform: rotateY(90deg);
-		/*scroll-snap-type: x mandatory;*/
 	}
 
 	#mobile #subjects .pic-box-pictures #mobile-gallery-regular-container #mobile-gallery-wider-container{
@@ -3433,6 +3432,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 	    	"img-a img-a img-b img-g img-h img-h img-m img-m img-n img-s img-t img-t"
 	    	"img-c img-d img-d img-i img-i img-j img-o img-p img-p img-u img-u img-v"
 	    	"img-e img-e img-f img-k img-l img-l img-q img-q img-r img-w img-x img-x";
+
+	    transform: translateX(-0%);  /*!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 	}
 
 
