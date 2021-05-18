@@ -197,114 +197,88 @@ $(document).ready(function(){
 	});
 
 
-
-
-	// //I devided the gallery to 4 different sections on the x-axis. When someone scrolls the gallery around the second section and
-	// //releases his finger, then the gallery will move exactly to the beginning of the second section. 
-	// //When someone scrolls the gallery around the third section and
-	// //releases his finger, then the gallery will move exactly to the beginning of the third section, etc.
-	// $("#mobile-gallery-regular-container").on("touchend", function(){ 
-
-	//  	console.log($(this).scrollLeft()); //shows us how many pixels we scrolled on x axis (from the begining of the container)
-	//  	var containerSize = document.getElementById("mobile-gallery-wider-container").offsetWidth; //offsetWidth shows the width of an element (it doesn't work with jquery)
-	// 	if( ($(this).scrollLeft() > containerSize/8) && ($(this).scrollLeft() < containerSize/2.6666)  ){
-	// 		var quarter = containerSize / 4;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: quarter}, 500); //the second section will appear
-	// 		document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
-	// 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-
-	// 	} else if ( ($(this).scrollLeft() > containerSize/2.6666) && ($(this).scrollLeft() < containerSize/1.6)  ){
-	// 		var half = containerSize / 2;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: half}, 500);
-	// 		document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
-	// 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-
-	// 	} else if ( ($(this).scrollLeft() > containerSize/1.6) && ($(this).scrollLeft() < containerSize/1.144)  ){
-	// 		var threeQuarters = containerSize / 1.3333;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 500);
-	// 		document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
-
-	// 	} else {
-	// 		var theBeginning = 0;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: theBeginning}, 500);
-	// 		document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 	}
-
-	// });
-
 	
 
-		//I devided the gallery to 4 different sections on the x-axis. When someone scrolls the gallery around the second section and
+	//I devided the gallery (on mobile) to 4 different sections on the x-axis. When someone scrolls the gallery around the second section and
 	//releases his finger, then the gallery will move exactly to the beginning of the second section. 
-	//When someone scrolls the gallery around the third section and
-	//releases his finger, then the gallery will move exactly to the beginning of the third section, etc.
+	//When someone scrolls the gallery around the third section and releases his finger,
+	//then the gallery will move exactly to the beginning of the third section, etc.
 	let lastTouchLocation;
 	let currentLocation;
 
 	$("#mobile-gallery-regular-container").on("touchstart", function(e){  //touchstart
-		lastTouchLocation = e.touches[0].clientX;
+		console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
+		lastTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
 		console.log(lastTouchLocation);
 	});
 
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
-		currentLocation = e.touches[0].clientX;
+		console.log(e);
+		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
 		console.log(currentLocation);
-		const widerGalleryContainer = document.getElementById("#mobile-gallery-wider-container");
+		const widerGalleryContainer = document.getElementById("mobile-gallery-wider-container");
+		const regularGalleryContainer = document.getElementById("mobile-gallery-regular-container");
 
-		if( (lastTouchLocation - currentLocation) > 10 ){
-			widerGalleryContainer.style.transform = "translateX(-25%)";
+		
+		//by the use of console.log(e); I found out that e.changedTouches[0].target shows me on which DOM element I started my touchend event:
+		let id = $(e.changedTouches[0].target).attr("id");
+
+		//rules to move the first section to the second section
+		if( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
+			widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
+			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
+	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
 		} 
+
+			//rules to move the second section to the third section
+			else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
+			widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
+			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
+	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
+		}
+
+			//rules to move the third section to the fourth section
+			else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
+			widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
+			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
+	 	}
+
+			//rules to move the fourth section back to the third section	 		
+	 		else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
+			widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
+			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
+	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	}
+
+	 		//rules to move the third section back to the second section
+	 		else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
+			widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
+			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
+	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	}
+
+	 		//rules to move the second section back to the first section
+	 		else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
+			widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
+			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
+	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	}
+
 	});
 
-
-	// $("#mobile-gallery-regular-container").on("touchmove", function(){ 
-
-	//  	console.log($(this).scrollLeft()); //shows us how many pixels we scrolled on x axis
-	//  	var containerSize = document.getElementById("mobile-gallery-wider-container").offsetWidth; //offsetWidth shows the width of an element (it doesn't work with jquery)
-	// 	if( ($(this).scrollLeft() > containerSize/8) && ($(this).scrollLeft() < containerSize/2.6666)  ){
-	// 		var quarter = containerSize / 4;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: quarter}, 500); //the second section will appear
-	// 		document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
-	// 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-
-	// 	} else if ( ($(this).scrollLeft() > containerSize/2.6666) && ($(this).scrollLeft() < containerSize/1.6)  ){
-	// 		var half = containerSize / 2;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: half}, 500);
-	// 		document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
-	// 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-
-	// 	} else if ( ($(this).scrollLeft() > containerSize/1.6) && ($(this).scrollLeft() < containerSize/1.144)  ){
-	// 		var threeQuarters = containerSize / 1.3333;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: threeQuarters}, 500);
-	// 		document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
-
-	// 	} else {
-	// 		var theBeginning = 0;
-	// 		$("#mobile-gallery-regular-container").animate({ scrollLeft: theBeginning}, 500);
-	// 		document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)";
-	// 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	// 	}
-
-	// });
 
 
 
