@@ -3435,6 +3435,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 	}
 
 
+	/*Animation forwards:*/
 	@keyframes galleryMovesLeft1{
 		from{transform: translateX(0%)}
 		to{transform: translateX(-25%)}
@@ -3450,6 +3451,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 		to{transform: translateX(-75%)}
 	}
 
+	/*Animation backwards:*/
+
 	@keyframes galleryMovesRight3{
 		from{transform: translateX(-75%)}
 		to{transform: translateX(-50%)}
@@ -3464,6 +3467,39 @@ screen and (max-width: 600px) and (orientation: portrait){
 		from{transform: translateX(-25%)}
 		to{transform: translateX(0%)}
 	}
+
+	/*Animation to far away bullet (forwards):*/
+	@keyframes galleryMovesLeft1and2{
+		0%{transform: translateX(0%)}
+		100%{transform: translateX(-50%)}
+	}
+
+	@keyframes galleryMovesLeft1and2and3{
+		0%{transform: translateX(0%)}
+		100%{transform: translateX(-75%)}
+	}
+
+	@keyframes galleryMovesLeft2and3{
+		0%{transform: translateX(-25%)}
+		100%{transform: translateX(-75%)}
+	}
+
+	/*Animation to far away bullet (backwards):*/
+	@keyframes galleryMovesRight2and1{
+		0%{transform: translateX(-50%)}
+		100%{transform: translateX(0%)}
+	}
+
+	@keyframes galleryMovesRight3and2and1{
+		0%{transform: translateX(-75%)}
+		100%{transform: translateX(0%)}
+	}
+
+	@keyframes galleryMovesRight3and2{
+		0%{transform: translateX(-75%)}
+		100%{transform: translateX(-25%)}
+	}
+
 
 
 	#mobile-gallery-container .images{

@@ -205,20 +205,20 @@ $(document).ready(function(){
 	//then the gallery will move exactly to the beginning of the third section, etc.
 	let lastTouchLocation;
 	let currentLocation;
+	let translateXGalleryLocation = 1;//That will tell us which section of the 4 galley sections currently appears on the screen
+	const widerGalleryContainer = document.getElementById("mobile-gallery-wider-container");
+	const regularGalleryContainer = document.getElementById("mobile-gallery-regular-container");
 
 	$("#mobile-gallery-regular-container").on("touchstart", function(e){  //touchstart
-		console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
+		//console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
 		lastTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
-		console.log(lastTouchLocation);
+		//console.log(lastTouchLocation);
 	});
 
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
-		console.log(e);
+		//console.log(e);
 		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
-		console.log(currentLocation);
-		const widerGalleryContainer = document.getElementById("mobile-gallery-wider-container");
-		const regularGalleryContainer = document.getElementById("mobile-gallery-regular-container");
-
+		//console.log(currentLocation);
 		
 		//by the use of console.log(e); I found out that e.changedTouches[0].target shows me on which DOM element I started my touchend event:
 		let id = $(e.changedTouches[0].target).attr("id");
@@ -230,6 +230,7 @@ $(document).ready(function(){
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		translateXGalleryLocation = 2;
 		} 
 
 			//rules to move the second section to the third section
@@ -239,6 +240,7 @@ $(document).ready(function(){
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 		translateXGalleryLocation = 3;
 		}
 
 			//rules to move the third section to the fourth section
@@ -248,6 +250,7 @@ $(document).ready(function(){
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
+	 		translateXGalleryLocation = 4;
 	 	}
 
 			//rules to move the fourth section back to the third section	 		
@@ -257,6 +260,7 @@ $(document).ready(function(){
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		translateXGalleryLocation = 3;
 	 	}
 
 	 		//rules to move the third section back to the second section
@@ -266,6 +270,7 @@ $(document).ready(function(){
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		translateXGalleryLocation = 2;
 	 	}
 
 	 		//rules to move the second section back to the first section
@@ -275,9 +280,103 @@ $(document).ready(function(){
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 		translateXGalleryLocation = 1;
 	 	}
 
 	});
+
+
+		
+		//on a bullet click (under the gallery), the mobile-gallery-wider-container will move to its correct location
+			const firstBullet = document.getElementById("firstCircle");
+	 		const secondBullet = document.getElementById("secondCircle"); 
+	 		const thirdBullet = document.getElementById("thirdCircle"); 
+	 		const fourthBullet = document.getElementById("fourthCircle"); 
+
+
+	 		$(firstBullet).on("click",  function(){
+
+	 			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
+	 			document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 			document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+
+	 			if (translateXGalleryLocation == 2){
+	 				widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 3){
+	 				widerGalleryContainer.style.animation = "galleryMovesRight2and1 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 4){
+	 				widerGalleryContainer.style.animation = "galleryMovesRight3and2and1 0.5s forwards ease";
+	 			}
+
+	 			translateXGalleryLocation = 1;
+	 		});
+
+
+
+	 		$(secondBullet).on("click",  function(){
+
+	 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 			document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)";  //the second bullet becomes white
+	 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 			document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+
+	 			if (translateXGalleryLocation == 1){
+	 				widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 3){
+	 				widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 4){
+	 				widerGalleryContainer.style.animation = "galleryMovesRight3and2 0.5s forwards ease";
+	 			}
+
+	 			translateXGalleryLocation = 2;
+
+	 		});
+
+
+
+	 		$(thirdBullet).on("click",  function(){
+
+	 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 			document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
+	 			document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
+	 			document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+
+	 			if (translateXGalleryLocation == 1){
+	 				widerGalleryContainer.style.animation = "galleryMovesLeft1and2 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 2){
+	 				widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 4){
+	 				widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
+	 			}
+
+	 			translateXGalleryLocation = 3;
+
+	 		});
+
+	 			
+	 			
+	 		$(fourthBullet).on("click",  function(){
+
+	 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 			document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
+	 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 			document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
+
+	 			if (translateXGalleryLocation == 1){
+	 				widerGalleryContainer.style.animation = "galleryMovesLeft1and2and3 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 2){
+	 				widerGalleryContainer.style.animation = "galleryMovesLeft2and3 0.5s forwards ease";
+	 			} else if (translateXGalleryLocation == 3){
+	 				widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
+	 			}
+
+	 			translateXGalleryLocation = 4;
+
+	 		});
+	 		
+
+
 
 
 
