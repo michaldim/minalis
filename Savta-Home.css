@@ -3550,8 +3550,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 11px;
 		left: calc(90% - 52px);
 		padding: 0;
-		z-index: 0;
-		-webkit-transform: translate3d(0,0,1px);
+/*		z-index: 0;
+*/		-webkit-transform: translate3d(0,0,1px);
 		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
 	}
 
