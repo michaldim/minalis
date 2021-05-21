@@ -639,6 +639,14 @@ body.compensate-for-scrollbar {
     transform: translate3d(0, 0, 0) scale(1);
 }
 
+.fancybox-overlay{
+    z-index: 9999 !important;
+}
+
+.fancybox-wrap{
+    z-index: 9999 !important;
+}
+
 /* Styling for Small-Screen Devices */
 @media all and (max-height: 576px) {
     .fancybox-slide {
