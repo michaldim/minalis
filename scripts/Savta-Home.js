@@ -216,6 +216,14 @@ $(document).ready(function(){
 		e.preventDefault();//in order to prevent scrolling of the body (in ios)
 	});
 
+
+
+	$("#mobile-gallery-regular-container").on("touchmove", function(e){ 
+		e.preventDefault();//in order to prevent scrolling of the body (in ios)
+	});
+
+
+
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
 		//console.log(e);
 
