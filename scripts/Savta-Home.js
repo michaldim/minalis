@@ -214,15 +214,8 @@ $(document).ready(function(){
 		lastTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
 		//console.log(lastTouchLocation);
 		e.preventDefault();//in order to prevent scrolling of the body (in ios)
-		$("body").css({"overflow" : "hidden"});
 	});
 
-
-
-	$("#mobile-gallery-regular-container").on("touchmove", function(e){ 
-		e.preventDefault();//in order to prevent scrolling of the body (in ios)
-		$("body").css({"overflow" : "hidden"});
-	});
 
 
 
@@ -230,7 +223,6 @@ $(document).ready(function(){
 		//console.log(e);
 
 		e.preventDefault();//in order to prevent scrolling of the body (in ios)
-		$("body").css({"overflow" : "hidden"});
 
 		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
 		//console.log(currentLocation);
