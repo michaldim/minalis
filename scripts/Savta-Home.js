@@ -217,6 +217,9 @@ $(document).ready(function(){
 
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
 		//console.log(e);
+
+		e.preventDefault();//in order to prevent scrolling
+
 		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
 		//console.log(currentLocation);
 		
