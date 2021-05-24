@@ -213,7 +213,6 @@ $(document).ready(function(){
 		//console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
 		lastTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
 		//console.log(lastTouchLocation);
-		e.preventDefault();//in order to prevent scrolling of the body (in ios)
 	});
 
 
@@ -221,8 +220,6 @@ $(document).ready(function(){
 
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
 		//console.log(e);
-
-		e.preventDefault();//in order to prevent scrolling of the body (in ios)
 
 		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
 		//console.log(currentLocation);
