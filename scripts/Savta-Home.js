@@ -379,37 +379,14 @@ $(document).ready(function(){
 
 	 		});
 	 		
+	 	
 
 
-	 		//I hided the gallery bacause fancybox changes the pictures location, after closing it
-	 		// $("#mobile-gallery-wider-container").on("click",  function(){
-	 		// 	$(this).css({"display": "none"});
-	 		// });
-
-
-
-	 		// $(".fancybox-button--close").on("click",  function(){
-	 		// 	if (translateXGalleryLocation == 1){
-	 		// 		widerGalleryContainer.css({"display": "block"});
-	 		// 	}
-
-	 		// 	if (translateXGalleryLocation == 2){
-	 		// 		widerGalleryContainer.css({"display": "block"});
-	 		// 		widerGalleryContainer.style.animation = "galleryMovesLeft1 0s forwards ease";
-	 		// 	}
-
-	 		// 	if (translateXGalleryLocation == 3){
-	 		// 		widerGalleryContainer.css({"display": "block"});
-	 		// 		widerGalleryContainer.style.animation = "galleryMovesLeft2 0s forwards ease";
-	 		// 	}
-
-	 		// 	if (translateXGalleryLocation == 4){
-	 		// 		widerGalleryContainer.css({"display": "block"});
-	 		// 		widerGalleryContainer.style.animation = "galleryMovesLeft3 0s forwards ease";
-	 		// 	}
-
-	 		// });
-
+	 		//on ios, the layer under the fancybox appears on screen, even when fancybox is open (it's a bug). 
+	 		//So the way to fix it is by making the gallery disappear (other trials didn't work).
+	 		//so since fancybox is adding class="fancybox-active" to the body, while fancubox is active, 
+	 		//and since this class disappears while fancubox is not active, so I used MutationObserver.observe() 
+	 		//which provides the ability to watch for changes being made to the DOM tree.
 		 	var element = document.getElementsByTagName('body');
 		 	var body = element[0];
 			
@@ -418,19 +395,23 @@ $(document).ready(function(){
 				 mutations.forEach(function(mutation) {
 
 				 	if ((mutation.type == "attributes") && (body.className == "fancybox-active")){
-				   		console.log("attributes changed`bitches");
 				   		widerGalleryContainer.style.display = "none";
+				   		document.getElementById("xThatBringsBackGalleryInMobile").style.display = "none";
+				   		document.getElementById("bulletsContainer").style.display = "none";
+				   		
 				   	} 
 				   		else if ((mutation.type == "attributes") && (body.className !== "fancybox-active")){
-				    	console.log("attributes changed");
-				    	widerGalleryContainer.style.display = "grid";				    	
+				    	widerGalleryContainer.style.display = "grid";	
+				    	document.getElementById("xThatBringsBackGalleryInMobile").style.display = "block";
+				   		document.getElementById("bulletsContainer").style.display = "block";			    	
 				   }
 
 				 });
 			});
 
+			//this is the function call:
 			observer.observe(body, {
-				 attributes: true //configure it to listen to attribute changes
+				 attributes: true //configure it to listen to attribute changes in the body
 			});
 
 
