@@ -381,10 +381,57 @@ $(document).ready(function(){
 	 		
 
 
+	 		//I hided the gallery bacause fancybox changes the pictures location, after closing it
+	 		// $("#mobile-gallery-wider-container").on("click",  function(){
+	 		// 	$(this).css({"display": "none"});
+	 		// });
 
 
 
+	 		// $(".fancybox-button--close").on("click",  function(){
+	 		// 	if (translateXGalleryLocation == 1){
+	 		// 		widerGalleryContainer.css({"display": "block"});
+	 		// 	}
 
+	 		// 	if (translateXGalleryLocation == 2){
+	 		// 		widerGalleryContainer.css({"display": "block"});
+	 		// 		widerGalleryContainer.style.animation = "galleryMovesLeft1 0s forwards ease";
+	 		// 	}
+
+	 		// 	if (translateXGalleryLocation == 3){
+	 		// 		widerGalleryContainer.css({"display": "block"});
+	 		// 		widerGalleryContainer.style.animation = "galleryMovesLeft2 0s forwards ease";
+	 		// 	}
+
+	 		// 	if (translateXGalleryLocation == 4){
+	 		// 		widerGalleryContainer.css({"display": "block"});
+	 		// 		widerGalleryContainer.style.animation = "galleryMovesLeft3 0s forwards ease";
+	 		// 	}
+
+	 		// });
+
+		 	var element = document.getElementsByTagName('body');
+		 	var body = element[0];
+			
+
+			var observer = new MutationObserver(function(mutations) {
+				 mutations.forEach(function(mutation) {
+
+				 	if ((mutation.type == "attributes") && (body.className == "fancybox-active")){
+				   		console.log("attributes changed`bitches");
+				   		widerGalleryContainer.style.display = "none";
+				   	} 
+				   		else if ((mutation.type == "attributes") && (body.className !== "fancybox-active")){
+				    	console.log("attributes changed");
+				    	widerGalleryContainer.style.display = "grid";				    	
+				   }
+
+				 });
+			});
+
+			observer.observe(body, {
+				 attributes: true //configure it to listen to attribute changes
+			});
 
 
 });
