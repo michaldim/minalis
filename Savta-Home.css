@@ -3502,6 +3502,25 @@ screen and (max-width: 600px) and (orientation: portrait){
 		100%{transform: translateX(-25%)}
 	}
 
+	@keyframes galleryStaysAt1{
+		0%{transform: translateX(0); opacity: 0;}
+		100%{transform: translateX(0); opacity: 1;}
+	}
+
+	@keyframes galleryStaysAt2{
+		0%{transform: translateX(-25%); opacity: 0;}
+		100%{transform: translateX(-25%); opacity: 1;}
+	}
+
+	@keyframes galleryStaysAt3{
+		0%{transform: translateX(-50%); opacity: 0;}
+		100%{transform: translateX(-50%); opacity: 1;}
+	}
+
+	@keyframes galleryStaysAt4{
+		0%{transform: translateX(-75%); opacity: 0;}
+		100%{transform: translateX(-75%); opacity: 1;}
+	}
 
 
 	#mobile-gallery-container .images{
@@ -3554,6 +3573,131 @@ screen and (max-width: 600px) and (orientation: portrait){
 		z-index: 0;
 		-webkit-transform: translate3d(0,0,1px);
 		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
+	}
+
+
+
+	#img-a{
+		background: url("pictures/mosaic/img1.jpg") no-repeat 63% 9%;
+		background-size: auto 220px;
+	}
+
+	#img-b{
+		background: url("pictures/mosaic/img2.jpg") no-repeat 15% 35%;/*first percent is right movement and second percent is down movement*/
+		background-size: auto 180px;
+	}
+
+	#img-c{
+		background: url("pictures/mosaic/img3.jpg") no-repeat 47% 20%;
+		background-size: auto 200px;
+	}
+
+	#img-d{
+		background: url("pictures/mosaic/img4.jpg") no-repeat 14% 26%;
+		background-size: 280px;
+	}
+
+	#img-e{
+	    background: url("pictures/mosaic/img5.jpg") no-repeat 44% 20%;
+		background-size: auto 220px;
+	}
+
+	#img-f{
+	    background: url("pictures/mosaic/img6.jpg") no-repeat 100% 5%;
+		background-size: auto 158px;
+	}
+
+	#img-g{
+	    background: url("pictures/mosaic/img7.jpg") no-repeat 25% 33%;
+		background-size: auto 170px;
+	}
+
+	#img-h{
+	    background: url("pictures/mosaic/img8.jpg") no-repeat 100% 35%;
+		background-size: auto 300px;
+	}
+
+	#img-i{
+	    background: url("pictures/mosaic/img9.jpg") no-repeat 49% 0%;
+	    background-size: auto 185px;
+	}
+
+	#img-j{
+	    background: url("pictures/mosaic/img10.JPG") no-repeat 100% 0%;
+	    background-size: auto 168px;
+	}
+
+	#img-k{
+	    background: url("pictures/mosaic/img11.jpg") no-repeat 50% 25%;
+		background-size: auto 270px;
+	}
+
+	#img-l{
+	    background: url("pictures/mosaic/img12.JPG") no-repeat 39% 50%;
+		background-size: auto 175px;
+	}
+
+
+	#img-m{
+	    background: url("pictures/mosaic/img13.JPG") no-repeat 0% 4%;
+		background-size: 210px auto;
+	}
+
+	#img-n{
+	    background: url("pictures/mosaic/img14.jpg") no-repeat 14% 10%;
+		background-size: auto 200px;
+	}
+
+	#img-o{
+	    background: url("pictures/mosaic/img15.jpg") no-repeat 47% 20%;
+		background-size: auto 170px;
+	}
+
+	#img-p{
+	    background: url("pictures/mosaic/img16.JPG") no-repeat 62% 0%;
+		background-size: auto 165px;
+	}
+
+
+	#img-q{
+	    background: url("pictures/mosaic/img17.JPG") no-repeat 85% 50%;
+		background-size: auto 165px;
+	}
+
+	#img-r{
+	    background: url("pictures/mosaic/img18.JPG") no-repeat 50% 30%;
+		background-size: auto 200px;
+	}
+
+	#img-s{
+	    background: url("pictures/mosaic/img19.jpg") no-repeat 40% 20%;
+		background-size: auto 170px;
+	}
+
+	#img-t{
+	    background: url("pictures/mosaic/img20.jpg") no-repeat 50% 15%;
+		background-size: auto 165px;
+	}
+
+
+	#img-u{
+	    background: url("pictures/mosaic/img21.jpg") no-repeat 68% 20%;
+		background-size: auto 168px;
+	}
+
+	#img-v{
+	    background: url("pictures/mosaic/img22.jpg") no-repeat 21% 0%;
+		background-size: auto 170px;
+	}
+
+	#img-w{
+	    background: url("pictures/mosaic/img23.JPG") no-repeat 54% 72%;
+		background-size: auto 170px;
+	}
+
+	#img-x{
+	    background: url("pictures/mosaic/img24.JPG") no-repeat 25% 60%;
+		background-size: auto 170px;
 	}
 
 

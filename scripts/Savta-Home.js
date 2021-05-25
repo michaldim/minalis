@@ -205,214 +205,232 @@ $(document).ready(function(){
 	//then the gallery will move exactly to the beginning of the third section, etc.
 	let lastTouchLocation;
 	let currentLocation;
-	let translateXGalleryLocation = 1;//That will tell us which section of the 4 galley sections currently appears on the screen
+	window.translateXGalleryLocation = 1;//That will tell us which section of the 4 galley sections currently appears on the screen. 
+										//I wrote window.translateXGalleryLocation instead of let translateXGalleryLocation, 
+										//because the console didn't know how to read a global scope
 	const widerGalleryContainer = document.getElementById("mobile-gallery-wider-container");
 	const regularGalleryContainer = document.getElementById("mobile-gallery-regular-container");
+
+
 
 	$("#mobile-gallery-regular-container").on("touchstart", function(e){  //touchstart
 		//console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
 		lastTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
-		//console.log(lastTouchLocation);
+		console.log("last location" + lastTouchLocation);
 	});
 
 
 
-
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
-		//console.log(e);
 
 		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
-		//console.log(currentLocation);
+		console.log("current location" + currentLocation);
 		
 		//by the use of console.log(e); I found out that e.changedTouches[0].target shows me on which DOM element I started my touchend event:
 		let id = $(e.changedTouches[0].target).attr("id");
-
+				                   
 		//rules to move the first section to the second section
-		if( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
+		if( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
 			widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		translateXGalleryLocation = 2;
+	 		window.translateXGalleryLocation = 2;
 		} 
 
-			//rules to move the second section to the third section
-			else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
+		//rules to move the second section to the third section
+		else if ( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
 			widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		translateXGalleryLocation = 3;
+	 		window.translateXGalleryLocation = 3;
 		}
 
-			//rules to move the third section to the fourth section
-			else if ( ((currentLocation - lastTouchLocation) < 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
+		//rules to move the third section to the fourth section
+		else if ( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
 			widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
-	 		translateXGalleryLocation = 4;
+	 		window.translateXGalleryLocation = 4;
 	 	}
 
-			//rules to move the fourth section back to the third section	 		
-	 		else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
+		//rules to move the fourth section back to the third section	 		
+	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
 			widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		translateXGalleryLocation = 3;
+	 		window.translateXGalleryLocation = 3;
 	 	}
 
-	 		//rules to move the third section back to the second section
-	 		else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
+	 	//rules to move the third section back to the second section
+	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
 			widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		translateXGalleryLocation = 2;
+	 		window.translateXGalleryLocation = 2;
 	 	}
 
-	 		//rules to move the second section back to the first section
-	 		else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
+	 	//rules to move the second section back to the first section
+	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
 			widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		translateXGalleryLocation = 1;
+	 		window.translateXGalleryLocation = 1;
+	 	}
+
+	 	//working on cases that we click on an image (the browser thinks that click is touchstart + touchend:
+	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 1)){
+	 		widerGalleryContainer.style.animation = "galleryStaysAt1 0.7s forwards ease";
+	 	}
+
+	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 2)){
+	 		widerGalleryContainer.style.animation = "galleryStaysAt2 0.7s forwards ease";
+	 	}
+
+	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 3)){
+	 		widerGalleryContainer.style.animation = "galleryStaysAt3 0.7s forwards ease";
+	 	}
+
+	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 4)){
+	 		widerGalleryContainer.style.animation = "galleryStaysAt4 0.7s forwards ease";
 	 	}
 
 	});
 
-
 		
-		//on a bullet click (under the gallery), the mobile-gallery-wider-container will move to its correct location
-			const firstBullet = document.getElementById("firstCircle");
-	 		const secondBullet = document.getElementById("secondCircle"); 
-	 		const thirdBullet = document.getElementById("thirdCircle"); 
-	 		const fourthBullet = document.getElementById("fourthCircle"); 
+		
+	//on a bullet click (under the gallery), the mobile-gallery-wider-container will move to its correct location
+	const firstBullet = document.getElementById("firstCircle");
+	const secondBullet = document.getElementById("secondCircle"); 
+	const thirdBullet = document.getElementById("thirdCircle"); 
+	const fourthBullet = document.getElementById("fourthCircle"); 
 
 
-	 		$(firstBullet).on("click",  function(){
+	$(firstBullet).on("click",  function(){
 
-	 			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
-	 			document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 			document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
+	 	document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 
-	 			if (translateXGalleryLocation == 2){
-	 				widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 3){
-	 				widerGalleryContainer.style.animation = "galleryMovesRight2and1 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 4){
-	 				widerGalleryContainer.style.animation = "galleryMovesRight3and2and1 0.5s forwards ease";
-	 			}
+	 	if (window.translateXGalleryLocation == 2){
+	 		widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 3){
+	 		widerGalleryContainer.style.animation = "galleryMovesRight2and1 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 4){
+	 		widerGalleryContainer.style.animation = "galleryMovesRight3and2and1 0.5s forwards ease";
+	 	}
 
-	 			translateXGalleryLocation = 1;
-	 		});
-
-
-
-	 		$(secondBullet).on("click",  function(){
-
-	 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 			document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)";  //the second bullet becomes white
-	 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 			document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-
-	 			if (translateXGalleryLocation == 1){
-	 				widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 3){
-	 				widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 4){
-	 				widerGalleryContainer.style.animation = "galleryMovesRight3and2 0.5s forwards ease";
-	 			}
-
-	 			translateXGalleryLocation = 2;
-
-	 		});
+	 	window.translateXGalleryLocation = 1;
+	});
 
 
 
-	 		$(thirdBullet).on("click",  function(){
+	 $(secondBullet).on("click",  function(){
 
-	 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 			document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
-	 			document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
-	 			document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 	document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)";  //the second bullet becomes white
+	 	document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 
-	 			if (translateXGalleryLocation == 1){
-	 				widerGalleryContainer.style.animation = "galleryMovesLeft1and2 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 2){
-	 				widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 4){
-	 				widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
-	 			}
+	 	if (window.translateXGalleryLocation == 1){
+	 		widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 3){
+	 		widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 4){
+	 		widerGalleryContainer.style.animation = "galleryMovesRight3and2 0.5s forwards ease";
+	 	}
 
-	 			translateXGalleryLocation = 3;
+	 	window.translateXGalleryLocation = 2;
+	});
 
-	 		});
+
+
+	$(thirdBullet).on("click",  function(){
+
+	 	document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 	document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
+	 	document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
+	 	document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+
+	 	if (window.translateXGalleryLocation == 1){
+	 		widerGalleryContainer.style.animation = "galleryMovesLeft1and2 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 2){
+	 		widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 4){
+	 		widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
+	 	}
+
+	 	window.translateXGalleryLocation = 3;
+	});
 
 	 			
 	 			
-	 		$(fourthBullet).on("click",  function(){
+	$(fourthBullet).on("click",  function(){
 
-	 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 			document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
-	 			document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 			document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
+	 	document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
+	 	document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
+	 	document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
 
-	 			if (translateXGalleryLocation == 1){
-	 				widerGalleryContainer.style.animation = "galleryMovesLeft1and2and3 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 2){
-	 				widerGalleryContainer.style.animation = "galleryMovesLeft2and3 0.5s forwards ease";
-	 			} else if (translateXGalleryLocation == 3){
-	 				widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
-	 			}
+	 	if (window.translateXGalleryLocation == 1){
+	 		widerGalleryContainer.style.animation = "galleryMovesLeft1and2and3 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 2){
+	 		widerGalleryContainer.style.animation = "galleryMovesLeft2and3 0.5s forwards ease";
+	 	} else if (window.translateXGalleryLocation == 3){
+	 		widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
+	 	}
 
-	 			translateXGalleryLocation = 4;
-
-	 		});
+	 	window.translateXGalleryLocation = 4;
+	});
 	 		
 	 	
 
 
-	 		//on ios, the layer under the fancybox appears on screen, even when fancybox is open (it's a bug). 
-	 		//So the way to fix it is by making the gallery disappear (other trials didn't work).
-	 		//so since fancybox is adding class="fancybox-active" to the body, while fancubox is active, 
-	 		//and since this class disappears while fancubox is not active, so I used MutationObserver.observe() 
-	 		//which provides the ability to watch for changes being made to the DOM tree.
-		 	var element = document.getElementsByTagName('body');
-		 	var body = element[0];
+	//on ios, the layer under the fancybox appears on screen, even when fancybox is open (it's a bug). 
+	//So the way to fix it is by making the gallery disappear (other trials didn't work).
+	//so since fancybox is adding class="fancybox-active" to the body, while fancubox is active, 
+	//and since this class disappears while fancubox is not active, so I used MutationObserver.observe() 
+	//which provides the ability to watch for changes being made to the DOM tree.
+	var element = document.getElementsByTagName('body');
+	var body = element[0];
 			
+	//I'm making a object called MutationObserver and mutations is its a parameter
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {  //for each element in the mutations' array, the next function will work 
 
-			var observer = new MutationObserver(function(mutations) {
-				 mutations.forEach(function(mutation) {
-
-				 	if ((mutation.type == "attributes") && (body.className == "fancybox-active")){
-				   		widerGalleryContainer.style.display = "none";
-				   		document.getElementById("xThatBringsBackGalleryInMobile").style.display = "none";
-				   		document.getElementById("bulletsContainer").style.display = "none";
+			if ((mutation.type == "attributes") && (body.className == "fancybox-active")) {
+				widerGalleryContainer.style.display = "none";
+				document.getElementById("xThatBringsBackGalleryInMobile").style.display = "none";
+				document.getElementById("bulletsContainer").style.display = "none";
 				   		
-				   	} 
-				   		else if ((mutation.type == "attributes") && (body.className !== "fancybox-active")){
-				    	widerGalleryContainer.style.display = "grid";	
-				    	document.getElementById("xThatBringsBackGalleryInMobile").style.display = "block";
-				   		document.getElementById("bulletsContainer").style.display = "block";			    	
-				   }
+			} 
+			else if ((mutation.type == "attributes") && (body.className !== "fancybox-active")) {
+				widerGalleryContainer.style.display = "grid";	
+				document.getElementById("xThatBringsBackGalleryInMobile").style.display = "block";
+				document.getElementById("bulletsContainer").style.display = "block";
+				// widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";	
+			}
 
-				 });
-			});
+		});
+	});
 
-			//this is the function call:
-			observer.observe(body, {
-				 attributes: true //configure it to listen to attribute changes in the body
-			});
+	//this is the function call:
+	observer.observe(body, {
+		attributes: true //configure it to listen to attribute changes in the body
+	});
+
 
 
 });

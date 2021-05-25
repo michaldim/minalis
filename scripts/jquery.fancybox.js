@@ -237,7 +237,7 @@
     // Try to focus on the first focusable element after opening
     autoFocus: true,
 
-    // Put focus back to active element after closing
+    // Put focus back to active element after closing (If we choose false, the first gallery screen will be shown)
     backFocus: true,
 
     // Do not let user to focus on element outside modal content
@@ -5629,7 +5629,6 @@
       });
     }
   });
-
 
 
 
