@@ -3832,6 +3832,155 @@ screen and (max-width: 600px) and (orientation: portrait){
 		margin-top: 20px;
 	}
 
+	#mobile #subjects .pic-box-pictures #mobile-gallery-regular-container #mobile-gallery-wider-container{
+		display:grid;
+		width: 400%;
+		height: 94%;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-gap: 10px;
+	    grid-template-areas: 
+	    	"img-a img-b img-c img-g img-h img-l img-m img-n img-o img-s img-t img-u"
+	    	"img-a img-d img-c img-g img-k img-l img-m img-p img-o img-s img-v img-u"
+	    	"img-e img-d img-f img-j img-k img-i img-q img-p img-r img-w img-v img-x";
+	    z-index: 0;
+	}
+
+
+	#bulletsContainer{
+		bottom: 0px;
+	}
+
+
+	#secondCircle,
+	#thirdCircle,
+	#fourthCircle{
+		margin-left: 3px;
+	}
+
+
+	#img-a{
+		background: url("pictures/mosaic/img1.jpg") no-repeat 63% 14%;
+		background-size: auto 220px;
+	}
+
+	#img-b{
+		background: url("pictures/mosaic/img2.jpg") no-repeat 15% 8%;/*first percent is right movement and second percent is down movement*/
+		background-size: auto 180px;
+	}
+
+	#img-c{
+		background: url("pictures/mosaic/img3.jpg") no-repeat 47% 18%;
+		background-size: auto 200px;
+	}
+
+/*	#img-d{
+		background: url("pictures/mosaic/img4.jpg") no-repeat 14% 26%;
+		background-size: 280px;
+	}*/
+
+	#img-e{
+	    background: url("pictures/mosaic/img5.jpg") no-repeat 44% 20%;
+		background-size: auto 150px;
+	}
+
+	#img-f{
+	    background: url("pictures/mosaic/img6.jpg") no-repeat 100% 5%;
+		background-size: auto 130px;
+	}
+
+	#img-g{
+	    background: url("pictures/mosaic/img7.jpg") no-repeat 25% 38%;
+		background-size: auto 170px;
+	}
+
+	#img-h{
+	    background: url("pictures/mosaic/img8.jpg") no-repeat 80% 38%;
+		background-size: auto 300px;
+	}
+
+	#img-i{
+	    background: url("pictures/mosaic/img9.jpg") no-repeat 49% 15%;
+	    background-size: auto 165px;
+	}
+
+	#img-j{
+	    background: url("pictures/mosaic/img10.JPG") no-repeat 50% 20%;
+	    background-size: auto 145px;
+	}
+
+	#img-k{
+	    background: url("pictures/mosaic/img11.jpg") no-repeat 50% 25%;
+		background-size: auto 290px;
+	}
+
+	#img-l{
+	    background: url("pictures/mosaic/img12.JPG") no-repeat 39% 50%;
+		background-size: auto 175px;
+	}
+
+
+	#img-m{
+	    background: url("pictures/mosaic/img13.JPG") no-repeat 15% 4%;
+		background-size: 210px auto;
+	}
+
+	#img-n{
+	    background: url("pictures/mosaic/img14.jpg") no-repeat 14% 27%;
+		background-size: auto 190px;
+	}
+
+	#img-o{
+	    background: url("pictures/mosaic/img15.jpg") no-repeat 47% 20%;
+		background-size: auto 170px;
+	}
+
+	#img-p{
+	    background: url("pictures/mosaic/img16.JPG") no-repeat 70% 0%;
+		background-size: auto 165px;
+	}
+
+
+	#img-q{
+	    background: url("pictures/mosaic/img17.JPG") no-repeat 70% 50%;
+		background-size: auto 165px;
+	}
+
+	#img-r{
+	    background: url("pictures/mosaic/img18.JPG") no-repeat 50% 35%;
+		background-size: auto 170px;
+	}
+
+	#img-s{
+	    background: url("pictures/mosaic/img19.jpg") no-repeat 30% 20%;
+		background-size: auto 170px;
+	}
+
+	#img-t{
+	    background: url("pictures/mosaic/img20.jpg") no-repeat 80% 55%;
+		background-size: auto 165px;
+	}
+
+
+	#img-u{
+	    background: url("pictures/mosaic/img21.jpg") no-repeat 55% 20%;
+		background-size: auto 168px;
+	}
+
+	#img-v{
+	    background: url("pictures/mosaic/img22.jpg") no-repeat 21% 0%;
+		background-size: auto 170px;
+	}
+
+	#img-w{
+	    background: url("pictures/mosaic/img23.JPG") no-repeat 54% 68%;
+		background-size: auto 170px;
+	}
+
+	#img-x{
+	    background: url("pictures/mosaic/img24.JPG") no-repeat 35% 54%;
+		background-size: auto 155px;
+	}
 
 }
 

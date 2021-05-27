@@ -216,15 +216,16 @@ $(document).ready(function(){
 	$("#mobile-gallery-regular-container").on("touchstart", function(e){  //touchstart
 		//console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
 		lastTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
-		console.log("last location" + lastTouchLocation);
+		// console.log("last location" + lastTouchLocation);
 	});
 
 
 
 	$("#mobile-gallery-regular-container").on("touchend", function(e){ //touchmove
 
+
 		currentLocation = e.changedTouches[0].clientX; //this locate the x coordinate of the touchend event
-		console.log("current location" + currentLocation);
+		//console.log("current location" + currentLocation);
 		
 		//by the use of console.log(e); I found out that e.changedTouches[0].target shows me on which DOM element I started my touchend event:
 		let id = $(e.changedTouches[0].target).attr("id");
