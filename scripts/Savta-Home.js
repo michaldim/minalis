@@ -81,6 +81,8 @@ $(document).ready(function(){
 
 
 
+	//Clicking the first savta img in mobile, will make this img disappear 
+	//and will make youtube movie and the X in the right corner appear
 	$("#mobile #subjects #savta").on("click", function(){
 		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)) ){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
@@ -109,6 +111,19 @@ $(document).ready(function(){
 	});
 
 
+
+	//In long mobile screens, while youtube movie is being opend in full screen mode, it makes the phone thinks that it is actually a tablet
+	//and not a phone, so the website design changes to tablet design and you can only hear the movie and not see it (it's a bug).
+	//So if the screen is long, so I'll change the youtube movie src to a src that don't let the full screen option
+	if( (window.innerWidth > 770 && (window.matchMedia("(orientation: landscape)").matches)) && (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ||
+		(window.innerHeight > 770 && (window.matchMedia("(orientation: portrait)").matches)) && (window.innerHeight < 900 && (window.matchMedia("(orientation: portrait)").matches)) ){
+		
+			const mobileIframes = document.getElementById("mobile").getElementsByTagName("iframe");
+			const savtaIframe = mobileIframes[0];
+			
+			savtaIframe.src = "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0";//the ?fs=0 at the end of the src, prevent the movie
+																						//from opening on full screen
+	}
 
 
 

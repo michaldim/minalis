@@ -3709,7 +3709,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 
 /*Because the pictures in this screen size are the laptop pictures (short and wide), the h1 location needed some changes*/
-@media screen and (min-width: 601px) and (max-width: 825px) and (orientation: landscape){
+@media screen and (min-width: 501px) and (max-width: 825px) and (orientation: landscape){
 
 	#subjects .top-pictures img{
 		width: 60%;	
@@ -3981,6 +3981,8 @@ screen and (max-width: 600px) and (orientation: portrait){
 	    background: url("pictures/mosaic/img24.JPG") no-repeat 35% 54%;
 		background-size: auto 155px;
 	}
+
+
 
 }
 
