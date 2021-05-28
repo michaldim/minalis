@@ -116,7 +116,7 @@ $(document).ready(function(){
 	//and not a phone, so the website design changes to tablet design and you can only hear the movie and not see it (it's a bug).
 	//So if the screen is long, so I'll change the youtube movie src to a src that don't let the full screen option
 	if( (window.innerWidth > 770 && (window.matchMedia("(orientation: landscape)").matches)) && (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ||
-		(window.innerHeight > 770 && (window.matchMedia("(orientation: portrait)").matches)) && (window.innerHeight < 900 && (window.matchMedia("(orientation: portrait)").matches)) ){
+		(window.innerHeight > 720 && (window.matchMedia("(orientation: portrait)").matches)) && (window.innerHeight < 900 && (window.matchMedia("(orientation: portrait)").matches)) ){
 		
 			const mobileIframes = document.getElementById("mobile").getElementsByTagName("iframe");
 			const savtaIframe = mobileIframes[0];
