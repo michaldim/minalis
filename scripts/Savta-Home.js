@@ -127,7 +127,7 @@ $(document).ready(function(){
 	}
 
 	if((window.innerHeight <= 700) && (window.matchMedia("(orientation: portrait)").matches)){
-			alert("smaller");
+			alert("smallerer");
 	}
 
 
