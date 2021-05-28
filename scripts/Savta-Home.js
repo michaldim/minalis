@@ -126,6 +126,9 @@ $(document).ready(function(){
 																						//from opening on full screen
 	}
 
+	if((window.innerHeight <= 710) && (window.matchMedia("(orientation: portrait)").matches)){
+			alert("smaller");
+	}
 
 
 
