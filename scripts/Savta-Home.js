@@ -121,6 +121,7 @@ $(document).ready(function(){
 			const mobileIframes = document.getElementById("mobile").getElementsByTagName("iframe");
 			const savtaIframe = mobileIframes[0];
 			
+			alert("yoopi");
 			savtaIframe.src = "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0";//the ?fs=0 at the end of the src, prevent the movie
 																						//from opening on full screen
 	}
