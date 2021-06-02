@@ -84,20 +84,27 @@ $(document).ready(function(){
 	//Clicking the first savta img in mobile, will make this img disappear 
 	//and will make youtube movie and the X in the right corner appear
 	$("#mobile #subjects #savta").on("click", function(){
-		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches)) ){
+		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
 			$("#mobile #subjects h1").first().fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
 		}
 	});
 
+
 	//I made a function, that changes the src of the video and then brings it back,
 	//because otherwise the video continues playing even when someone leaves the video's screen. 
 	//(It's a way to make the video stops).
 	function delaySrcChange() {
- 		 $("#movieForMobile").attr("src", "").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM");
+		if( (window.innerWidth < 771 && (window.matchMedia("(orientation: landscape)").matches)) || (window.innerHeight < 671 && (window.matchMedia("(orientation: portrait)").matches)) ){
+			$("#movieForMobile").attr("src", "").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=1");
+		} else {
+			$("#movieForMobileWithoutFullScreen").attr("src", "").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0");
+		}
 	}
+	
 
 	//When someone clicks the "X" sign near savta's movie, while the movie is open, 
 	//then the iframe will disappear and the user will see savta's image again.
@@ -105,6 +112,7 @@ $(document).ready(function(){
 	$("#xThatBringsBackSavtaImgInMobile").on("click", function(){
 		$(this).fadeOut(500);
 		$("#mobile #movieForMobile").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirl 0.5s ease-in forwards"});
 		$("#mobile #subjects #savta").css({"animation": "twirlBack 1.2s 0.6s ease-out forwards"});
 		$("#mobile #subjects h1").first().delay(1200).fadeIn(1000);
 		setTimeout(delaySrcChange, 600);
@@ -113,22 +121,18 @@ $(document).ready(function(){
 
 
 	//In long mobile screens, while youtube movie is being opend in full screen mode, it makes the phone thinks that it is actually a tablet
-	//and not a phone, so the website design changes to tablet design and you can only hear the movie and not see it (it's a bug).
-	//So if the screen is long, so I'll change the youtube movie src to a src that don't let the full screen option
-	if( (window.innerWidth > 770 && (window.matchMedia("(orientation: landscape)").matches)) && (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ||
-		(window.innerHeight > 670 && (window.matchMedia("(orientation: portrait)").matches)) && (window.innerHeight < 900 && (window.matchMedia("(orientation: portrait)").matches)) ){
+	//and not a phone, so the website design changes to tablet design and you can only hear the movie and not seeing it (it's a bug).
+	//So for cases that the screen is long, I'm changing the youtube movie src to a src that doesn't let the full screen option
+	// if( (window.innerWidth > 770 && (window.matchMedia("(orientation: landscape)").matches)) && (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ||
+	// 	(window.innerHeight > 670 && (window.matchMedia("(orientation: portrait)").matches)) && (window.innerHeight < 900 && (window.matchMedia("(orientation: portrait)").matches)) ){
 		
-			const mobileIframes = document.getElementById("mobile").getElementsByTagName("iframe");
-			const savtaIframe = mobileIframes[0];
+	// 		const mobileIframes = document.getElementById("mobile").getElementsByTagName("iframe");
+	// 		const savtaIframe = mobileIframes[0];
 			
-			alert("roopi");
-			savtaIframe.src = "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0";//the ?fs=0 at the end of the src, prevent the movie
-																						//from opening on full screen
-	}
+	// 		savtaIframe.src = "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0";//the ?fs=0 at the end of the src, prevent the movie
+	// 																					//from opening on full screen
+	// }
 
-	if((window.innerHeight <= 670) && (window.matchMedia("(orientation: portrait)").matches)){
-			alert("smallerrrrr");
-	}
 
 
 
