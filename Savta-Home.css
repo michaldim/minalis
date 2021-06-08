@@ -3825,13 +3825,13 @@ screen and (max-width: 600px) and (orientation: portrait){
 	.recipe-mobile:nth-of-type(5){
 		/*background: #4e2b08;*/
 		color: #ebbe4a;
-		background: -webkit-linear-gradient(#4e2b08 70%, #1f1103);
-		background: -webkit-gradient(linear, top, bottom, color-stop(70%, #4e2b08), color-stop(100%, #1f1103));
-		background: -moz-linear-gradient(#4e2b08 70%, #1f1103);
-		background: -o-linear-gradient(#4e2b08 70%, #1f1103);
-		background: -ms-linear-gradient(#4e2b08 70%, #1f1103);
-	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2b08', endColorstr='#1f1103',GradientType=0 );
-		background: linear-gradient(#4e2b08 70%, #1f1103);
+		background: -webkit-linear-gradient(#4e2b08 70%, #7d450d);
+		background: -webkit-gradient(linear, top, bottom, color-stop(70%, #4e2b08), color-stop(100%, #7d450d));
+		background: -moz-linear-gradient(#4e2b08 70%, #7d450d);
+		background: -o-linear-gradient(#4e2b08 70%, #7d450d);
+		background: -ms-linear-gradient(#4e2b08 70%, #7d450d);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2b08', endColorstr='#7d450d',GradientType=0 );
+		background: linear-gradient(#4e2b08 70%, #7d450d);
 	}
 
 	#mobile #subjects #xThatBringsBackRecipesInMobile{
