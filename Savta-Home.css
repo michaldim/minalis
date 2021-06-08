@@ -3327,7 +3327,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		top: 14%;
 	}
 
-	#music-iframes iframe{    /*--------------------------------------------------------*/
+	.MobileSong iframe{    /*--------------------------------------------------------*/
 		display: none;
 	}
 
