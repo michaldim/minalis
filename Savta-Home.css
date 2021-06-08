@@ -3332,36 +3332,6 @@ screen and (max-width: 600px) and (orientation: portrait){
 	}
 
 
-/*	#movieForMobile{
-		display: block;
-		position: absolute;
-		top: 0px;
-		left: 10%/*16%*/;
-	/*	width: 80%/*68%*/;
-	/*	height: 100%;
-		padding-top: 20px;
-		transform: rotateY(90deg);
-		z-index: 0; /*without it the X won't appear in Safari*/
-/*	}*/
-
-
-/*	#xThatBringsBackSavtaImgInMobile{
-		display: none;
-		position: absolute;
-		color: white;
-		background: rgba(129, 141, 135);
-		/*border: 3px solid white;*/
-		/*border-radius: 50%;
-		direction: rtl;
-		top: 31px;
-		right: calc(10% + 12px);
-		padding: 0;
-		z-index: 6;
-		-webkit-transform: translate3d(0,0,1px);
-		transform: translate3d(0,0,1px);*/ /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
-	/*}*/
-
-
 	.pic-box-time{
 		position: relative;
 		visibility: visible;
@@ -3706,6 +3676,238 @@ screen and (max-width: 600px) and (orientation: portrait){
 	    background: url("pictures/mosaic/img24.JPG") no-repeat 25% 60%;
 		background-size: auto 170px;
 	}
+
+
+	.pic-box-food ul{
+		position: absolute;
+		width: 80%;
+		top: 63px;
+		left: 10%;
+		transform: rotateY(90deg); 
+		z-index: 0;/*I need to make it 0*/
+		color: #ffffff;
+		direction: ltr;
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 0;
+	}
+
+	.pic-box-food ul li:nth-of-type(1){
+		flex-basis: 32%;
+		border-radius: 10px 10px 0 0;
+		background: #b0941e;
+		color: #fbf3d3;
+	}
+
+	.pic-box-food ul li:nth-of-type(2){
+		flex-basis: 32%;
+		border-radius: 10px 10px 0 0;
+		background: #771583;
+		color: #e0ca38;
+	}
+
+	.pic-box-food ul li:nth-of-type(3){
+		flex-basis: 32%;
+		border-radius: 10px 10px 0 0;
+		background: #e9a9cf;
+		color: black;
+	}
+
+	.pic-box-food ul li:nth-of-type(4){
+		flex-basis: 49%;
+		border-radius: 10px 10px 0 0;
+		background: #ebbe4a;
+		color: black;
+	}
+
+	.pic-box-food ul li:nth-of-type(5){
+		flex-basis: 49%;
+		border-radius: 10px 10px 0 0;
+		background: #4e2b08;
+		color: #ebbe4a;
+	}
+
+	.pic-box-food ul li p{
+		font-family:'Amatic SC', cursive, Arial, Sans-serif;
+		font-size: 28px;
+		font-weight: 700;
+	}
+
+	#recipes-mobile-container{
+		position: absolute;
+		width: 80%;
+		height: calc(100% - 136px);
+		top: calc(63px + 72px);
+		left: 10%;
+		overflow: scroll; 
+		transform: rotateY(90deg); 
+		z-index: 0;
+		color: #ffffff;
+		direction: rtl;
+	}
+
+	.recipe-mobile{
+		padding-bottom: 25px;
+		display: none;
+	}
+
+	#mobile #longerrecipes-mobile-container input{ /*All the rules here was made in order to prevent the radio buttons from appearing on screen*/
+		position: absolute;
+		top: 0px;
+		right: -100px; 
+		width: 0;
+		height: 0;
+		margin: 0;
+		z-index: -100;
+	}
+
+	/*This rule means that when a specific input is checked, then .recipe-mobile that comes exactly after that input will be block*/
+	#mobile #longerrecipes-mobile-container input:checked + .recipe-mobile{ 
+		display: block;
+		animation: recipeOpacity 1s;
+	}
+
+	@keyframes recipeOpacity{
+		from{opacity: 0;}
+		to{opacity: 1;}
+	}
+
+	.recipe-mobile:nth-of-type(1){
+		/*background: #b0941e;*/
+		color: #fbf3d3;
+		background: -webkit-linear-gradient(#b0941e 75%, #5d4e10);
+		background: -webkit-gradient(linear, top, bottom, color-stop(75%, #b0941e), color-stop(100%, #5d4e10));
+		background: -moz-linear-gradient(#b0941e 75%, #5d4e10);
+		background: -o-linear-gradient(#b0941e 75%, #5d4e10);
+		background: -ms-linear-gradient(#b0941e 75%, #5d4e10);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0941e', endColorstr='#5d4e10',GradientType=0 );
+		background: linear-gradient(#b0941e 75%, #5d4e10);
+	}
+
+	.recipe-mobile:nth-of-type(2){
+		/*background: #771583;*/
+		color: #e0ca38;
+		background: -webkit-linear-gradient(#771583 90%, #370a3d);
+		background: -webkit-gradient(linear, top, bottom, color-stop(90%, #771583), color-stop(100%, #370a3d));
+		background: -moz-linear-gradient(#771583 90%, #370a3d);
+		background: -o-linear-gradient(#771583 90%, #370a3d);
+		background: -ms-linear-gradient(#771583 90%, #370a3d);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#771583', endColorstr='#370a3d',GradientType=0 );
+		background: linear-gradient(#771583 90%, #370a3d);
+	}
+
+	.recipe-mobile:nth-of-type(3){
+		/*background: #e9a9cf;*/
+		color: black;
+		background: -webkit-linear-gradient(#e9a9cf 65%, #e9d6e1);
+		background: -webkit-gradient(linear, top, bottom, color-stop(65%, #e9a9cf), color-stop(100%, #e9d6e1));
+		background: -moz-linear-gradient(#e9a9cf 65%, #e9d6e1);
+		background: -o-linear-gradient(#e9a9cf 65%, #e9d6e1);
+		background: -ms-linear-gradient(#e9a9cf 65%, #e9d6e1);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9a9cf', endColorstr='#e9d6e1',GradientType=0 );
+		background: linear-gradient(#e9a9cf 65%, #e9d6e1);
+	}
+
+	.recipe-mobile:nth-of-type(4){
+		/*background: #ebbe4a;*/
+		color: black;
+		background: -webkit-linear-gradient(#ebbe4a 65%, #ebdbb4);
+		background: -webkit-gradient(linear, top, bottom, color-stop(65%, #ebbe4a), color-stop(100%, #ebdbb4));
+		background: -moz-linear-gradient(#ebbe4a 65%, #ebdbb4);
+		background: -o-linear-gradient(#ebbe4a 65%, #ebdbb4);
+		background: -ms-linear-gradient(#ebbe4a 65%, #ebdbb4);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebbe4a', endColorstr='#ebdbb4',GradientType=0 );
+		background: linear-gradient(#ebbe4a 65%, #ebdbb4);
+	}
+
+	.recipe-mobile:nth-of-type(5){
+		/*background: #4e2b08;*/
+		color: #ebbe4a;
+		background: -webkit-linear-gradient(#4e2b08 80%, #a65c11);
+		background: -webkit-gradient(linear, top, bottom, color-stop(80%, #4e2b08), color-stop(100%, #a65c11));
+		background: -moz-linear-gradient(#4e2b08 80%, #a65c11);
+		background: -o-linear-gradient(#4e2b08 80%, #a65c11);
+		background: -ms-linear-gradient(#4e2b08 80%, #a65c11);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e2b08', endColorstr='#a65c11',GradientType=0 );
+		background: linear-gradient(#4e2b08 80%, #a65c11);
+	}
+
+	#mobile #subjects #xThatBringsBackRecipesInMobile{
+		display: none; 
+		position: absolute;
+		margin: 20px auto 0 auto;
+		color: white;
+		background: transparent;
+		/*background: #7d7777;*/
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		direction: rtl;
+		top: 0px;
+		left: calc(90% - 40px);
+		padding: 0;
+		z-index: 0;
+		-webkit-transform: translate3d(0,0,1px);
+		transform: translate3d(0,0,1px); /*z-index didn't work in Safari on iphone, so this rule worked and did the same*/
+	}
+
+	#soup-img, #gefilte-img, #cake-img, #chocolateBalls-img, #bubale-img{
+		height: 170px;
+		min-height: 170px;
+		margin-bottom: 20px;
+	}
+
+	#soup-img{
+		background: url("pictures/recipes/IMG-2805S.jpg") no-repeat 50% 51%;
+	}
+
+	#gefilte-img{
+		background: url("pictures/recipes/gefilteS.jpeg") no-repeat 40% 55%;
+	}
+
+	#bubale-img{
+		background: url("pictures/recipes/IMG_4440SM.jpg") no-repeat 45% 46%;
+	}
+
+	#cake-img{
+		background: url("pictures/recipes/img20200917-s.jpg") no-repeat 20% 42%;
+	}
+
+	#chocolateBalls-img{
+		background: url("pictures/recipes/IMG-2329-s.jpg") no-repeat 50% 61%;
+	}
+
+	#longerrecipes-mobile-container p{
+		font-family: 'Varela Round', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		text-align: right;
+		padding: 0 10px 0 10px; 
+	}
+
+	#longerrecipes-mobile-container p:nth-of-type(1){
+		font-family: 'Varela Round', sans-serif;
+		font-size: 32px;
+		font-weight: 400;
+		text-align: center;
+		display: none;
+	}
+
+	p ins{
+		font-family: 'Amatic SC', cursive, Arial, sans-serif;
+		font-size: 28px;
+		font-weight: 700;
+	}
+
+	.recipe-mobile span:last-of-type{
+		font-family: 'Varela Round', sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+	
 
 
 }
@@ -4071,5 +4273,16 @@ screen and (max-height: 670px) and (orientation: portrait){
 }
 
 
+@media screen and (max-width: 330px){
 
+	#recipes-mobile-container{
+		top: calc(23px + 58px);
+	}
 
+	.pic-box-food ul li p{
+		font-family:'Amatic SC', cursive, Arial, Sans-serif;
+		font-size: 24px;
+		font-weight: 700;
+	}
+}
+	

@@ -120,26 +120,10 @@ $(document).ready(function(){
 
 
 
-	//In long mobile screens, while youtube movie is being opend in full screen mode, it makes the phone thinks that it is actually a tablet
-	//and not a phone, so the website design changes to tablet design and you can only hear the movie and not seeing it (it's a bug).
-	//So for cases that the screen is long, I'm changing the youtube movie src to a src that doesn't let the full screen option
-	// if( (window.innerWidth > 770 && (window.matchMedia("(orientation: landscape)").matches)) && (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ||
-	// 	(window.innerHeight > 670 && (window.matchMedia("(orientation: portrait)").matches)) && (window.innerHeight < 900 && (window.matchMedia("(orientation: portrait)").matches)) ){
-		
-	// 		const mobileIframes = document.getElementById("mobile").getElementsByTagName("iframe");
-	// 		const savtaIframe = mobileIframes[0];
-			
-	// 		savtaIframe.src = "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0";//the ?fs=0 at the end of the src, prevent the movie
-	// 																					//from opening on full screen
-	// }
-
-
-
-
 	//When someone clicks the picture of time-line on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the time-line appears.
 	$("#mobile #subjects #clockImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #time-line-container-for-mobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
@@ -166,7 +150,7 @@ $(document).ready(function(){
 	//When someone clicks the tree picture on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #treeMobileImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #family-tree-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-tree h1").fadeOut(1000);
@@ -201,7 +185,7 @@ $(document).ready(function(){
 	//When someone clicks the picture with the camera on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #galleryFrontImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 826 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #mobile-gallery-regular-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-pictures h1").fadeOut(1000);
@@ -454,6 +438,83 @@ $(document).ready(function(){
 	observer.observe(body, {
 		attributes: true //configure it to listen to attribute changes in the body
 	});
+
+
+
+
+
+	//When someone clicks the #recipesFrontImg on mobile screens, it disappears
+	//and then the transformed div appears and also the "X" that closes the recipes container.
+	$("#mobile #subjects #recipesFrontImg").on("click", function(){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile .pic-box-food ul").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
+			$("#mobile #subjects .pic-box-food h1").fadeOut(1000);
+			$("#mobile #xThatBringsBackRecipesInMobile").delay(1200).fadeIn(1000);
+		}
+	});
+
+
+	//When someone clicks the "X" sign near the recipes container,  
+	//then the the recipes container will disappear and the user will see the img of #recipesFrontImg again.
+	$("#xThatBringsBackRecipesInMobile").on("click", function(){
+		$(this).fadeOut(500);
+		$("#mobile .pic-box-food ul").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #recipesFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #subjects .pic-box-food h1").delay(1200).fadeIn(1000);
+	});
+
+
+
+	//when someone clicks on a recipe title on the upper line, it goes down with the rest of its line
+	const topRecipes = document.getElementsByClassName("topRecipes");
+	const bottomRecipes = document.getElementsByClassName("bottomRecipes");
+	// const IngredientsAndInstructions  = document.getElementsByClassName("recipe-mobile");
+
+	topRecipes[0].onclick = function() {
+		topRecipes[0].style.order = "3";
+		topRecipes[1].style.order = "4";
+		topRecipes[2].style.order = "5";
+		bottomRecipes[0].style.order = "1";
+		bottomRecipes[1].style.order = "2";
+	};
+
+	topRecipes[1].onclick = function() {
+		topRecipes[0].style.order = "3";
+		topRecipes[1].style.order = "4";
+		topRecipes[2].style.order = "5";
+		bottomRecipes[0].style.order = "1";
+		bottomRecipes[1].style.order = "2";
+	};
+
+	topRecipes[2].onclick = function() {
+		topRecipes[0].style.order = "3";
+		topRecipes[1].style.order = "4";
+		topRecipes[2].style.order = "5";
+		bottomRecipes[0].style.order = "1";
+		bottomRecipes[1].style.order = "2";
+	};
+
+
+	//If the bottom line of the recipes is at the top, so when someone clicks it, it goes to the bottom with the rest of its line.
+	bottomRecipes[0].onclick = function() {
+		topRecipes[0].style.order = "0";
+		topRecipes[1].style.order = "1";
+		topRecipes[2].style.order = "2";
+		bottomRecipes[0].style.order = "3";
+		bottomRecipes[1].style.order = "4";
+	};
+	
+	bottomRecipes[1].onclick = function() {
+		topRecipes[0].style.order = "0";
+		topRecipes[1].style.order = "1";
+		topRecipes[2].style.order = "2";
+		bottomRecipes[0].style.order = "3";
+		bottomRecipes[1].style.order = "4";
+	};
+
 
 
 

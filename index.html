@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="./Savta-Home.css" type="text/css">
 		<!-- CSS for the image gallery-->
 	    <link rel="stylesheet" type="text/css" href="scripts/jquery.fancybox.css">
-		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
 		<title>סבתא מינה ליס</title>
 		<link rel="icon" href="favicon.png" type="image/png">
 		<!--without the meta tag my media queries didn't work properly-->
@@ -564,13 +564,148 @@
 				</div>
 
 
+
 				<div class="pic-box-food buttom-pictures">
 						<picture>
 							<source media="(max-width:600px) and (orientation: portrait)" srcset="mobile/pictures-header/recipe-mobile.jpg">
 							<img id="recipesFrontImg" class="buttom-pictures-frontImg" src="pictures/chocolateBalls.jpg" alt="מתכונים"/>
 						</picture>
 						<h1 class="oddH1inMobile">מתכונים</h1>
+						<!--The label inside the <ul> is connected to the <input> above every recipe. With the help of css, 
+							when the label of a radio button is checked, than the recipe under it appears-->	
+						<ul>
+							<li class="topRecipes"><label for="soupRadio"><p>מרק תירס</p></label></li>
+							<li class="topRecipes"><label for="gefilteRadio"><p>גפילטע פיש</p></label></li>
+							<li class="topRecipes"><label for="bubaleRadio"><p>בובל'ה</p></label></li>
+							<li class="bottomRecipes"><label for="cakeRadio"><p>עוגת דבש</p></label></li>
+							<li class="bottomRecipes"><label for="chocolateBallsRadio"><p>כדורי שוקולד</p></label></li>
+						</ul>
+						<div id="recipes-mobile-container">
+							<div id="longerrecipes-mobile-container">
+
+								<input type="radio" id="soupRadio" name="recipesRadio">
+								<div id="soup" class="recipe-mobile">
+									<div id="soup-img"></div>
+							    	<p class="recipe-header"><span>מרק תירס</span></p><br>
+									<p><ins class="products">רכיבים:</ins><br><br> <!--<ins> makes underline--> 
+										2 בצלים בינוניים<br>
+										6 כפות שמן<br>
+										1 קופסת שימורים של תירס<br>
+										2 כפות מרק עוף<br>
+										4 כפות קמח<br>
+										10 כוסות מים רותחים<br>
+										מלח ופלפל<br><br>
+								    </p>
+								    <p><ins class="instructions">הוראות הכנה:</ins><br><br>
+										קוצצים את הבצלים ומטגנים אותם בסיר עם השמן עד להזהבתם. כשהם מזהיבים יש להכניס לסיר את גרגירי התירס (לאחר שסוננו ונשטפו) ולערבב את הכל יחד. 
+										לאחר מכן יש להוסיף לסיר מלח ופלפל על פי הטעם, ואת שתי כפות מרק העוף. מערבבים הכל ומוסיפים את כפות הקמח (אחת-אחת). 
+										לאחר שהכל עורבב היטב שופכים לסיר את כוסות המים הרתוחים, מערבבים שוב ונותנים למרק לרתוח במשך 5 דקות.<br><br>
+										<span>מקררים ואוכלים בהנאה.<br>
+										בתאבון!</span>
+									</p>
+							    </div>
+
+
+							    <input type="radio" id="gefilteRadio" name="recipesRadio">
+							    <div id="gefilte" class="recipe-mobile">
+				                	<div id="gefilte-img"></div>
+									<p class="recipe-header"><span>גפילטע פיש</span></p><br>
+									<p><ins class="products">רכיבי הקציצות:</ins><br><br>
+										2.4 קילו ברוטו קרפיון טרי וטחון (לשמור את העצמות בצד ולחצות לשניים את הראשים- עבור הציר)<br>
+										1 כף סוכר<br>
+										1/3 כף פלפל לבן<br>
+										3/4 כף מלח<br>
+										1/2 שקית של כריך מלאה בבצל קצוץ שטוגן לצבע מוזהב<br>
+										3 ביצים<br>
+										מעט קמח מצה<br><br>					
+										<ins class="instructions">הוראות הכנה של הקציצות:</ins><br><br></p>
+										<p>בקערה גדולה שמים את דגי הקרפיון הטחונים, ומעליהם שמים את הסוכר, הפלפל הלבן והמלח ומערבבים. מוסיפים את הבצל המטוגן ואת הביצים ושוב מערבבים. מוסיפים מעט מאד קמח מצה ומערבבים בפעם האחרונה (התחושה של הקציצות צריכה להיות של ג׳לי רך).</p><br><br>
+									<p><ins class="products">רכיבי הציר:</ins><br><br>
+										עצמות וראשי קרפיון חצויים<br>
+										2 גזרים חתוכים לפרוסות<br>
+										1 בצל לבן גדול חתוך לפרוסות<br>
+										1 כף סוכר<br>
+										1/4 כף פלפל לבן<br>
+										1/4 כף מלח<br>
+										מים<br><br>
+										<ins class="instructions">הוראות הכנה של הציר:</ins><br><br></p>
+										<p>שמים בבסיס סיר גדול את העצמות והראשים, מעליהם מניחים את פרוסות הגזר ואת פרוסות הבצל. מפזרים מעל את הסוכר, הפלפל הלבן והמלח.
+										ממלאים את הסיר במים עד 1/3 מגובהו. שמים על הכיריים, ולאחר שהציר רותח מרטיבים את הידיים ומכניסים את קציצות הדגים לסיר (יש להרטיב את הידיים בין קציצה לקציצה). אחרי שכל הקציצות בסיר, סוגרים את המכסה, ממתינים ששוב המים בסיר ירתחו, ואז מנמיכים את האש לאש קטנה ומבשלים את הקציצות במשך שעתיים.
+										אחרי שעתיים מכבים את הגז ומחכים שהדגים יתקררו.<br>
+										מסדרים כל קציצת דג עם פרוסת גזר מעל ומתחילים לזלול.<br><br>
+										 <span>בתאבון! </span>
+									</p>
+								</div>
+
+
+								<input type="radio" id="bubaleRadio" name="recipesRadio">
+								<div id="bubale" class="recipe-mobile">
+									<div id="bubale-img"></div>
+									<p class="recipe-header"><span>בובל'ה מתוקה</span></p><br>
+									<p><ins class="products">רכיבים:</ins><br><br>
+										1 ביצה<br>
+										1 כף סוכר<br>
+										1 כף קמח מצה<br>
+										אבקת סוכר<br><br><br>
+									</p><br>
+									<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+									מפרידים את הביצה לחלמון ולחלבון. מקציפים את חלבון הביצה עם כף סוכר עד להיווצרות קצף יציב ורך.  סוגרים את המיקסר ומוסיפים לקצף את החלמון וכף קמח מצה בתנועות עדינות, כדי שהקצף לא ישבר. מטגנים את התערובת כמו חביתה משני הצדדים. לאחר שהבובל'ה קיבלה צבע חום יפה, מורידים אותה מהכיריים ומפזרים מעל את אבקת הסוכר.<br><br>
+									<span>מנה טעימה ופשוטה להכנה.<br>
+									בתאבון!</span>
+									</p>
+								</div>
+
+
+								<input type="radio" checked id="cakeRadio" name="recipesRadio">
+								<div id="cake" class="recipe-mobile">
+									<div id="cake-img"></div>
+									<p class="recipe-header"><span>עוגת דבש</span></p><br>
+									<p><ins class="products">רכיבים:</ins><br><br>
+										4 כוסות קמח<br>
+										2 כפיות שטוחות של סודה לשתיה<br>
+										1 כוס סוכר<br>
+										3 כפות מלאות ריבה (עם בטן) או 1 כוס דבש<br>
+										1 כף נס קפה<br>
+										4 ביצים<br>
+										1/2 כוס שמן<br>
+										1 כוס מיץ תפוזים	<br><br>
+									</p>
+									<p><ins class="instructions">הוראות הכנה:</ins><br><br>
+										שמים בקערה את הסוכר, הריבה, הביצים והקפה ומערבבים היטב. לאחר מכן מוסיפים את השמן ומיץ התפוזים ושוב מערבבים. לבסוף שמים את הקמח, ומוסיפים סודה לשתיה דרך מסננת (כדי למנוע היווצרות גושים). מערבבים הכל, מכניסים לתבנית ואופים על 180 מעלות עד שמתקבל צבע חום יפה.<br><br>
+										<span>לללקק את האצבעות,<br>
+										ובתאבון! </span>
+									</p>
+								</div>	
+
+
+								<input type="radio" id="chocolateBallsRadio" name="recipesRadio">
+								<div id="chocolateBalls" class="recipe-mobile">
+									<div id="chocolateBalls-img"></div>
+									<p class="recipe-header"><span>כדורי שוקולד בסגנון סניקרס</span></p><br>
+									<p><ins class="products">רכיבים:</ins><br><br>
+										100 גרם קקאו<br>
+										1/2 1 כוסות סוכר<br>
+										1 חבילת מרגרינה מומסת<br>
+										1 כוס יין פטישים (לקידוש)<br>
+										1 כוס מיץ תפוזים<br>
+										2-3 כפות מיץ לימון<br>
+										500 גרם בוטנים טבעיים קצוצים<br>
+										ביסקוויטים טחונים<br>
+										קוקוס טחון<br><br>
+								    </p>
+								    <p><ins class="instructions">הוראות הכנה:</ins><br><br>
+										מערבבים את כל הרכיבים יחד (פרט לשניים האחרונים). מוסיפים ביסקוויטים טחונים, עד שמגיעים למרקם שמאפשר גלגול של העיסה לכדורים. את הכדורים שמכינים עוטפים בקוקוס ואוכלים בתאבון.<br><br>
+										<span>לבריאות!</span>
+									</p>
+								</div> 
+
+							</div>
+						</div>
+						<img id="xThatBringsBackRecipesInMobile" src="./close-circle-outline.svg" title="החזרת תמונת המקור" name="close-circle-outline" />
+
 				</div>
+
+
 
 
 				<div class="pic-box-music buttom-pictures">
@@ -579,171 +714,23 @@
 							<img id="musicFrontImg" class="buttom-pictures-frontImg" src="pictures/myViolin.jpg" alt="מוזיקה"/>
 						</picture>
 						<h1 class="evenH1inMobile">מוזיקה אהובה</h1>
+
+
+						</div>
 				</div>
 
 			</div>
 			
 	
+				
+
+
+							
+
+						
 
 
 
-			<p id="recipes">מתכונים</p> <!--This is the recipes header-->
-			<div id="recipes-container">
-
-
-				<div id="recipe1" class="recipe">
-
-					<div id="soup-img"></div>
-
-					<div id="soup-ingredients">
-						<p class="recipe-header">מרק תירס</p><br>
-						<p><ins class="products">רכיבים:</ins><br><br> <!--<ins> makes underline--> 
-							2 בצלים בינוניים<br>
-							6 כפות שמן<br>
-							1 קופסת שימורים של תירס<br>
-							2 כפות מרק עוף<br>
-							4 כפות קמח<br>
-							10 כוסות מים רותחים<br>
-							מלח ופלפל<br><br>
-					    </p>
-					</div>
-					
-					<div id="soup-instructions">    
-						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-							קוצצים את הבצלים ומטגנים אותם בסיר עם השמן עד להזהבתם. כשהם מזהיבים יש להכניס לסיר את גרגירי התירס (לאחר שסוננו ונשטפו) ולערבב את הכל יחד. 
-							לאחר מכן יש להוסיף לסיר מלח ופלפל על פי הטעם, ואת שתי כפות מרק העוף. מערבבים הכל ומוסיפים את כפות הקמח (אחת-אחת). 
-							לאחר שהכל עורבב היטב שופכים לסיר את כוסות המים הרתוחים, מערבבים שוב ונותנים למרק לרתוח במשך 5 דקות.<br><br>
-							<span>מקררים ואוכלים בהנאה.<br>
-							בתאבון!</span>
-						</p>
-					</div>	
-
-				</div>
-
-				<div id="recipe2" class="recipe">
-
-	                <div id="gefilte-img"></div>
-
-					<div class="gefilte-instructions">
-						<p class="recipe-header">גפילטע פיש</p><br>
-							<p><ins class="products">רכיבי הקציצות:</ins><br><br>
-								2.4 קילו ברוטו קרפיון טרי וטחון (לשמור את העצמות בצד ולחצות לשניים את הראשים- עבור הציר)<br>
-								1 כף סוכר<br>
-								1/3 כף פלפל לבן<br>
-								3/4 כף מלח<br>
-								1/2 שקית של כריך מלאה בבצל קצוץ שטוגן לצבע מוזהב<br>
-								3 ביצים<br>
-								מעט קמח מצה<br><br>					
-								<ins class="instructions">הוראות הכנה של הקציצות:</ins><br><br>
-								בקערה גדולה שמים את דגי הקרפיון הטחונים, ומעליהם שמים את הסוכר, הפלפל הלבן והמלח ומערבבים. מוסיפים את הבצל המטוגן ואת הביצים ושוב מערבבים. מוסיפים מעט מאד קמח מצה ומערבבים בפעם האחרונה (התחושה של הקציצות צריכה להיות של ג׳לי רך).<br><br>
-							</p>
-						</p>
-					</div>
-
-
-					<div class="juice-instructions">
-						<p><ins class="products">רכיבי הציר:</ins><br><br>
-							עצמות וראשי קרפיון חצויים<br>
-							2 גזרים חתוכים לפרוסות<br>
-							1 בצל לבן גדול חתוך לפרוסות<br>
-							1 כף סוכר<br>
-							1/4 כף פלפל לבן<br>
-							1/4 כף מלח<br>
-							מים<br><br>
-							<ins class="instructions">הוראות הכנה של הציר:</ins><br><br>
-							שמים בבסיס סיר גדול את העצמות והראשים, מעליהם מניחים את פרוסות הגזר ואת פרוסות הבצל. מפזרים מעל את הסוכר, הפלפל הלבן והמלח.
-							ממלאים את הסיר במים עד 1/3 מגובהו. שמים על הכיריים, ולאחר שהציר רותח מרטיבים את הידיים ומכניסים את קציצות הדגים לסיר (יש להרטיב את הידיים בין קציצה לקציצה). אחרי שכל הקציצות בסיר, סוגרים את המכסה, ממתינים ששוב המים בסיר ירתחו, ואז מנמיכים את האש לאש קטנה ומבשלים את הקציצות במשך שעתיים.
-							אחרי שעתיים מכבים את הגז ומחכים שהדגים יתקררו.<br>
-							מסדרים כל קציצת דג עם פרוסת גזר מעל ומתחילים לזלול.<br><br>
-							 <span>בתאבון! </span>
-						</p>
-					</div>
-
-				</div>
-
-
-				<div id="recipe3" class="recipe">
-					
-					<div id="chocolateBalls-img"></div>
-
-					<div id="chocolateBalls-ingredients">
-						<p class="recipe-header">כדורי שוקולד בסגנון סניקרס</p><br>
-						<p><ins class="products">רכיבים:</ins><br><br>
-							100 גרם קקאו<br>
-							1/2 1 כוסות סוכר<br>
-							1 חבילת מרגרינה מומסת<br>
-							1 כוס יין פטישים (לקידוש)<br>
-							1 כוס מיץ תפוזים<br>
-							2-3 כפות מיץ לימון<br>
-							500 גרם בוטנים טבעיים קצוצים<br>
-							ביסקוויטים טחונים<br>
-							קוקוס טחון<br><br>
-					    </p>
-					</div> 
-
-					<div id="chocolateBalls-instructions">
-						<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-							מערבבים את כל הרכיבים יחד (פרט לשניים האחרונים). מוסיפים ביסקוויטים טחונים, עד שמגיעים למרקם שמאפשר גלגול של העיסה לכדורים. את הכדורים שמכינים עוטפים בקוקוס ואוכלים בתאבון.<br><br>
-							<span>לבריאות!</span>
-						</p>
-					</div>
-
-				</div>
-
-
-				<div id="two-holiday-desserts">					
-
-					<div id="recipe4" class="recipe">
-						<div id="bubale-ingredients">
-							<p class="recipe-header">בובל'ה מתוקה</p><br>
-							<p><ins class="products">רכיבים:</ins><br><br>
-								1 ביצה<br>
-								2 כפות סוכר<br>
-								1 כף קמח מצה<br>
-								אבקת סוכר<br><br><br>
-							</p>
-						</div>
-
-						<div id="bubale-instructions">
-							<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-							מפרידים את הביצה לחלמון ולחלבון. מקציפים את חלבון הביצה עם כף סוכר עד להיווצרות קצף יציב ורך.  סוגרים את המיקסר ומוסיפים לקצף את החלמון וכף קמח מצה בתנועות עדינות, כדי שהקצף לא ישבר. מטגנים את התערובת כמו חביתה משני הצדדים. לאחר שהבובל'ה קיבלה צבע חום יפה, מורידים אותה מהכיריים ומפזרים מעל את אבקת הסוכר.<br><br>
-							<span>מנה טעימה ופשוטה להכנה.<br>
-							בתאבון!</span>
-							</p>
-						</div>
-					</div>
-
-					<div id="recipe5" class="recipe">
-						<div id="cake-ingredients">
-							<p class="recipe-header">עוגת דבש</p><br>
-							<p><ins class="products">רכיבים:</ins><br><br>
-								4 כוסות קמח<br>
-								2 כפיות שטוחות של סודה לשתיה<br>
-								1 כוס סוכר<br>
-								3 כפות מלאות ריבה (עם בטן) או 1 כוס דבש<br>
-								1 כף נס קפה<br>
-								4 ביצים<br>
-								1/2 כוס שמן<br>
-								1 כוס מיץ תפוזים	<br><br>
-							</p>
-						</div>
-
-						<div id="cake-instructions">		
-							<p><ins class="instructions">הוראות הכנה:</ins><br><br>
-								שמים בקערה את הסוכר, הריבה, הביצים והקפה ומערבבים היטב. לאחר מכן מוסיפים את השמן ומיץ התפוזים ושוב מערבבים. לבסוף שמים את הקמח, ומוסיפים סודה לשתיה דרך מסננת (כדי למנוע היווצרות גושים). מערבבים הכל, מכניסים לתבנית ואופים על 180 מעלות עד שמתקבל צבע חום יפה.<br><br>
-								<span>לללקק את האצבעות,<br>
-								ובתאבון! </span>
-							</p>
-						</div>
-
-						<div id="cake-img"></div>
-
-					</div>
-
-
-				</div>
-
-			</div>
 
 			<p id="music">מוזיקה אהובה</p> <!--This is music header-->
 			<div id="music-iframes">
