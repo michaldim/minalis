@@ -3739,7 +3739,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		position: absolute;
 		width: 80%;
 		height: calc(100% - 136px);
-		top: calc(63px + 72px);
+		top: calc(63px + 71px);
 		left: 10%;
 		overflow: scroll; 
 		transform: rotateY(90deg); 
@@ -3751,6 +3751,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 	.recipe-mobile{
 		padding-bottom: 25px;
 		display: none;
+		padding-top: 4px;
 	}
 
 	#mobile #longerrecipes-mobile-container input{ /*All the rules here was made in order to prevent the radio buttons from appearing on screen*/
@@ -3856,7 +3857,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 	#soup-img, #gefilte-img, #cake-img, #chocolateBalls-img, #bubale-img{
 		height: 170px;
 		min-height: 170px;
-		margin-bottom: 20px;
+		margin: 0px 4px 20px 4px;
 	}
 
 	#soup-img{
@@ -4276,7 +4277,8 @@ screen and (max-height: 670px) and (orientation: portrait){
 @media screen and (max-width: 330px){
 
 	#recipes-mobile-container{
-		top: calc(23px + 58px);
+		top: 121px;
+		height: calc(100% - 122px);
 	}
 
 	.pic-box-food ul li p{
