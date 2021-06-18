@@ -214,7 +214,7 @@ $(document).ready(function(){
 	let currentLocation;
 	window.translateXGalleryLocation = 1;//That will tell us which section of the 4 galley sections currently appears on the screen. 
 										//I wrote window.translateXGalleryLocation instead of let translateXGalleryLocation, 
-										//because the console didn't know how to read a global scope
+										//because the console didn't know how to read a global scope (and I had to check this variable)
 	const widerGalleryContainer = document.getElementById("mobile-gallery-wider-container");
 	const regularGalleryContainer = document.getElementById("mobile-gallery-regular-container");
 
@@ -471,7 +471,6 @@ $(document).ready(function(){
 	//when someone clicks on a recipe title on the upper line, it goes down with the rest of its line
 	const topRecipes = document.getElementsByClassName("topRecipes");
 	const bottomRecipes = document.getElementsByClassName("bottomRecipes");
-	// const IngredientsAndInstructions  = document.getElementsByClassName("recipe-mobile");
 
 	topRecipes[0].onclick = function() {
 		topRecipes[0].style.order = "3";
@@ -514,6 +513,254 @@ $(document).ready(function(){
 		bottomRecipes[0].style.order = "3";
 		bottomRecipes[1].style.order = "4";
 	};
+
+
+
+	//When someone clicks the #musicFrontImg on mobile screens, it disappears
+	//and then the transformed div appears and also the "X" that closes the recipes container.
+	$("#mobile #subjects #musicFrontImg").on("click", function(){
+		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the violin's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
+			$("#mobile #subjects .pic-box-music h1").fadeOut(1000);
+			$("#mobile #xThatBringsBackMusicInMobile").delay(1200).fadeIn(1000);
+		}
+	});
+
+
+	//When someone clicks the "X" sign at the top of the music container,  
+	//then the the music container will disappear and the user will see the img of #musicFrontImg again.
+	$("#xThatBringsBackMusicInMobile").on("click", function(){
+		$(this).fadeOut(500);
+		$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #musicFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #subjects .pic-box-music h1").delay(1200).fadeIn(1000);
+	});
+
+
+
+
+
+	const wideMusicContainer = document.getElementById("widerMusicContainer");
+	const regularMusicContainer = document.getElementById("mobile-music-iframes");
+
+	//The next variable helps calculate the starting position of the music slider.
+	//The second musicVideo needs to be centered at the middle of the screen
+	//315 is the length from the left side of the slider until the middle of the second video, when the screen is portrait
+	//765 is the length from the left side of the slider until the middle of the second video, when the screen is landscape
+	let calculateStartingPoint;
+
+	if (window.innerWidth <= 600){
+		calculateStartingPoint = -(315 - (0.5 * window.innerWidth));	
+	} else if (window.innerWidth > 600){
+		calculateStartingPoint = -(765 - (0.5 * window.innerWidth));
+	}
+	
+	// let startingPoint = calculateStartingPoint + "px";
+	// screen.width
+	wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+
+	let lastMusicTouchLocation;
+	let currentMusicTouchLocation;
+	window.marginLeftMusicLocation = 2;//That will tell us which video of the 6 music videos is currently at the center of the screen.
+										//It equals 2, since the second video is at the center of the screen at the beginning.
+										//I wrote window.marginLeftGalleryLocation instead of let marginLeftGalleryLocation, 
+										//because the console didn't know how to read a global scope (and I had to check this variable)
+
+
+	$("#widerMusicContainer").on("touchstart", function(e){  //touchstart
+		//console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
+		lastMusicTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
+	});
+
+
+	$("#widerMusicContainer").on("touchend", function(e){ //touchmove
+
+
+		currentMusicTouchLocation = e.changedTouches[0].clientX;//this locates the x coordinate of the touchend event
+
+
+		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= 510
+			}
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation += 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 3) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= 510
+			}
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation += 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 4) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= 510
+			}
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation += 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 5) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= 510
+			}
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation += 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 6) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= 510
+			}
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation += 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 7) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= 510
+			}
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation += 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("eighth-song")[0].style.animation = "scaleBig 0s forwards ease";
+			if (window.innerWidth <= 600){
+				calculateStartingPoint = -(315 - (0.5 * window.innerWidth));	
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint = -(765 - (0.5 * window.innerWidth));
+			}
+			// calculateStartingPoint = -(315 - (0.5 * window.innerWidth));
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 2;
+			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("eighth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 2) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint += 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint += 510
+			}
+			// calculateStartingPoint += 210; //-= (210*5);
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation -= 1;
+			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleBig 0s forwards ease";
+			if(window.innerWidth <= 600){
+				calculateStartingPoint -= (210 * 6);
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint -= (510 * 6);
+			}
+			// calculateStartingPoint -= (210 * 6);
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 7;
+			
+			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			//document.getElementById("widerMusicContainer").getElementsByClassName("eighth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 7) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint += 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint += 510
+			}
+			// calculateStartingPoint += 210;
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 6;
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 6) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint += 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint += 510
+			}
+			// calculateStartingPoint += 210;
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 5;
+			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 5) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint += 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint += 510
+			}
+			// calculateStartingPoint += 210;
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 4;
+			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 4) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint += 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint += 510
+			}
+			// calculateStartingPoint += 210;
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 3;
+			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 3) ){
+			if(window.innerWidth <= 600){
+				calculateStartingPoint += 210
+			} else if (window.innerWidth > 600){
+				calculateStartingPoint += 510
+			}
+			// calculateStartingPoint += 210;
+			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			window.marginLeftMusicLocation = 2;
+			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		}
+
+	});
+
+
+
+
+
+
+
 
 
 
