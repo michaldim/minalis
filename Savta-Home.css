@@ -3947,6 +3947,11 @@ screen and (max-width: 600px) and (orientation: portrait){
 		margin: 0 5px;
 	}
 
+	.MobileSong iframe{
+		/*pointer-events: none;*/
+		touch-action: none;
+	}
+
 	#widerMusicContainer .first-song{
 		order: 1;
 		transform: scale(0.95);

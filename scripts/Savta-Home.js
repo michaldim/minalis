@@ -581,11 +581,11 @@ $(document).ready(function(){
 		//when we made touchstart+touchend on the widerMusicContainer, 
 		//the mobile device thought we clicked the iframes in it (and not the widerMusicContainer),
 		//so i made this if sentence, so on swipe the iframes won't think we clicked them.
-		if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) ){
-			$("iframe").css("pointerEvents", "none"); //within css, pointer-event: none; means that the element won't respond to a click event.
-		} else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
-			$("iframe").css("pointerEvents", "auto");
-		}
+		// if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) ){
+		// 	$("iframe").css("pointerEvents", "none"); //within css, pointer-event: none; means that the element won't respond to a click event.
+		// } else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
+		// 	$("iframe").css("pointerEvents", "auto");
+		// }
 
 
 		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){			
@@ -761,8 +761,22 @@ $(document).ready(function(){
 			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}		
 
+		// if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10)){
+		// 	$("iframe").css("pointerEvents", "auto");
+		// } else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10)){
+		// 	$("iframe").css("pointerEvents", "none");
+		// } 
+
+			if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10)){
+			$("iframe").css("touchAction", "auto");
+		} else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10)){
+			$("iframe").css("touchAction", "none");
+		} 
+
 
 	});
+	
+
 
 
 
