@@ -583,6 +583,8 @@ $(document).ready(function(){
 		//so i made this if sentence, so on swipe the iframes won't think we clicked them.
 		if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) ){
 			$("iframe").css("pointerEvents", "none"); //within css, pointer-event: none; means that the element won't respond to a click event.
+		} else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
+			$("iframe").css("pointerEvents", "auto");
 		}
 
 
