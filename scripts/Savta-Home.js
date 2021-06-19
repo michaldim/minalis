@@ -551,12 +551,11 @@ $(document).ready(function(){
 	let calculateStartingPoint;
 
 	if (window.innerWidth <= 600){
-		calculateStartingPoint = -(315 - (0.5 * window.innerWidth));	
+		calculateStartingPoint = -(315 - (0.5 * window.innerWidth));//portrait screen	
 	} else if (window.innerWidth > 600){
-		calculateStartingPoint = -(765 - (0.5 * window.innerWidth));
+		calculateStartingPoint = -(765 - (0.5 * window.innerWidth));//landscape screen
 	}
 	
-	// let startingPoint = calculateStartingPoint + "px";
 	// screen.width
 	wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 
@@ -579,12 +578,19 @@ $(document).ready(function(){
 
 		currentMusicTouchLocation = e.changedTouches[0].clientX;//this locates the x coordinate of the touchend event
 
+		//when we made touchstart+touchend on the widerMusicContainer, 
+		//the mobile device thought we clicked the iframes in it (and not the widerMusicContainer),
+		//so i made this if sentence, so on swipe the iframes won't think we clicked them.
+		if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) ){
+			$("iframe").css("pointerEvents", "none"); //within css, pointer-event: none; means that the element won't respond to a click event.
+		}
 
-		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){
+
+		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){			
 			if(window.innerWidth <= 600){
-				calculateStartingPoint -= 210
+				calculateStartingPoint -= 210 //for portrait screen
 			} else if (window.innerWidth > 600){
-				calculateStartingPoint -= 510
+				calculateStartingPoint -= 510 //for landscape screen
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation += 1;
@@ -751,7 +757,8 @@ $(document).ready(function(){
 			window.marginLeftMusicLocation = 2;
 			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
+		}		
+
 
 	});
 
