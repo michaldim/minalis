@@ -3929,7 +3929,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 
 	#widerMusicContainer{
 		display: flex;
-		width: 1890px;
+		width: 1680px; /*(210*8)*/
 		height: 90%;
 		flex-wrap: nowrap;
 	    z-index: 0;
@@ -3947,58 +3947,60 @@ screen and (max-width: 600px) and (orientation: portrait){
 		margin: 0 5px;
 	}
 
-	.MobileSong iframe{
-		/*pointer-events: none;*/
-		touch-action: none;
+	.MobileSong iframe{ 
+		pointer-events: none; /*I'll make it auto on specific javascript cases*/
+		/*touch-action: none;*/
 	}
 
-	#widerMusicContainer .first-song{
+	/*#widerMusicContainer #minusOne-song{
 		order: 1;
+		transform: scale(0.95);
+	}*/
+
+	#widerMusicContainer #zero-song{
+		order: 2;
 		transform: scale(0.95);
 	}
 
-	#widerMusicContainer .second-song{
-		order: 2;
-		transform: scale(1.05);
-	}
-
-	#widerMusicContainer .third-song{
+	#widerMusicContainer #first-song{
 		order: 3;
 		transform: scale(0.95);
 	}
 
-
-	#widerMusicContainer .fourth-song{
+	#widerMusicContainer #second-song{
 		order: 4;
-		transform: scale(0.95);
+		transform: scale(1.05);
 	}
 
-
-	#widerMusicContainer .fifth-song{
+	#widerMusicContainer #third-song{
 		order: 5;
 		transform: scale(0.95);
 	}
 
-
-	#widerMusicContainer .sixth-song{
+	#widerMusicContainer #fourth-song{
 		order: 6;
 		transform: scale(0.95);
 	}
 
-	#widerMusicContainer .seventh-song{
+	#widerMusicContainer #fifth-song{
 		order: 7;
 		transform: scale(0.95);
 	}
 
-	#widerMusicContainer .eighth-song{
+	#widerMusicContainer #sixth-song{
 		order: 8;
 		transform: scale(0.95);
 	}
 
-	#widerMusicContainer .ninth-song{
+	#widerMusicContainer #seventh-song{
 		order: 9;
 		transform: scale(0.95);
 	}
+
+	/*#widerMusicContainer #eighth-song{
+		order: 10;
+		transform: scale(0.95);
+	}*/
 
 
 	#mobile #subjects .pic-box-music #xThatBringsBackMusicInMobile{
@@ -4381,7 +4383,7 @@ screen and (max-height: 670px) and (orientation: portrait){
 	}
 
 	#widerMusicContainer{
-		width: 4080px;
+		width: 4080px; /*510*8*/
 	}
 
 	.MobileSong{
