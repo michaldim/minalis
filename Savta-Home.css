@@ -3947,7 +3947,7 @@ screen and (max-width: 600px) and (orientation: portrait){
 		margin: 0 5px;
 	}
 
-	.MobileSong iframe{ 
+	.MobileSong{ 
 		pointer-events: none; /*I'll make it auto on specific javascript cases*/
 		/*touch-action: none;*/
 	}

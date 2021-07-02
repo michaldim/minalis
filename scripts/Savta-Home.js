@@ -516,6 +516,73 @@ $(document).ready(function(){
 
 
 
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	/////////////////-------------------------------------------------------------/////////////////////////
+  // 2. This code loads the IFrame Player API code asynchronously
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+      let musicIds = ["zero-song", "first-song", "second-song", "third-song", "fourth-song", "fifth-song", "sixth-song", "seventh-song"];
+
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        for (i = 0; i < musicIds.length; i++) {
+
+          let currentSong = musicIds[i];
+
+          let onReadyPlayer = function(event) {
+            console.log("ready:" + currentSong);
+            console.log($("#" + currentSong));
+            $("#" + currentSong + "> iframe").css("pointerEvents", "none");
+          }
+
+          var done = false;
+          let onPlayerStateChange = function(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+              console.log("state change");
+              setTimeout(stopVideo, 6000);
+              done = true;
+            }
+          }
+
+          player = new YT.Player(currentSong, {
+            playerVars: {
+              'playsinline': 1
+            },
+            events: {
+              'onReady': onReadyPlayer,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+
+
+          function stopVideo() {
+            player.stopVideo();
+          }
+        }  
+      }
+
+
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 	//When someone clicks the #musicFrontImg on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the recipes container.
 	$("#mobile #subjects #musicFrontImg").on("click", function(){
@@ -747,7 +814,10 @@ $(document).ready(function(){
 
 
 
-
+		//pointer-events: auto; means that the user can click on the chosen element. 
+		//I told the CSS that the pointer-events for the iframe is none, because
+		//I couldn't swipe the #widerMusicContainer (the mobile devices reffered only to the iframes and not to the bigger container around it),
+		//so this javascript code is telling that if there is a click and not a swipe, then the iframes can be clicked.
 		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10)){
 			$("iframe").css("pointerEvents", "auto");
 			console.log("iframe auto");
