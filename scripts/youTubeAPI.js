@@ -38,8 +38,8 @@
               width: '200',
               videoId: currentVideo,
               playerVars: {
-                'playsinline': 1,
-                'fs': 1
+                playsinline: 1,
+                fs: 1
               },
               events: {
                 'onReady': onReadyPlayer,
@@ -52,8 +52,8 @@
                 width: '200',
                 videoId: currentVideo,
                 playerVars: {
-                  'playsinline': 1,
-                  'fs': 0
+                  playsinline: 1,
+                  fs: 0
                 },
                 events: {
                   'onReady': onReadyPlayer,
