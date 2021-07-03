@@ -32,18 +32,51 @@
             }
           }
 
-          player = new YT.Player(currentSong, {
-            height: '100%',
-            width: '200',
-            videoId: currentVideo,
-            playerVars: {
-              'playsinline': 1
-            },
-            events: {
-              'onReady': onReadyPlayer,
-              'onStateChange': onPlayerStateChange
-            }
-          });
+          if( (window.innerWidth < 771 && (window.matchMedia("(orientation: landscape)").matches)) || (window.innerHeight < 671 && (window.matchMedia("(orientation: portrait)").matches)) ){
+            player = new YT.Player(currentSong, {
+              height: '100%',
+              width: '200',
+              videoId: currentVideo,
+              playerVars: {
+                'playsinline': 1,
+                'fs': 1
+              },
+              events: {
+                'onReady': onReadyPlayer,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          } else {
+              player = new YT.Player(currentSong, {
+                height: '100%',
+                width: '200',
+                videoId: currentVideo,
+                playerVars: {
+                  'playsinline': 1,
+                  'fs': 0
+                },
+                events: {
+                  'onReady': onReadyPlayer,
+                  'onStateChange': onPlayerStateChange
+                }
+              });
+          }
+
+          // player = new YT.Player(currentSong, {
+          //   height: '100%',
+          //   width: '200',
+          //   videoId: currentVideo,
+          //   playerVars: {
+          //     'playsinline': 1,
+          //     'fs': 0
+          //   },
+          //   events: {
+          //     'onReady': onReadyPlayer,
+          //     'onStateChange': onPlayerStateChange
+          //   }
+          // });
+
+
 
         }  
       }

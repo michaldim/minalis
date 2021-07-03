@@ -520,58 +520,7 @@ $(document).ready(function(){
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 
-	/////////////////-------------------------------------------------------------/////////////////////////
-  // 2. This code loads the IFrame Player API code asynchronously
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-      let musicIds = ["zero-song", "first-song", "second-song", "third-song", "fourth-song", "fifth-song", "sixth-song", "seventh-song"];
-
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        for (i = 0; i < musicIds.length; i++) {
-
-          let currentSong = musicIds[i];
-
-          let onReadyPlayer = function(event) {
-            console.log("ready:" + currentSong);
-            console.log($("#" + currentSong));
-            $("#" + currentSong + "> iframe").css("pointerEvents", "none");
-          }
-
-          var done = false;
-          let onPlayerStateChange = function(event) {
-            if (event.data == YT.PlayerState.PLAYING && !done) {
-              console.log("state change");
-              setTimeout(stopVideo, 6000);
-              done = true;
-            }
-          }
-
-          player = new YT.Player(currentSong, {
-            playerVars: {
-              'playsinline': 1
-            },
-            events: {
-              'onReady': onReadyPlayer,
-              'onStateChange': onPlayerStateChange
-            }
-          });
-
-
-          function stopVideo() {
-            player.stopVideo();
-          }
-        }  
-      }
-
+	
 
 
 
