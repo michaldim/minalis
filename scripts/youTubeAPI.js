@@ -25,11 +25,15 @@
           }
 
           let onPlayerStateChange = function(event) {
-            if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED) {
+            if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.BUFFERING) {
               $(".MobileSong").css("pointerEvents", "none");
             } else if (event.data == YT.PlayerState.PLAYING) {
               $("#" + currentSong).css("pointerEvents", "auto");
             }
+          }
+
+          let onPlayerError = function(event) {            
+            $("#" + currentSong).css("pointerEvents", "none");
           }
 
           if( (window.innerWidth < 771 && (window.matchMedia("(orientation: landscape)").matches)) || (window.innerHeight < 671 && (window.matchMedia("(orientation: portrait)").matches)) ){
@@ -43,7 +47,8 @@
               },
               events: {
                 'onReady': onReadyPlayer,
-                'onStateChange': onPlayerStateChange
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
               }
             });
           } else {
@@ -57,7 +62,8 @@
                 },
                 events: {
                   'onReady': onReadyPlayer,
-                  'onStateChange': onPlayerStateChange
+                  'onStateChange': onPlayerStateChange,
+                  'onError': onPlayerError
                 }
               });
           }
