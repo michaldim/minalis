@@ -25,7 +25,7 @@
           }
 
           let onPlayerStateChange = function(event) {
-            if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.BUFFERING) {
+            if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED) {
               $(".MobileSong").css("pointerEvents", "none");
             } else if (event.data == YT.PlayerState.PLAYING) {
               $("#" + currentSong).css("pointerEvents", "auto");
