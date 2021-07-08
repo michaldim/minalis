@@ -9,7 +9,7 @@ $(document).ready(function(){
 	var startingScrollPos = 0; 
 	function headerDisappears() {
 	  var currentScrollPos = window.pageYOffset; //pageYOffset tells us how much the screen was scrolled on the Y axis (0 means it wasn't scrolled)
-	  if (screen.width < 601 && (startingScrollPos < currentScrollPos)) {
+	  if (screen.width < 600 && (startingScrollPos < currentScrollPos)) {
 	    document.getElementsByTagName("header")[0].style.top = "-60px";
 	  } else {
 	    document.getElementsByTagName("header")[0].style.top = "0";
@@ -23,13 +23,15 @@ $(document).ready(function(){
 	//Get the button
 	var mybutton = document.getElementById("myBtn");
 
-	//When someone scrolls down more than 600px from the top of the document, than the top-button will appear, but it won't appear in mobile screens (that are 600px wide or less) and it also won't work in mobile screens that were rotated to landscape view (their max-size in landscape view is 825px)
+	//When someone scrolls down more than 600px from the top of the document, than the top-button will appear, 
+	//but it won't appear in mobile screens (that are 600px wide or less) 
+	//and it also won't work in mobile screens that were rotated to landscape view (their max-size in landscape view is less than 900px)
 	function scrollButtonAppears() {
-		 if (screen.width > 600 && screen.width < 825 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
+		 if (screen.width >= 600 && screen.width < 1281 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
 		    mybutton.style.display = "block"; //this rule is good for tablets
-		 } else if (screen.width > 600 && screen.width < 825 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
+		 } else if (screen.width < 900 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
 		 	mybutton.style.display = "none"; //this rule is good for mobile screen that was rotated
-		 } else if(screen.width >= 825 && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
+		 } else if(screen.width >= 900 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
 		 	mybutton.style.display = "block"; //this rule is good for tablets and computers
 		 } else {
 		 	mybutton.style.display = "none"; //this rule is good for mobile
@@ -84,7 +86,7 @@ $(document).ready(function(){
 	//Clicking the first savta img in mobile, will make this img disappear 
 	//and will make youtube movie and the X in the right corner appear
 	$("#mobile #subjects #savta").on("click", function(){
-		if( (window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ){
+		if( (window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
@@ -123,7 +125,7 @@ $(document).ready(function(){
 	//When someone clicks the picture of time-line on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the time-line appears.
 	$("#mobile #subjects #clockImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #time-line-container-for-mobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile .pic-box-time #time-line-header-horizontal").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
@@ -150,7 +152,7 @@ $(document).ready(function(){
 	//When someone clicks the tree picture on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #treeMobileImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #family-tree-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-tree h1").fadeOut(1000);
@@ -185,7 +187,7 @@ $(document).ready(function(){
 	//When someone clicks the picture with the camera on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #galleryFrontImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile #mobile-gallery-regular-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-pictures h1").fadeOut(1000);
@@ -327,10 +329,10 @@ $(document).ready(function(){
 
 	$(firstBullet).on("click",  function(){
 
-	 	document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
-	 	document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 	document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 	document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	firstBullet.style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
+	 	secondBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	thirdBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	fourthBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
 
 	 	if (window.translateXGalleryLocation == 2){
 	 		widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
@@ -347,10 +349,10 @@ $(document).ready(function(){
 
 	 $(secondBullet).on("click",  function(){
 
-	 	document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 	document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)";  //the second bullet becomes white
-	 	document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 	document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	firstBullet.style.background = "rgba(125, 119, 119, 0.6)";
+	 	secondBullet.style.background = "rgba(255, 255, 255, 1)";  //the second bullet becomes white
+	 	thirdBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	fourthBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
 
 	 	if (window.translateXGalleryLocation == 1){
 	 		widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
@@ -367,10 +369,10 @@ $(document).ready(function(){
 
 	$(thirdBullet).on("click",  function(){
 
-	 	document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 	document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
-	 	document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
-	 	document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	firstBullet.style.background = "rgba(125, 119, 119, 0.6)";
+	 	secondBullet.style.background = "rgba(125, 119, 119, 0.6)";  
+	 	thirdBullet.style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
+	 	fourthBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
 
 	 	if (window.translateXGalleryLocation == 1){
 	 		widerGalleryContainer.style.animation = "galleryMovesLeft1and2 0.5s forwards ease";
@@ -387,10 +389,10 @@ $(document).ready(function(){
 	 			
 	$(fourthBullet).on("click",  function(){
 
-	 	document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 	document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)";  
-	 	document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 	document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
+	 	firstBullet.style.background = "rgba(125, 119, 119, 0.6)";
+	 	secondBullet.style.background = "rgba(125, 119, 119, 0.6)";  
+	 	thirdBullet.style.background = "rgba(125, 119, 119, 0.6)"; 
+	 	fourthBullet.style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
 
 	 	if (window.translateXGalleryLocation == 1){
 	 		widerGalleryContainer.style.animation = "galleryMovesLeft1and2and3 0.5s forwards ease";
@@ -446,7 +448,7 @@ $(document).ready(function(){
 	//When someone clicks the #recipesFrontImg on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the recipes container.
 	$("#mobile #subjects #recipesFrontImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile .pic-box-food ul").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
@@ -472,62 +474,26 @@ $(document).ready(function(){
 	const topRecipes = document.getElementsByClassName("topRecipes");
 	const bottomRecipes = document.getElementsByClassName("bottomRecipes");
 
-	topRecipes[0].onclick = function() {
+	for (i = 0; i < 3; i++){
+		topRecipes[i].onclick = function() {
 		topRecipes[0].style.order = "3";
 		topRecipes[1].style.order = "4";
 		topRecipes[2].style.order = "5";
 		bottomRecipes[0].style.order = "1";
 		bottomRecipes[1].style.order = "2";
 	};
-
-	topRecipes[1].onclick = function() {
-		topRecipes[0].style.order = "3";
-		topRecipes[1].style.order = "4";
-		topRecipes[2].style.order = "5";
-		bottomRecipes[0].style.order = "1";
-		bottomRecipes[1].style.order = "2";
-	};
-
-	topRecipes[2].onclick = function() {
-		topRecipes[0].style.order = "3";
-		topRecipes[1].style.order = "4";
-		topRecipes[2].style.order = "5";
-		bottomRecipes[0].style.order = "1";
-		bottomRecipes[1].style.order = "2";
-	};
-
+	}
 
 	//If the bottom line of the recipes is at the top, so when someone clicks it, it goes to the bottom with the rest of its line.
-	bottomRecipes[0].onclick = function() {
+	for (i = 0; i < 2; i++){
+		bottomRecipes[i].onclick = function() {
 		topRecipes[0].style.order = "0";
 		topRecipes[1].style.order = "1";
 		topRecipes[2].style.order = "2";
 		bottomRecipes[0].style.order = "3";
 		bottomRecipes[1].style.order = "4";
 	};
-	
-	bottomRecipes[1].onclick = function() {
-		topRecipes[0].style.order = "0";
-		topRecipes[1].style.order = "1";
-		topRecipes[2].style.order = "2";
-		bottomRecipes[0].style.order = "3";
-		bottomRecipes[1].style.order = "4";
-	};
-
-
-
-
-
-	//////////////////////////////////////////////////////////////////////////////////////////////////
-
-	
-
-
-
-
-	//////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+	}
 
 
 
@@ -535,7 +501,7 @@ $(document).ready(function(){
 	//When someone clicks the #musicFrontImg on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the recipes container.
 	$("#mobile #subjects #musicFrontImg").on("click", function(){
-		if((window.innerWidth < 601 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
 			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the violin's img appears in (0deg) when I want to bring it back (after clicking on the X)
 			$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
 			$("#mobile #subjects .pic-box-music h1").fadeOut(1000);
@@ -544,6 +510,15 @@ $(document).ready(function(){
 	});
 
 
+	//I made a function, that pauses the videos (after the X button is clicked),
+	//because otherwise the videos continue playing even when someone leaves the music/video's screen. 
+	function srcPause() {
+		for (i = 0; i < players.length; i++ ){  //the player is an Array that I made in the youTubeAPI.js file
+			players[i].pauseVideo();
+		}
+	}
+	
+
 	//When someone clicks the "X" sign at the top of the music container,  
 	//then the the music container will disappear and the user will see the img of #musicFrontImg again.
 	$("#xThatBringsBackMusicInMobile").on("click", function(){
@@ -551,6 +526,7 @@ $(document).ready(function(){
 		$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirl 0.5s ease-in forwards"});
 		$("#mobile #subjects #musicFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
 		$("#mobile #subjects .pic-box-music h1").delay(1200).fadeIn(1000);
+		setTimeout(srcPause, 600);
 	});
 
 
@@ -562,13 +538,13 @@ $(document).ready(function(){
 
 	//The next variable helps calculate the starting position of the music slider.
 	//The second musicVideo needs to be centered at the middle of the screen
-	//735 is the length from the left side of the slider until the middle of the #second-song, when the screen is portrait
-	//765 is the length from the left side of the slider until the middle of the #second-song, when the screen is landscape
+	//525 is the length from the left side of the slider until the middle of the #second-song, when the screen is portrait
+	//1275 is the length from the left side of the slider until the middle of the #second-song, when the screen is landscape
 	let calculateStartingPoint;
 
-	if (window.innerWidth <= 600){
+	if (window.innerWidth < 600){
 		calculateStartingPoint = -(525 - (0.5 * window.innerWidth));//portrait screen	
-	} else if (window.innerWidth > 600){
+	} else if (window.innerWidth >= 600){
 		calculateStartingPoint = -(1275 - (0.5 * window.innerWidth));//landscape screen
 	}
 	
@@ -594,20 +570,11 @@ $(document).ready(function(){
 
 		currentMusicTouchLocation = e.changedTouches[0].clientX;//this locates the x coordinate of the touchend event
 
-		//when we made touchstart+touchend on the widerMusicContainer, 
-		//the mobile device thought we clicked the iframes in it (and not the widerMusicContainer),
-		//so i made this if sentence, so on swipe the iframes won't think we clicked them.
-		// if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) ){
-		// 	$("iframe").css("pointerEvents", "none"); //within css, pointer-event: none; means that the element won't respond to a click event.
-		// } else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
-		// 	$("iframe").css("pointerEvents", "auto");
-		// }
-
 
 		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){			
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint -= 210 //for portrait screen
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint -= 510 //for landscape screen
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -617,9 +584,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 3) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint -= 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint -= 510
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -629,9 +596,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 4) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint -= 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint -= 510
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -641,9 +608,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 5) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint -= 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint -= 510
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -654,10 +621,11 @@ $(document).ready(function(){
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 6) ){
 			window.marginLeftMusicLocation = 1;
+
 			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0s forwards ease";
-			if (window.innerWidth <= 600){
+			if (window.innerWidth < 600){
 				calculateStartingPoint = -(315 - (0.5 * window.innerWidth));	
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint = -(765 - (0.5 * window.innerWidth));
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -668,9 +636,9 @@ $(document).ready(function(){
 
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 1) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint -= 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint -= 510
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -683,11 +651,11 @@ $(document).ready(function(){
 
 
 
-
+		//The videos are on a "videos slider" where the #first-song is changing to #sixth-song after swiping right with our finger
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 1) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint -= (210 * 5);
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint -= (510 * 5);
 			}
 			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
@@ -697,9 +665,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 6) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint += 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint += 510
 			}
 			// calculateStartingPoint += 210;
@@ -710,9 +678,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 5) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint += 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint += 510
 			}
 			// calculateStartingPoint += 210;
@@ -723,9 +691,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 4) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint += 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint += 510
 			}
 			// calculateStartingPoint += 210;
@@ -736,9 +704,9 @@ $(document).ready(function(){
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 3) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint += 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint += 510
 			}
 			// calculateStartingPoint += 210;
@@ -749,9 +717,9 @@ $(document).ready(function(){
 		}		
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 2) ){
-			if(window.innerWidth <= 600){
+			if(window.innerWidth < 600){
 				calculateStartingPoint += 210
-			} else if (window.innerWidth > 600){
+			} else if (window.innerWidth >= 600){
 				calculateStartingPoint += 510
 			}
 			// calculateStartingPoint += 210;
@@ -764,22 +732,12 @@ $(document).ready(function(){
 
 
 		//pointer-events: auto; means that the user can click on the chosen element. 
-		//I told the CSS that the pointer-events for the iframe is none, because
+		//I told the CSS that the pointer-events for the iframe is "none", because
 		//I couldn't swipe the #widerMusicContainer (the mobile devices reffered only to the iframes and not to the bigger container around it),
 		//so this javascript code is telling that if there is a click and not a swipe, then the iframes can be clicked.
-		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10)){
+		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
 			$("iframe").css("pointerEvents", "auto");
-			console.log("iframe auto");
 		}
-
-
-
-
-		//  else if ( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) || ((currentMusicTouchLocation - lastMusicTouchLocation) < -10)){
-		// 	$("iframe").css("pointerEvents", "none");
-		// 	console.log("iframe none");
-		// } 
-
 		
 
 	});
