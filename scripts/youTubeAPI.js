@@ -7,9 +7,9 @@
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
       //This array contains the id names of the divs that contain the iframes
-      let musicIds = ["zero-song", "first-song", "second-song", "third-song", "fourth-song", "fifth-song", "sixth-song", "seventh-song"];
+      let musicIds = ["minusOne-song", "zero-song", "first-song", "second-song", "third-song", "fourth-song", "fifth-song", "sixth-song", "seventh-song", "eighth-song"];
       //This array contains the youTube's videoId
-      let videoIds = ["nJ1ERiGhpmA", "ZUVEq6NC7mM", "mqokFDOE4AQ", "Akk2zwoA80s", "vYs-BHkMV_A", "xejh9WAJEHg", "nJ1ERiGhpmA", "ZUVEq6NC7mM"];
+      let videoIds = ["xejh9WAJEHg", "nJ1ERiGhpmA", "ZUVEq6NC7mM", "mqokFDOE4AQ", "Akk2zwoA80s", "vYs-BHkMV_A", "xejh9WAJEHg", "nJ1ERiGhpmA", "ZUVEq6NC7mM", "mqokFDOE4AQ"];
 
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.

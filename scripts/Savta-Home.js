@@ -537,30 +537,23 @@ $(document).ready(function(){
 	const regularMusicContainer = document.getElementById("mobile-music-iframes");
 
 	//The next variable helps calculate the starting position of the music slider.
-	//The second musicVideo needs to be centered at the middle of the screen
-	//525 is the length from the left side of the slider until the middle of the #second-song, when the screen is portrait
-	//1275 is the length from the left side of the slider until the middle of the #second-song, when the screen is landscape
-	let calculateStartingPoint;
+	//The #second-song needs to be centered at the middle of the screen.
+	//Since we have 8 videos and we need to put the #second-song (which has 2 videos before it) at the center, then we take 
+	//the container's width, devide it by 8 and multiply it by 2.5.
+	//The other part of the calculation, puts the number we got at the center of the screen
+	let calculateStartingPoint = -((((wideMusicContainer.offsetWidth)/8)*2.5)- (0.5 * window.innerWidth)); //offsetWidth tells us the width of an element 
 
-	if (window.innerWidth < 600){
-		calculateStartingPoint = -(525 - (0.5 * window.innerWidth));//portrait screen	
-	} else if (window.innerWidth >= 600){
-		calculateStartingPoint = -(1275 - (0.5 * window.innerWidth));//landscape screen
-	}
-	
-	// screen.width
-	wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+	//wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 
 	let lastMusicTouchLocation;
 	let currentMusicTouchLocation;
 	window.marginLeftMusicLocation = 2;//That will tell us which video of the 6 music videos is currently at the center of the screen.
-										//It equals 2, since the second video is at the center of the screen at the beginning.
+										//It equals 2, since #second-song is at the center of the screen at the beginning.
 										//I wrote window.marginLeftGalleryLocation instead of let marginLeftGalleryLocation, 
 										//because the console didn't know how to read a global scope (and I had to check this variable)
 
 
 	$("#widerMusicContainer").on("touchstart", function(e){  //touchstart
-		//console.log(e); //When we do console log to "e", we get a lot of info like the next line I wrote:
 		lastMusicTouchLocation = e.touches[0].clientX; //this locates the x coordinate of the touchstart event
 	});
 
@@ -571,162 +564,105 @@ $(document).ready(function(){
 		currentMusicTouchLocation = e.changedTouches[0].clientX;//this locates the x coordinate of the touchend event
 
 
-		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){			
-			if(window.innerWidth < 600){
-				calculateStartingPoint -= 210 //for portrait screen
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint -= 510 //for landscape screen
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){	
 			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX2ndTo3rdVideo 1s forwards ease"
+			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 3) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint -= 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint -= 510
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX3rdTo4thVideo 1s forwards ease"
+			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 4) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint -= 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint -= 510
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX4thTo5thVideo 1s forwards ease"
+			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 5) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint -= 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint -= 510
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX5thTo6thVideo 1s forwards ease"
+			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 6) ){
 			window.marginLeftMusicLocation = 1;
-
-			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0s forwards ease";
-			if (window.innerWidth < 600){
-				calculateStartingPoint = -(315 - (0.5 * window.innerWidth));	
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint = -(765 - (0.5 * window.innerWidth));
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
-			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX6thTo1stVideo 1s forwards ease"
+			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 1) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint -= 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint -= 510
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX1stTo2ndVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			//If someone swipe right and suddenly changes dirrection, it'll cause the #seventh-song to appear big, that's why we need the next line:
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 		}
 
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		//The videos are on a "videos slider" where the #first-song is changing to #sixth-song after swiping right with our finger
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 1) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint -= (210 * 5);
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint -= (510 * 5);
-			}
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation = 6;
-			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0s forwards ease";			
+			document.getElementById("widerMusicContainer").style.animation = "translateX1stTo6thVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0.4s forwards ease";			
 			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleBig 0.8s forwards ease";//
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 6) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint += 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint += 510
-			}
-			// calculateStartingPoint += 210;
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation = 5;
-			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX6thTo5thVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 5) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint += 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint += 510
-			}
-			// calculateStartingPoint += 210;
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation = 4;
-			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX5thTo4thVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 4) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint += 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint += 510
-			}
-			// calculateStartingPoint += 210;
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation = 3;
-			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX4thTo3rdVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 3) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint += 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint += 510
-			}
-			// calculateStartingPoint += 210;
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
+			//calculateStartingPoint += ((wideMusicContainer.offsetWidth)/8);
+			//wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation = 2;
-			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX3rdTo2ndVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}		
 
 		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 2) ){
-			if(window.innerWidth < 600){
-				calculateStartingPoint += 210
-			} else if (window.innerWidth >= 600){
-				calculateStartingPoint += 510
-			}
-			// calculateStartingPoint += 210;
-			wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
 			window.marginLeftMusicLocation = 1;
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0s forwards ease";
+			document.getElementById("widerMusicContainer").style.animation = "translateX2ndTo1stVideo 1s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
 			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
 

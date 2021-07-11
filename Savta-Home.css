@@ -3169,6 +3169,67 @@ footer{
 	100%{ transform: scale(0.95) }
 }
 
+/*More animation for music slider*/
+@keyframes translateX1stTo2ndVideo{
+	0%{ transform: translateX(calc(-25% + 50vw)) }
+	100%{ transform: translateX(calc(-35% + 50vw)) }
+}
+
+@keyframes translateX2ndTo3rdVideo{
+	0%{ transform: translateX(calc(-35% + 50vw)) } /*50vw represents 50% of the screen width*/
+	100%{ transform: translateX(calc(-45% + 50vw)) }
+}
+
+@keyframes translateX3rdTo4thVideo{
+	0%{ transform: translateX(calc(-45% + 50vw)) }
+	100%{ transform: translateX(calc(-55% + 50vw)) }
+}
+
+@keyframes translateX4thTo5thVideo{
+	0%{ transform: translateX(calc(-55% + 50vw)) }
+	100%{ transform: translateX(calc(-65% + 50vw)) }
+}
+
+@keyframes translateX5thTo6thVideo{
+	0%{ transform: translateX(calc(-65% + 50vw)) }
+	100%{ transform: translateX(calc(-75% + 50vw)) }
+}
+
+@keyframes translateX6thTo1stVideo{
+	0%{ transform: translateX(calc(-15% + 50vw)) }
+	100%{ transform: translateX(calc(-25% + 50vw)) }
+}
+
+@keyframes translateX1stTo6thVideo{
+	0%{ transform: translateX(calc(-85% + 50vw)) }
+	100%{ transform: translateX(calc(-75% + 50vw)) }
+}
+
+@keyframes translateX6thTo5thVideo{
+	0%{ transform: translateX(calc(-75% + 50vw)) }
+	100%{ transform: translateX(calc(-65% + 50vw)) }
+}
+
+@keyframes translateX5thTo4thVideo{
+	0%{ transform: translateX(calc(-65% + 50vw)) }
+	100%{ transform: translateX(calc(-55% + 50vw)) }
+}
+
+@keyframes translateX4thTo3rdVideo{
+	0%{ transform: translateX(calc(-55% + 50vw)) }
+	100%{ transform: translateX(calc(-45% + 50vw)) }
+}
+
+@keyframes translateX3rdTo2ndVideo{
+	0%{ transform: translateX(calc(-45% + 50vw)) } /*50vw represents 50% of the screen width*/
+	100%{ transform: translateX(calc(-35% + 50vw)) }
+}
+
+@keyframes translateX2ndTo1stVideo{
+	0%{ transform: translateX(calc(-35% + 50vw)) }
+	100%{ transform: translateX(calc(-25% + 50vw)) }
+}
+
 
 
 /*The first line is good for mobile phones with landscape orientation and the second line is good for mobile phones with portrait orientation*/
@@ -3929,15 +3990,13 @@ screen and (max-width: 599px) and (orientation: portrait){
 
 	#widerMusicContainer{
 		display: flex;
-		width: 1680px; /*(210*8)*/
+		width: 2100px; /*(210*10)*/
 		height: 90%;
 		flex-wrap: nowrap;
 	    z-index: 0;
 	    text-align: left;
-	}
-
-	#widerMusicContainer iframe{
-		border: 4px solid #7d7777;
+	    transform: translateX(calc(-35% + 50vw));/*50vw is 50% of the screen width, while 35% is 100% of #widerMusicContainer
+	    devided by 10 videos, and multiply by 4.5 (which will bring us to the middle of #second-song) */
 	}
 
 	.MobileSong{
@@ -3945,17 +4004,14 @@ screen and (max-width: 599px) and (orientation: portrait){
 		height: calc(100% - 52px);
 		padding-top: 0px;
 		margin: 0 5px;
-	}
-
-	.MobileSong{ 
+		border: 4px solid #7d7777;
 		pointer-events: none; /*I'll make it auto on specific javascript cases*/
-		/*touch-action: none;*/
 	}
 
-	/*#widerMusicContainer #minusOne-song{
+	#widerMusicContainer #minusOne-song{
 		order: 1;
 		transform: scale(0.95);
-	}*/
+	}
 
 	#widerMusicContainer #zero-song{
 		order: 2;
@@ -3997,10 +4053,11 @@ screen and (max-width: 599px) and (orientation: portrait){
 		transform: scale(0.95);
 	}
 
-	/*#widerMusicContainer #eighth-song{
+	#widerMusicContainer #eighth-song{
 		order: 10;
 		transform: scale(0.95);
-	}*/
+	}
+
 
 
 	#mobile #subjects .pic-box-music #xThatBringsBackMusicInMobile{
@@ -4383,7 +4440,7 @@ screen and (max-height: 670px) and (orientation: portrait){
 	}
 
 	#widerMusicContainer{
-		width: 4080px; /*510*8*/
+		width: 5100px; /*510*10*/
 	}
 
 	.MobileSong{
