@@ -9,17 +9,17 @@ $(document).ready(function(){
 	var startingScrollPos = 0; 
 	function headerDisappears() {
 	  var currentScrollPos = window.pageYOffset; //pageYOffset tells us how much the screen was scrolled on the Y axis (0 means it wasn't scrolled)
-	  if ( (screen.width < 600 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary") && (startingScrollPos < currentScrollPos)) || 
-	  	(screen.width < 900 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (startingScrollPos < currentScrollPos)) ){
+	  if ( (screen.width < 600 && (window.matchMedia("(orientation: portrait)").matches) && (startingScrollPos < currentScrollPos)) || 
+	  	(screen.width < 900 && (window.matchMedia("(orientation: landscape)").matches) && (startingScrollPos < currentScrollPos)) ){
 	    document.getElementsByTagName("header")[0].style.top = "-60px";
 	  } else {
 	    document.getElementsByTagName("header")[0].style.top = "0";
 	  }
 	}
-
-
-
-
+	//(screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary")
+	//(screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")
+	//(window.matchMedia("(orientation: landscape)").matches)
+	//(window.matchMedia("(orientation: portrait)").matches)
 
 	//Get the button
 	var mybutton = document.getElementById("myBtn");
