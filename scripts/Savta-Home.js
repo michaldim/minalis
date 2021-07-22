@@ -16,10 +16,10 @@ $(document).ready(function(){
 	    document.getElementsByTagName("header")[0].style.top = "0";
 	  }
 	}
-	//(screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary")
-	//(screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary")
-	//(window.matchMedia("(orientation: landscape)").matches)
-	//(window.matchMedia("(orientation: portrait)").matches)
+	
+
+
+	
 
 	//Get the button
 	var mybutton = document.getElementById("myBtn");
@@ -88,9 +88,9 @@ $(document).ready(function(){
 	//and will make youtube movie and the X in the right corner appear
 	$("#mobile #subjects #savta").on("click", function(){
 		if( (window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches)) ){
-			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
-			$("#mobile #movieForMobile").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
-			$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
+			$(this).css({"animation": "twirlOtherDirection 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because savta's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile #movieForMobile").css({"animation": "twirlBackOtherDirection 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlBackOtherDirection 1.2s 0.7s ease-out forwards"});
 			$("#mobile #subjects h1").first().fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
 		}
