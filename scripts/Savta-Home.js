@@ -154,8 +154,8 @@ $(document).ready(function(){
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #treeMobileImg").on("click", function(){
 		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
-			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
-			$("#mobile #family-tree-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$(this).css({"animation": "twirlOtherDirection 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile #family-tree-mobile-container").css({"animation": "twirlBackOtherDirection 1.2s 0.7s ease-out forwards"}); //
 			$("#mobile #subjects .pic-box-tree h1").fadeOut(1000);
 			$("#mobile #xThatBringsBackTreeImgInMobile").delay(1200).fadeIn(1000);
 		}
@@ -166,8 +166,8 @@ $(document).ready(function(){
 	//then the time-line will disappear and the user will see the clock image again.
 	$("#xThatBringsBackTreeImgInMobile").on("click", function(){
 		$(this).fadeOut(500);
-		$("#mobile #family-tree-mobile-container").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#mobile #subjects #treeMobileImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #family-tree-mobile-container").css({"animation": "twirlOtherDirection 0.5s ease-in forwards"});
+		$("#mobile #subjects #treeMobileImg").css({"animation": "twirlBackOtherDirection 1.2s 0.8s ease-out forwards"});
 		$("#mobile #subjects .pic-box-tree h1").delay(1200).fadeIn(1000);
 	});
 
