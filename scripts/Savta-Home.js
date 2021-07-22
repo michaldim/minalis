@@ -28,11 +28,11 @@ $(document).ready(function(){
 	//but it won't appear in mobile screens (that are 600px wide or less) 
 	//and it also won't work in mobile screens that were rotated to landscape view (their max-size in landscape view is less than 900px)
 	function scrollButtonAppears() {
-		 if (screen.width >= 600 && screen.width < 1281 && (screen.orientation.type === "portrait-primary" || screen.orientation.type === "portrait-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
+		 if (screen.width >= 600 && screen.width < 1281 && (window.matchMedia("(orientation: portrait)").matches) && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)) {   
 		    mybutton.style.display = "block"; //this rule is good for tablets
-		 } else if (screen.width < 900 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
+		 } else if (screen.width < 900 && (window.matchMedia("(orientation: landscape)").matches) && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
 		 	mybutton.style.display = "none"; //this rule is good for mobile screen that was rotated
-		 } else if(screen.width >= 900 && (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
+		 } else if(screen.width >= 900 && (window.matchMedia("(orientation: landscape)").matches) && (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600)){
 		 	mybutton.style.display = "block"; //this rule is good for tablets and computers
 		 } else {
 		 	mybutton.style.display = "none"; //this rule is good for mobile
