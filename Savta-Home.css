@@ -3067,6 +3067,7 @@ footer{
 	100%{ transform: rotateY(90deg) }
 }
 
+/*The twirl looked bad on the first and the third section on ios, so I changed their animation direction with twirlOtherDirection*/
 @keyframes twirlOtherDirection{
 	0%{ transform: rotateY(0deg) }
 	100%{ transform: rotateY(-90deg) }
@@ -3077,6 +3078,7 @@ footer{
 	100%{ transform: rotateY(0deg) }
 }
 
+/*The twirlBack looked bad on the first and the third section on ios, so I changed their animation direction with twirlBackOtherDirection*/
 @keyframes twirlBackOtherDirection{
 	0%{ transform: rotateY(-90deg) }
 	100%{ transform: rotateY(0deg) }

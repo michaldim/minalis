@@ -114,9 +114,9 @@ $(document).ready(function(){
 	//I'm changing the src, because otherwise the video continues playing (It's a way to make the video stops).
 	$("#xThatBringsBackSavtaImgInMobile").on("click", function(){
 		$(this).fadeOut(500);
-		$("#mobile #movieForMobile").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#mobile #subjects #savta").css({"animation": "twirlBack 1.2s 0.6s ease-out forwards"});
+		$("#mobile #movieForMobile").css({"animation": "twirlOtherDirection 0.5s ease-in forwards"});
+		$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlOtherDirection 0.5s ease-in forwards"});
+		$("#mobile #subjects #savta").css({"animation": "twirlBackOtherDirection 1.2s 0.6s ease-out forwards"});
 		$("#mobile #subjects h1").first().delay(1200).fadeIn(1000);
 		setTimeout(delaySrcChange, 600);
 	});
