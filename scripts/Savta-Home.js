@@ -516,6 +516,7 @@ $(document).ready(function(){
 	function srcPause() {
 		for (i = 0; i < players.length; i++ ){  //the player is an Array that I made in the youTubeAPI.js file
 			players[i].pauseVideo();
+			$(".MobileSong").css("pointerEvents", "none");
 		}
 	}
 	
@@ -673,7 +674,7 @@ $(document).ready(function(){
 		//I couldn't swipe the #widerMusicContainer (the mobile devices reffered only to the iframes and not to the bigger container around it),
 		//so this javascript code is telling that if there is a click and not a swipe, then the iframes can be clicked.
 		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
-			$("iframe").css("pointerEvents", "auto");
+			$(".MobileSong").css("pointerEvents", "auto");
 		}
 		
 

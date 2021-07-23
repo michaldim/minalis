@@ -46,7 +46,7 @@
               videoId: currentVideo,
               playerVars: {
                 playsinline: 1,
-                fs: 1
+                fs: 1 //Only in smaller screens fullScreen is allowed (Otherwise there will be confusion with the tablet design)
               },
               events: {
                 'onReady': onReadyPlayer,
@@ -61,7 +61,7 @@
                 videoId: currentVideo,
                 playerVars: {
                   playsinline: 1,
-                  fs: 0
+                  fs: 0 //Only in smaller screens fullScreen is allowed (Otherwise there will be confusion with the tablet design)
                 },
                 events: {
                   'onReady': onReadyPlayer,
