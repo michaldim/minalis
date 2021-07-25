@@ -3182,62 +3182,62 @@ footer{
 }
 
 /*More animation for music slider*/
-@keyframes translateX1stTo2ndVideo{
+@keyframes translateX1to2video{
 	0%{ transform: translateX(calc(-25% + 50vw)) }
 	100%{ transform: translateX(calc(-35% + 50vw)) }
 }
 
-@keyframes translateX2ndTo3rdVideo{
+@keyframes translateX2to3video{
 	0%{ transform: translateX(calc(-35% + 50vw)) } /*50vw represents 50% of the screen width*/
 	100%{ transform: translateX(calc(-45% + 50vw)) }
 }
 
-@keyframes translateX3rdTo4thVideo{
+@keyframes translateX3to4video{
 	0%{ transform: translateX(calc(-45% + 50vw)) }
 	100%{ transform: translateX(calc(-55% + 50vw)) }
 }
 
-@keyframes translateX4thTo5thVideo{
+@keyframes translateX4to5video{
 	0%{ transform: translateX(calc(-55% + 50vw)) }
 	100%{ transform: translateX(calc(-65% + 50vw)) }
 }
 
-@keyframes translateX5thTo6thVideo{
+@keyframes translateX5to6video{
 	0%{ transform: translateX(calc(-65% + 50vw)) }
 	100%{ transform: translateX(calc(-75% + 50vw)) }
 }
 
-@keyframes translateX6thTo1stVideo{
+@keyframes translateX6to1video{
 	0%{ transform: translateX(calc(-15% + 50vw)) }
 	100%{ transform: translateX(calc(-25% + 50vw)) }
 }
 
-@keyframes translateX1stTo6thVideo{
+@keyframes translateX1to6video{
 	0%{ transform: translateX(calc(-85% + 50vw)) }
 	100%{ transform: translateX(calc(-75% + 50vw)) }
 }
 
-@keyframes translateX6thTo5thVideo{
+@keyframes translateX6to5video{
 	0%{ transform: translateX(calc(-75% + 50vw)) }
 	100%{ transform: translateX(calc(-65% + 50vw)) }
 }
 
-@keyframes translateX5thTo4thVideo{
+@keyframes translateX5to4video{
 	0%{ transform: translateX(calc(-65% + 50vw)) }
 	100%{ transform: translateX(calc(-55% + 50vw)) }
 }
 
-@keyframes translateX4thTo3rdVideo{
+@keyframes translateX4to3video{
 	0%{ transform: translateX(calc(-55% + 50vw)) }
 	100%{ transform: translateX(calc(-45% + 50vw)) }
 }
 
-@keyframes translateX3rdTo2ndVideo{
+@keyframes translateX3to2video{
 	0%{ transform: translateX(calc(-45% + 50vw)) } /*50vw represents 50% of the screen width*/
 	100%{ transform: translateX(calc(-35% + 50vw)) }
 }
 
-@keyframes translateX2ndTo1stVideo{
+@keyframes translateX2to1video{
 	0%{ transform: translateX(calc(-35% + 50vw)) }
 	100%{ transform: translateX(calc(-25% + 50vw)) }
 }

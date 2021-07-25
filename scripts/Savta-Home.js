@@ -535,8 +535,8 @@ $(document).ready(function(){
 
 
 
-	const wideMusicContainer = document.getElementById("widerMusicContainer");
 	const regularMusicContainer = document.getElementById("mobile-music-iframes");
+	const wideMusicContainer = document.getElementById("widerMusicContainer");
 
 	//The next variable helps calculate the starting position of the music slider.
 	//The #second-song needs to be centered at the middle of the screen.
@@ -546,13 +546,13 @@ $(document).ready(function(){
 	let calculateStartingPoint = -((((wideMusicContainer.offsetWidth)/8)*2.5)- (0.5 * window.innerWidth)); //offsetWidth tells us the width of an element 
 
 	//wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
-
+	
 	let lastMusicTouchLocation;
 	let currentMusicTouchLocation;
-	window.marginLeftMusicLocation = 2;//That will tell us which video of the 6 music videos is currently at the center of the screen.
-										//It equals 2, since #second-song is at the center of the screen at the beginning.
-										//I wrote window.marginLeftGalleryLocation instead of let marginLeftGalleryLocation, 
-										//because the console didn't know how to read a global scope (and I had to check this variable)
+	window.musicLocation = 2;//That will tell us which video of the 6 music videos is currently at the center of the screen.
+							//It equals 2, since #second-song is at the center of the screen at the beginning.
+							//I wrote window.marginLeftGalleryLocation instead of let marginLeftGalleryLocation, 
+							//because the console didn't know how to read a global scope (and I had to check this variable)
 
 
 	$("#widerMusicContainer").on("touchstart", function(e){  //touchstart
@@ -562,119 +562,82 @@ $(document).ready(function(){
 
 	$("#widerMusicContainer").on("touchend", function(e){ //touchmove
 
-
 		currentMusicTouchLocation = e.changedTouches[0].clientX;//this locates the x coordinate of the touchend event
 
+		const musicArray =["minusOne-song", "zero-song", "first-song", "second-song", "third-song", "fourth-song", "fifth-song", "sixth-song", "seventh-song", "eighth-song"];
+		let i = window.musicLocation;
 
-		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 2) ){	
-			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX2ndTo3rdVideo 1s forwards ease"
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		function videoSizeChangeRight(element){
+			wideMusicContainer.getElementsByClassName(musicArray[element + 1])[0].style.animation = "scaleSmall 0.4s forwards ease";
+			wideMusicContainer.getElementsByClassName(musicArray[element + 2])[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 3) ){
-			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX3rdTo4thVideo 1s forwards ease"
-			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
+		function videoSizeChangeLeft(element){
+			wideMusicContainer.getElementsByClassName(musicArray[element + 1])[0].style.animation = "scaleSmall 0.4s forwards ease";
+			wideMusicContainer.getElementsByClassName(musicArray[element])[0].style.animation = "scaleBig 0.8s forwards ease";
 		}
 
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 4) ){
-			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX4thTo5thVideo 1s forwards ease"
-			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
+		if(((currentMusicTouchLocation - lastMusicTouchLocation) <= -10) && (i >= 1) && (i <= 6)){  //Swipe to the right (the finger goes left)
 
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 5) ){
-			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX5thTo6thVideo 1s forwards ease"
-			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
+			if (i == 6){
+				wideMusicContainer.style.animation = "translateX6to1video 1s forwards ease";  //The gallery is a loop, so when it reaches its end, it starts from the beginning
+			} else {
+				wideMusicContainer.style.animation = "translateX" + i + "to" + (i + 1) +"video 1s forwards ease";  //It's based on the CSS animation keyframes
+			}
 
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 6) ){
-			window.marginLeftMusicLocation = 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX6thTo1stVideo 1s forwards ease"
-			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
+			videoSizeChangeRight(i);
 
+			switch (i) {        		   //switch is the same as "if", but it looks cleaner
+				case 1:                    //"first-song" is the same as "seventh-song"
+					videoSizeChangeRight(7);
+					break;
+				case 2:                    //"second-song" is the same as "eighth-song" (It's an edge case)
+					wideMusicContainer.getElementsByClassName(musicArray[8 + 1])[0].style.animation = "scaleSmall 0.4s forwards ease"; //"eighth-song"
+					break;
+				case 5:                    //"fifth-song" is the same as "minusOne-song"
+					videoSizeChangeRight(-1);
+					break;
+				case 6:                    //"sixth-song" is the same as "zero-song"
+					videoSizeChangeRight(0);
+					window.musicLocation = 0; 
+					break;
+			}
+	
+			window.musicLocation += 1;
+		
 
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < -10) && (window.marginLeftMusicLocation == 1) ){
-			window.marginLeftMusicLocation += 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX1stTo2ndVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			//If someone swipe right and suddenly changes dirrection, it'll cause the #seventh-song to appear big, that's why we need the next line:
-			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-		}
+		} else if( ((currentMusicTouchLocation - lastMusicTouchLocation) >= 10) && (i >= 1) && (i <= 6)){ //Swipe to the left (the finger goes right)
 
+			if (i == 1){
+				wideMusicContainer.style.animation = "translateX1to6video 1s forwards ease";  //the gallery is a loop, so when it reaches its end, it starts from the beginning
+			} else {
+				wideMusicContainer.style.animation = "translateX" + i + "to" + (i - 1) + "video 1s forwards ease";  //It's based on the CSS animation keyframes
+			}
+			
+			videoSizeChangeLeft(i);
 
+			switch (i) {   //It's the same as "if" but looks better
+				case 6:                       //"sixth-song" is the same as "zero-song"
+					videoSizeChangeLeft(0);
+					break;
+				case 5:                       //"fifth-song" is the same as "minusOne-song" (It's an edge case)
+					wideMusicContainer.getElementsByClassName(musicArray[0])[0].style.animation = "scaleSmall 0.4s forwards ease";
+					break;
+				case 2: 					  //"second-song" is the same as "eighth-song"
+				 	videoSizeChangeLeft(8);
+				 	break;
+				case 1:                       //"first-song" is the same as "seventh-song"
+					videoSizeChangeLeft(7);
+					window.musicLocation = 7;  //the gallery is a loop, so when it reaches its end, it starts from the beginning
+					break;
+			}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		//The videos are on a "videos slider" where the #first-song is changing to #sixth-song after swiping right with our finger
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 1) ){
-			window.marginLeftMusicLocation = 6;
-			document.getElementById("widerMusicContainer").style.animation = "translateX1stTo6thVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleSmall 0.4s forwards ease";			
-			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleBig 0.8s forwards ease";//
-		}
-
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 6) ){
-			window.marginLeftMusicLocation = 5;
-			document.getElementById("widerMusicContainer").style.animation = "translateX6thTo5thVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("sixth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("zero-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-		}
-
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 5) ){
-			window.marginLeftMusicLocation = 4;
-			document.getElementById("widerMusicContainer").style.animation = "translateX5thTo4thVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("fifth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
-
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 4) ){
-			window.marginLeftMusicLocation = 3;
-			document.getElementById("widerMusicContainer").style.animation = "translateX4thTo3rdVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("fourth-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
-
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 3) ){
-			//calculateStartingPoint += ((wideMusicContainer.offsetWidth)/8);
-			//wideMusicContainer.style.marginLeft = calculateStartingPoint + "px";
-			window.marginLeftMusicLocation = 2;
-			document.getElementById("widerMusicContainer").style.animation = "translateX3rdTo2ndVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("third-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}		
-
-		else if( ((currentMusicTouchLocation - lastMusicTouchLocation) > 10) && (window.marginLeftMusicLocation == 2) ){
-			window.marginLeftMusicLocation = 1;
-			document.getElementById("widerMusicContainer").style.animation = "translateX2ndTo1stVideo 1s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("second-song")[0].style.animation = "scaleSmall 0.4s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("first-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-			document.getElementById("widerMusicContainer").getElementsByClassName("seventh-song")[0].style.animation = "scaleBig 0.8s forwards ease";
-		}
+			window.musicLocation -= 1;	
 
 
-
-		//pointer-events: auto; means that the user can click on the chosen element. 
-		//I told the CSS that the pointer-events for the iframe is "none", because
-		//I couldn't swipe the #widerMusicContainer (the mobile devices reffered only to the iframes and not to the bigger container around it),
-		//so this javascript code is telling that if there is a click and not a swipe, then the iframes can be clicked.
-		if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
-			$(".MobileSong").css("pointerEvents", "auto");
+		} else if( ((currentMusicTouchLocation - lastMusicTouchLocation) < 10) && ((currentMusicTouchLocation - lastMusicTouchLocation) > -10) ){
+			
+			$(".MobileSong").css("pointerEvents", "auto");  //If the click is in one place and not a swipe, then the videos will become clickable
 		}
 		
 
