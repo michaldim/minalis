@@ -3100,6 +3100,68 @@ footer{
 	from{transform: translateX(-50%)}
 	to{transform: translateX(-75%)}
 }
+/******************************New trial*******************************************/
+@keyframes galleryMoves0to1{
+	from{transform: translateX(0%)}
+	to{transform: translateX(-25%)}
+}
+
+@keyframes galleryMoves1to2{
+	from{transform: translateX(-25%)}
+	to{transform: translateX(-50%)}
+}
+
+@keyframes galleryMoves2to3{
+	from{transform: translateX(-50%)}
+	to{transform: translateX(-75%)}
+}
+
+@keyframes galleryMoves3to2{
+	from{transform: translateX(-75%)}
+	to{transform: translateX(-50%)}
+}
+
+@keyframes galleryMoves2to1{
+	from{transform: translateX(-50%)}
+	to{transform: translateX(-25%)}
+}
+
+@keyframes galleryMoves1to0{
+	from{transform: translateX(-25%)}
+	to{transform: translateX(0%)}
+}
+
+@keyframes galleryMoves0to2{
+	0%{transform: translateX(0%)}
+	100%{transform: translateX(-50%)}
+}
+
+@keyframes galleryMoves0to3{
+	0%{transform: translateX(0%)}
+	100%{transform: translateX(-75%)}
+}
+
+@keyframes galleryMoves1to3{
+	0%{transform: translateX(-25%)}
+	100%{transform: translateX(-75%)}
+}
+
+@keyframes galleryMoves2to0{
+	0%{transform: translateX(-50%)}
+	100%{transform: translateX(0%)}
+}
+
+@keyframes galleryMoves3to0{
+	0%{transform: translateX(-75%)}
+	100%{transform: translateX(0%)}
+}
+
+@keyframes galleryMoves3to1{
+	0%{transform: translateX(-75%)}
+	100%{transform: translateX(-25%)}
+}
+
+/*****************************End of new trial*************************************/
 
 /*Animation backwards:*/
 
