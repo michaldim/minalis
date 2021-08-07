@@ -3085,22 +3085,7 @@ footer{
 }
 
 
-/*Animation for gallery: forwards:*/
-@keyframes galleryMovesLeft1{
-	from{transform: translateX(0%)}
-	to{transform: translateX(-25%)}
-}
-
-@keyframes galleryMovesLeft2{
-	from{transform: translateX(-25%)}
-	to{transform: translateX(-50%)}
-}
-
-@keyframes galleryMovesLeft3{
-	from{transform: translateX(-50%)}
-	to{transform: translateX(-75%)}
-}
-/******************************New trial*******************************************/
+/***Gallery location***/
 @keyframes galleryMoves0to1{
 	from{transform: translateX(0%)}
 	to{transform: translateX(-25%)}
@@ -3157,57 +3142,6 @@ footer{
 }
 
 @keyframes galleryMoves3to1{
-	0%{transform: translateX(-75%)}
-	100%{transform: translateX(-25%)}
-}
-
-/*****************************End of new trial*************************************/
-
-/*Animation backwards:*/
-
-@keyframes galleryMovesRight3{
-	from{transform: translateX(-75%)}
-	to{transform: translateX(-50%)}
-}
-
-@keyframes galleryMovesRight2{
-	from{transform: translateX(-50%)}
-	to{transform: translateX(-25%)}
-}
-
-@keyframes galleryMovesRight1{
-	from{transform: translateX(-25%)}
-	to{transform: translateX(0%)}
-}
-
-/*Animation to far away bullet (forwards):*/
-@keyframes galleryMovesLeft1and2{
-	0%{transform: translateX(0%)}
-	100%{transform: translateX(-50%)}
-}
-
-@keyframes galleryMovesLeft1and2and3{
-	0%{transform: translateX(0%)}
-	100%{transform: translateX(-75%)}
-}
-
-@keyframes galleryMovesLeft2and3{
-	0%{transform: translateX(-25%)}
-	100%{transform: translateX(-75%)}
-}
-
-/*Animation to far away bullet (backwards):*/
-@keyframes galleryMovesRight2and1{
-	0%{transform: translateX(-50%)}
-	100%{transform: translateX(0%)}
-}
-
-@keyframes galleryMovesRight3and2and1{
-	0%{transform: translateX(-75%)}
-	100%{transform: translateX(0%)}
-}
-
-@keyframes galleryMovesRight3and2{
 	0%{transform: translateX(-75%)}
 	100%{transform: translateX(-25%)}
 }

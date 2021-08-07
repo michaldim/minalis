@@ -242,7 +242,7 @@ $(document).ready(function(){
 				                   
 		//rules to move the first section to the second section
 		if( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
-			widerGalleryContainer.style.animation = "galleryMovesLeft1 0.5s forwards ease";
+			widerGalleryContainer.style.animation = "galleryMoves0to1 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
@@ -252,7 +252,7 @@ $(document).ready(function(){
 
 		//rules to move the second section to the third section
 		else if ( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
-			widerGalleryContainer.style.animation = "galleryMovesLeft2 0.5s forwards ease";
+			widerGalleryContainer.style.animation = "galleryMoves1to2 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
@@ -262,7 +262,7 @@ $(document).ready(function(){
 
 		//rules to move the third section to the fourth section
 		else if ( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
-			widerGalleryContainer.style.animation = "galleryMovesLeft3 0.5s forwards ease";
+			widerGalleryContainer.style.animation = "galleryMoves2to3 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
@@ -272,7 +272,7 @@ $(document).ready(function(){
 
 		//rules to move the fourth section back to the third section	 		
 	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
-			widerGalleryContainer.style.animation = "galleryMovesRight3 0.5s forwards ease";
+			widerGalleryContainer.style.animation = "galleryMoves3to2 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
@@ -282,7 +282,7 @@ $(document).ready(function(){
 
 	 	//rules to move the third section back to the second section
 	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
-			widerGalleryContainer.style.animation = "galleryMovesRight2 0.5s forwards ease";
+			widerGalleryContainer.style.animation = "galleryMoves2to1 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
 	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
@@ -292,7 +292,7 @@ $(document).ready(function(){
 
 	 	//rules to move the second section back to the first section
 	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
-			widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";
+			widerGalleryContainer.style.animation = "galleryMoves1to0 0.5s forwards ease";
 			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
 	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
 	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
@@ -321,13 +321,14 @@ $(document).ready(function(){
 
 		
 
-	
+	//The gallery bullets
 	const bullet1 = document.getElementById("firstCircle");
 	const bullet2 = document.getElementById("secondCircle"); 
 	const bullet3 = document.getElementById("thirdCircle"); 
 	const bullet4 = document.getElementById("fourthCircle"); 
 	const bullets = [bullet1, bullet2, bullet3, bullet4];
 
+	//When someone clicks a gallery bullet, it will change its color and the widerGalleryContainer location
 	for (j = 0; j < 4; j++){
 		$(bullets[j]).on("click",  function(){
 		  	this.style.background = "rgba(255, 255, 255, 1)"; //this bullet becomes white
@@ -336,12 +337,14 @@ $(document).ready(function(){
 				if (this != (bullets[k])){
 					bullets[k].style.background = "rgba(125, 119, 119, 0.6)"; //these bullets become grey
 				} else {
-					n = k;
+					n = k; //will help us find the index of the bullet that was clicked
 				}
 			} 
 
 			let m = window.translateXGalleryLocation;
-			widerGalleryContainer.style.animation = "galleryMoves" + m + "to" + n + " 0.5s forwards ease";
+			if (m != n){  
+				widerGalleryContainer.style.animation = "galleryMoves" + m + "to" + n + " 0.5s forwards ease";
+			}
 			window.translateXGalleryLocation = n;
 		});
 	}
@@ -372,7 +375,6 @@ $(document).ready(function(){
 				widerGalleryContainer.style.display = "grid";	
 				document.getElementById("xThatBringsBackGalleryInMobile").style.display = "block";
 				document.getElementById("bulletsContainer").style.display = "block";
-				// widerGalleryContainer.style.animation = "galleryMovesRight1 0.5s forwards ease";	
 			}
 
 		});
