@@ -173,18 +173,6 @@ $(document).ready(function(){
 
 
 
-	//The familyTreeMobileImg wasn't centered inside its scrolled container
-	//so I took the img's width and devided it to 3.6 (I tried different numbers from 2 and above)
-	//until I reached its center
-	var familyTreeContainerInsideContainer = $("#containerInsideContainer");
-	var familyTreeMobileImg = $("#familyTreeMobileImg");
-	var scrollto = familyTreeMobileImg.width() / 3.6;
-	familyTreeContainerInsideContainer.animate({ scrollLeft:  scrollto});
-
-
-
-
-
 	//When someone clicks the picture with the camera on mobile screens, it disappears
 	//and then the transformed div appears and also the "X" that closes the family-tree appears.
 	$("#mobile #subjects #galleryFrontImg").on("click", function(){
@@ -207,7 +195,76 @@ $(document).ready(function(){
 	});
 
 
+	//When someone clicks the #recipesFrontImg on mobile screens, it disappears
+	//and then the transformed div appears and also the "X" that closes the recipes container.
+	$("#mobile #subjects #recipesFrontImg").on("click", function(){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile .pic-box-food ul").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
+			$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
+			$("#mobile #subjects .pic-box-food h1").fadeOut(1000);
+			$("#mobile #xThatBringsBackRecipesInMobile").delay(1200).fadeIn(1000);
+		}
+	});
+
+
+	//When someone clicks the "X" sign near the recipes container,  
+	//then the the recipes container will disappear and the user will see the img of #recipesFrontImg again.
+	$("#xThatBringsBackRecipesInMobile").on("click", function(){
+		$(this).fadeOut(500);
+		$("#mobile .pic-box-food ul").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #recipesFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #subjects .pic-box-food h1").delay(1200).fadeIn(1000);
+	});
+
+
+
+	//When someone clicks the #musicFrontImg on mobile screens, it disappears
+	//and then the transformed div appears and also the "X" that closes the recipes container.
+	$("#mobile #subjects #musicFrontImg").on("click", function(){
+		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
+			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the violin's img appears in (0deg) when I want to bring it back (after clicking on the X)
+			$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
+			$("#mobile #subjects .pic-box-music h1").fadeOut(1000);
+			$("#mobile #xThatBringsBackMusicInMobile").delay(1200).fadeIn(1000);
+		}
+	});
+
+
+	//I made a function, that pauses the videos (after the X button is clicked),
+	//because otherwise the videos continue playing even when someone leaves the music/video's screen. 
+	function srcPause() {
+		for (i = 0; i < players.length; i++ ){  //the player is an Array that I made in the youTubeAPI.js file
+			players[i].pauseVideo();
+			$(".MobileSong").css("pointerEvents", "none");
+		}
+	}
 	
+
+	//When someone clicks the "X" sign at the top of the music container,  
+	//then the the music container will disappear and the user will see the img of #musicFrontImg again.
+	$("#xThatBringsBackMusicInMobile").on("click", function(){
+		$(this).fadeOut(500);
+		$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirl 0.5s ease-in forwards"});
+		$("#mobile #subjects #musicFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
+		$("#mobile #subjects .pic-box-music h1").delay(1200).fadeIn(1000);
+		setTimeout(srcPause, 600);
+	});
+
+	
+
+
+
+	//The familyTreeMobileImg wasn't centered inside its scrolled container
+	//so I took the img's width and devided it to 3.6 (in order to reach its center)
+	var familyTreeContainerInsideContainer = $("#containerInsideContainer");
+	var familyTreeMobileImg = $("#familyTreeMobileImg");
+	var scrollto = familyTreeMobileImg.width() / 3.6;
+	familyTreeContainerInsideContainer.animate({ scrollLeft:  scrollto});
+
+
+
 
 	//I devided the gallery (on mobile) to 4 different sections on the x-axis. When someone scrolls the gallery around the second section and
 	//releases his finger, then the gallery will move exactly to the beginning of the second section. 
@@ -221,6 +278,13 @@ $(document).ready(function(){
 	const widerGalleryContainer = document.getElementById("mobile-gallery-wider-container");
 	const regularGalleryContainer = document.getElementById("mobile-gallery-regular-container");
 
+
+	//The gallery bullets
+	const bullet1 =	document.getElementById("firstCircle");
+	const bullet2 =	document.getElementById("secondCircle");
+	const bullet3 =	document.getElementById("thirdCircle");
+	const bullet4 =	document.getElementById("fourthCircle");
+	const bullets = [bullet1, bullet2, bullet3, bullet4];
 
 
 	$("#mobile-gallery-regular-container").on("touchstart", function(e){  //touchstart
@@ -239,94 +303,53 @@ $(document).ready(function(){
 		
 		//by the use of console.log(e); I found out that e.changedTouches[0].target shows me on which DOM element I started my touchend event:
 		let id = $(e.changedTouches[0].target).attr("id");
-				                   
-		//rules to move the first section to the second section
-		if( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-a' || id == 'img-b' || id == 'img-c' || id == 'img-d' || id == 'img-e' || id == 'img-f')){
-			widerGalleryContainer.style.animation = "galleryMoves0to1 0.5s forwards ease";
-			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
-	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		window.translateXGalleryLocation = 1;
-		} 
 
-		//rules to move the second section to the third section
-		else if ( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
-			widerGalleryContainer.style.animation = "galleryMoves1to2 0.5s forwards ease";
-			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
-	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		window.translateXGalleryLocation = 2;
+		let IDsDevidedByScreens = [['img-a', 'img-b', 'img-c', 'img-d', 'img-e', 'img-f'],  //IDsDevidedByScreens[0];
+							  	  ['img-g', 'img-h', 'img-i', 'img-j', 'img-k', 'img-l'],  //IDsDevidedByScreens[1];
+							 	  ['img-m', 'img-n', 'img-o', 'img-p', 'img-q', 'img-r'],  //IDsDevidedByScreens[2];
+								  ['img-s', 'img-t', 'img-u', 'img-v', 'img-w', 'img-x']]; //IDsDevidedByScreens[3];
+	
+
+		//This function will help us find the index of the screen section that was clicked at the beginning of the touch action
+		//(The screen is devided to 4 sections/arrays in IDsDevidedByScreens)
+		function screensIndex(){
+			let a;
+			IDsDevidedByScreens.forEach(function(value, index){
+				value.forEach(function(insideValue, insideIndex){  //The value is the inner array
+					if (id == insideValue){
+						a = index;
+					}
+				});
+			});
+			return a;
+		} 					  	
+
+
+		let startingScreenIndex = screensIndex(); //Now I'm calling the screensIndex() function and put it in a variable
+
+		if((currentLocation - lastTouchLocation) < -10) { //When someone swipes his finger from right to left
+				if (startingScreenIndex < 3) {   //It is smaller than 3, because we can't swipe the 4th screen in that direction, since it's the last one
+					widerGalleryContainer.style.animation = "galleryMoves" + startingScreenIndex + "to" + (startingScreenIndex + 1) + " 0.5s forwards ease";  //The widerGalleryContainer moves, and a new section of the gallery appears
+					bullets[startingScreenIndex + 1].style.background = "rgba(255, 255, 255, 1)"; //The new screen's bullet will become white
+					bullets[startingScreenIndex].style.background = "rgba(125, 119, 119, 0.6)";	//The previous bullet will become grey
+					window.translateXGalleryLocation = startingScreenIndex + 1; //The new translateXGalleryLocation 
+				}		
+		} else if ((currentLocation - lastTouchLocation) > 10) {    //When someone swipes his finger from left to right
+					if (startingScreenIndex > 0) {  //It is bigger than 0, because we can't swipe the first screen in that direction
+						widerGalleryContainer.style.animation = "galleryMoves" + startingScreenIndex + "to" + (startingScreenIndex - 1) + " 0.5s forwards ease";
+						bullets[startingScreenIndex - 1].style.background = "rgba(255, 255, 255, 1)"; //The new screen's bullet will become white
+						bullets[startingScreenIndex].style.background = "rgba(125, 119, 119, 0.6)";	//The previous bullet will become grey
+						window.translateXGalleryLocation = startingScreenIndex - 1;  //The new translateXGalleryLocation
+					}
+		 } else if (((currentLocation - lastTouchLocation) >= -10) && ((currentLocation - lastTouchLocation) <= 10)) {  //working on cases that we click on an image (the browser thinks that click is touchstart + touchend)
+					widerGalleryContainer.style.animation = "galleryStaysAt"+ startingScreenIndex +" 0.7s forwards ease";  //The gallery stays in place
+					window.translateXGalleryLocation = startingScreenIndex;
 		}
-
-		//rules to move the third section to the fourth section
-		else if ( ((currentLocation - lastTouchLocation) < -10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
-			widerGalleryContainer.style.animation = "galleryMoves2to3 0.5s forwards ease";
-			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("fourthCircle").style.background = "rgba(255, 255, 255, 1)"; //the fourth bullet becomes white
-	 		window.translateXGalleryLocation = 3;
-	 	}
-
-		//rules to move the fourth section back to the third section	 		
-	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-s' || id == 'img-t' || id == 'img-u' || id == 'img-v' || id == 'img-w' || id == 'img-x')){
-			widerGalleryContainer.style.animation = "galleryMoves3to2 0.5s forwards ease";
-			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("thirdCircle").style.background = "rgba(255, 255, 255, 1)"; //the third bullet becomes white
-	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		window.translateXGalleryLocation = 2;
-	 	}
-
-	 	//rules to move the third section back to the second section
-	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-m' || id == 'img-n' || id == 'img-o' || id == 'img-p' || id == 'img-q' || id == 'img-r')){
-			widerGalleryContainer.style.animation = "galleryMoves2to1 0.5s forwards ease";
-			document.getElementById("firstCircle").style.background = "rgba(125, 119, 119, 0.6)";
-	 		document.getElementById("secondCircle").style.background = "rgba(255, 255, 255, 1)"; //the second bullet becomes white
-	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		window.translateXGalleryLocation = 1;
-	 	}
-
-	 	//rules to move the second section back to the first section
-	 	else if ( ((currentLocation - lastTouchLocation) > 10) && (id == 'img-g' || id == 'img-h' || id == 'img-i' || id == 'img-j' || id == 'img-k' || id == 'img-l')){
-			widerGalleryContainer.style.animation = "galleryMoves1to0 0.5s forwards ease";
-			document.getElementById("firstCircle").style.background = "rgba(255, 255, 255, 1)"; //the first bullet becomes white
-	 		document.getElementById("secondCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("thirdCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		document.getElementById("fourthCircle").style.background = "rgba(125, 119, 119, 0.6)"; 
-	 		window.translateXGalleryLocation = 0;
-	 	}
-
-	 	//working on cases that we click on an image (the browser thinks that click is touchstart + touchend:
-	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 0)){
-	 		widerGalleryContainer.style.animation = "galleryStaysAt1 0.7s forwards ease";
-	 	}
-
-	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 1)){
-	 		widerGalleryContainer.style.animation = "galleryStaysAt2 0.7s forwards ease";
-	 	}
-
-	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 2)){
-	 		widerGalleryContainer.style.animation = "galleryStaysAt3 0.7s forwards ease";
-	 	}
-
-	 	else if ( ((currentLocation - lastTouchLocation) > -10) && ((currentLocation - lastTouchLocation) < 10) && (window.translateXGalleryLocation == 3)){
-	 		widerGalleryContainer.style.animation = "galleryStaysAt4 0.7s forwards ease";
-	 	}
 
 	});
 
 		
 
-	//The gallery bullets
-	const bullet1 = document.getElementById("firstCircle");
-	const bullet2 = document.getElementById("secondCircle"); 
-	const bullet3 = document.getElementById("thirdCircle"); 
-	const bullet4 = document.getElementById("fourthCircle"); 
-	const bullets = [bullet1, bullet2, bullet3, bullet4];
 
 	//When someone clicks a gallery bullet, it will change its color and the widerGalleryContainer location
 	for (j = 0; j < 4; j++){
@@ -389,29 +412,7 @@ $(document).ready(function(){
 
 
 
-	//When someone clicks the #recipesFrontImg on mobile screens, it disappears
-	//and then the transformed div appears and also the "X" that closes the recipes container.
-	$("#mobile #subjects #recipesFrontImg").on("click", function(){
-		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
-			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the clock's img appears in (0deg) when I want to bring it back (after clicking on the X)
-			$("#mobile .pic-box-food ul").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"}); //
-			$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
-			$("#mobile #subjects .pic-box-food h1").fadeOut(1000);
-			$("#mobile #xThatBringsBackRecipesInMobile").delay(1200).fadeIn(1000);
-		}
-	});
-
-
-	//When someone clicks the "X" sign near the recipes container,  
-	//then the the recipes container will disappear and the user will see the img of #recipesFrontImg again.
-	$("#xThatBringsBackRecipesInMobile").on("click", function(){
-		$(this).fadeOut(500);
-		$("#mobile .pic-box-food ul").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#mobile .pic-box-food #recipes-mobile-container").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#mobile #subjects #recipesFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
-		$("#mobile #subjects .pic-box-food h1").delay(1200).fadeIn(1000);
-	});
-
+	
 
 
 	//when someone clicks on a recipe title on the upper line, it goes down with the rest of its line
@@ -436,42 +437,6 @@ $(document).ready(function(){
 			};
 		}
 	}
-
-
-
-
-
-	//When someone clicks the #musicFrontImg on mobile screens, it disappears
-	//and then the transformed div appears and also the "X" that closes the recipes container.
-	$("#mobile #subjects #musicFrontImg").on("click", function(){
-		if((window.innerWidth < 600 && (window.matchMedia("(orientation: portrait)").matches)) || (window.innerWidth < 900 && (window.matchMedia("(orientation: landscape)").matches))){
-			$(this).css({"animation": "twirl 0.6s ease-in forwards", "transform": "rotateY(90deg)"}); //I used transform here, because the violin's img appears in (0deg) when I want to bring it back (after clicking on the X)
-			$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirlBack 1.2s 0.7s ease-out forwards"});
-			$("#mobile #subjects .pic-box-music h1").fadeOut(1000);
-			$("#mobile #xThatBringsBackMusicInMobile").delay(1200).fadeIn(1000);
-		}
-	});
-
-
-	//I made a function, that pauses the videos (after the X button is clicked),
-	//because otherwise the videos continue playing even when someone leaves the music/video's screen. 
-	function srcPause() {
-		for (i = 0; i < players.length; i++ ){  //the player is an Array that I made in the youTubeAPI.js file
-			players[i].pauseVideo();
-			$(".MobileSong").css("pointerEvents", "none");
-		}
-	}
-	
-
-	//When someone clicks the "X" sign at the top of the music container,  
-	//then the the music container will disappear and the user will see the img of #musicFrontImg again.
-	$("#xThatBringsBackMusicInMobile").on("click", function(){
-		$(this).fadeOut(500);
-		$("#mobile .pic-box-music #mobile-music-iframes").css({"animation": "twirl 0.5s ease-in forwards"});
-		$("#mobile #subjects #musicFrontImg").css({"animation": "twirlBack 1.2s 0.8s ease-out forwards"});
-		$("#mobile #subjects .pic-box-music h1").delay(1200).fadeIn(1000);
-		setTimeout(srcPause, 600);
-	});
 
 
 
@@ -585,14 +550,6 @@ $(document).ready(function(){
 
 	});
 	
-
-
-
-
-
-
-
-
 
 
 

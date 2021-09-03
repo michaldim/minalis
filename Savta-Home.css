@@ -3146,22 +3146,22 @@ footer{
 	100%{transform: translateX(-25%)}
 }
 
-@keyframes galleryStaysAt1{
+@keyframes galleryStaysAt0{
 	0%{transform: translateX(0); opacity: 0;}
 	100%{transform: translateX(0); opacity: 1;}
 }
 
-@keyframes galleryStaysAt2{
+@keyframes galleryStaysAt1{
 	0%{transform: translateX(-25%); opacity: 0;}
 	100%{transform: translateX(-25%); opacity: 1;}
 }
 
-@keyframes galleryStaysAt3{
+@keyframes galleryStaysAt2{
 	0%{transform: translateX(-50%); opacity: 0;}
 	100%{transform: translateX(-50%); opacity: 1;}
 }
 
-@keyframes galleryStaysAt4{
+@keyframes galleryStaysAt3{
 	0%{transform: translateX(-75%); opacity: 0;}
 	100%{transform: translateX(-75%); opacity: 1;}
 }
@@ -3468,7 +3468,6 @@ screen and (max-width: 599px) and (orientation: portrait){
 
 	#subjects .top-pictures #xThatBringsBackClockImgInMobile{
 		display: none; 
-		position: absolute;
 		position: absolute;
 		margin: 20px auto 0 auto;
 		color: white;
