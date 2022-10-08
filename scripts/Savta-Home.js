@@ -102,9 +102,9 @@ $(document).ready(function(){
 	//(It's a way to make the video stops).
 	function delaySrcChange() {
 		if( (window.innerWidth < 771 && (window.matchMedia("(orientation: landscape)").matches)) || (window.innerHeight < 671 && (window.matchMedia("(orientation: portrait)").matches)) ){
-			$("#movieForMobile").attr("src", "").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=1");
+			$("#movieForMobile").attr("src", "").attr("src", "https://player.vimeo.com/video/757880417?h=d7cb0c4844&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479");
 		} else {
-			$("#movieForMobileWithoutFullScreen").attr("src", "").attr("src", "https://www.youtube-nocookie.com/embed/tshhrdR5jSM?fs=0");
+			$("#movieForMobileWithoutFullScreen").attr("src", "").attr("src", "https://player.vimeo.com/video/757880417?h=d7cb0c4844&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479");
 		}
 	}
 	
