@@ -4096,6 +4096,10 @@ screen and (max-width: 599px) and (orientation: portrait){
 
 @media screen and (min-width: 771px) and (max-width: 899px) and (orientation: landscape), /*I changed it from (max-width: 825px), because somes phones are longer*/
 screen and (min-height: 671px) and (max-height: 889px) and (orientation: portrait){
+
+	.pic-box-savta {
+		animation-fill-mode: none !important;
+	}
 	
 	#movieForMobile{
 		display: none;
@@ -4135,6 +4139,10 @@ screen and (min-height: 671px) and (max-height: 889px) and (orientation: portrai
 
 @media screen and (max-width: 770px) and (orientation: landscape), /*I changed it from (max-width: 825px), because somes phones are longer*/
 screen and (max-height: 670px) and (orientation: portrait){
+
+	.pic-box-savta {
+		animation-fill-mode: none !important;
+	}
 	
 	#movieForMobile{
 		display: block;
