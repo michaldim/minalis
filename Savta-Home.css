@@ -4097,6 +4097,18 @@ screen and (max-width: 599px) and (orientation: portrait){
 @media screen and (min-width: 771px) and (max-width: 899px) and (orientation: landscape), /*I changed it from (max-width: 825px), because somes phones are longer*/
 screen and (min-height: 671px) and (max-height: 889px) and (orientation: portrait){
 
+	#desktop #background-of-movie {
+		display: none;
+	}
+	
+	#desktop #background-of-movie iframe {
+		display: none;
+	}
+
+	#subjects {
+		animation-fill-mode: none !important;
+	}
+
 	.pic-box-savta {
 		animation-fill-mode: none !important;
 	}
@@ -4154,6 +4166,7 @@ screen and (max-height: 670px) and (orientation: portrait){
 		padding-top: 20px; */
 		transform: rotateY(-90deg);
 		z-index: 0; /*without it the X won't appear in Safari*/
+		background: #111;
 	}
 
 	#movieForMobileWithoutFullScreen{
