@@ -4104,14 +4104,6 @@ screen and (min-height: 671px) and (max-height: 889px) and (orientation: portrai
 	#desktop #background-of-movie iframe {
 		display: none;
 	}
-
-	#subjects {
-		animation-fill-mode: none !important;
-	}
-
-	.pic-box-savta {
-		animation-fill-mode: none !important;
-	}
 	
 	#movieForMobile{
 		display: none;
@@ -4152,9 +4144,9 @@ screen and (min-height: 671px) and (max-height: 889px) and (orientation: portrai
 @media screen and (max-width: 770px) and (orientation: landscape), /*I changed it from (max-width: 825px), because somes phones are longer*/
 screen and (max-height: 670px) and (orientation: portrait){
 
-	.pic-box-savta {
+	/* .pic-box-savta {
 		animation-fill-mode: none !important;
-	}
+	} */
 	
 	#movieForMobile{
 		display: block;
@@ -4167,6 +4159,10 @@ screen and (max-height: 670px) and (orientation: portrait){
 		transform: rotateY(-90deg);
 		z-index: 0; /*without it the X won't appear in Safari*/
 		background: #111;
+	}
+
+	.animationRemoved {
+		animation-fill-mode: none !important;
 	}
 
 	#movieForMobileWithoutFullScreen{

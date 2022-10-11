@@ -93,6 +93,12 @@ $(document).ready(function(){
 			$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlBackOtherDirection 1.2s 0.7s ease-out forwards"});
 			$("#mobile #subjects h1").first().fadeOut(1000);
 			$("#mobile #xThatBringsBackSavtaImgInMobile").delay(1200).fadeIn(1000);
+			setTimeout(() => {
+				$("#mobile #movieForMobile").css("transform", "rotateY(0deg)");
+				$("#mobile #movieForMobile").css({"animation": "none"}); 
+				$("#mobile #movieForMobile").addClass('animationRemoved');
+            	$("#mobile #movieForMobile").removeClass('animationIsOn');
+			}, 1900);
 		}
 	});
 
@@ -104,7 +110,7 @@ $(document).ready(function(){
 		if( (window.innerWidth < 771 && (window.matchMedia("(orientation: landscape)").matches)) || (window.innerHeight < 671 && (window.matchMedia("(orientation: portrait)").matches)) ){
 			$("#movieForMobile").attr("src", "").attr("src", "https://player.vimeo.com/video/757880417?h=d7cb0c4844&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479");
 		} else {
-			$("#movieForMobileWithoutFullScreen").attr("src", "").attr("src", "https://player.vimeo.com/video/758433357?h=18d8ce8bd9");
+			$("#movieForMobileWithoutFullScreen").attr("src", "").attr("src", "https://player.vimeo.com/video/757880417?h=d7cb0c4844&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479");
 		}
 	}
 	
@@ -113,7 +119,10 @@ $(document).ready(function(){
 	//then the iframe will disappear and the user will see savta's image again.
 	//I'm changing the src, because otherwise the video continues playing (It's a way to make the video stops).
 	$("#xThatBringsBackSavtaImgInMobile").on("click", function(){
+		$("#mobile #movieForMobile").addClass('animationIsOn');
+        $("#mobile #movieForMobile").removeClass('animationRemoved');
 		$(this).fadeOut(500);
+		$("#mobile #movieForMobile").css("transform", "rotateY(-90deg)");
 		$("#mobile #movieForMobile").css({"animation": "twirlOtherDirection 0.5s ease-in forwards"});
 		$("#mobile #movieForMobileWithoutFullScreen").css({"animation": "twirlOtherDirection 0.5s ease-in forwards"});
 		$("#mobile #subjects #savta").css({"animation": "twirlBackOtherDirection 1.2s 0.6s ease-out forwards"});
