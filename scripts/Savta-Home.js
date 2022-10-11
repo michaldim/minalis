@@ -102,6 +102,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#mobile #movieForMobile").on("click", function(){
+		console.log("hello");
+	});
+
 
 	//I made a function, that changes the src of the video and then brings it back,
 	//because otherwise the video continues playing even when someone leaves the video's screen. 
