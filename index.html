@@ -799,18 +799,22 @@
 			});
 
 
-			player.getFullscreen().then(function(fullscreen) {
-				console.log(fullscreen);
-					if (fullscreen == true) {
-						player.exitFullscreen().then(function() {
-							console.log('exited full screen');
-						}).catch(function(error) {
-							console.log(error);
-						});
-					}
-			}).catch(function(error) {
-				console.log(error);
+			player.on('fullscreenchange', function(data) {
+				player.getFullscreen().then(function(fullscreen) {
+					console.log(fullscreen);
+						if (fullscreen == true) {
+							player.exitFullscreen().then(function() {
+								console.log('exited full screen');
+							}).catch(function(error) {
+								console.log(error);
+							});
+						}
+				}).catch(function(error) {
+					console.log(error);
+				});
 			});
+
+			
 			
 		</script>
 
