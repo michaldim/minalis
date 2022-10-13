@@ -794,15 +794,6 @@
 			// These are Vimeo API rules from https://github.com/vimeo/player.js :
 			const mobileVimeoIframe = document.querySelector('#mobile #subjects .pic-box-savta #movieForMobileWithoutFullScreen');
 			const player = new Vimeo.Player(mobileVimeoIframe);
-		
-			player.on('play', function() {
-				console.log('played the video!: ', player, player.element.id);
-				if (player.element.id == 'movieForMobileWithoutFullScreen') {
-					console.log('player.element.id is movieForMobileWithoutFullScreen');
-				} else {
-					console.log('player.element.id is not movieForMobileWithoutFullScreen');
-				}
-			});
 			
 			// in some screens the fullscreen button exists, although it should not,
 			// so I wrote this eventListener, in order to prevent the user from making the 
