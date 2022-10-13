@@ -4148,7 +4148,7 @@ screen and (max-height: 670px) and (orientation: portrait){
 		animation-fill-mode: none !important;
 	} */
 	
-	#movieForMobile:not(:fullscreen) {
+	#movieForMobile {
 		display: block;
 		position: absolute;
 		/* top: 0px;
@@ -4159,13 +4159,6 @@ screen and (max-height: 670px) and (orientation: portrait){
 		transform: rotateY(-90deg);
 		z-index: 0; /*without it the X won't appear in Safari*/
 		background: #111;
-	}
-
-	#movieForMobile:fullscreen {
-		position: relative;
-		width: 100vw;
-		height: 100vh;
-		z-index: 99;
 	}
 
 	.animationRemoved {

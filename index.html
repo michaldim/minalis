@@ -789,6 +789,30 @@
 		<script src="scripts/smooth-scroll.polyfills.js"></script>
 		<script src="scripts/Savta-Home.js"></script>
 		<script src="scripts/youTubeAPI.js"></script>
+		<script src="https://player.vimeo.com/api/player.js"></script>
+		<script>
+			const mobileVimeoIframe = document.querySelector('#mobile #subjects .pic-box-savta #movieForMobileWithoutFullScreen');
+			const player = new Vimeo.Player(mobileVimeoIframe);
+		
+			player.on('play', function() {
+				console.log('played the video!: ', mobileVimeoIframe);
+			});
+
+
+			player.getFullscreen().then(function(fullscreen) {
+				console.log(fullscreen);
+					if (fullscreen == true) {
+						player.exitFullscreen().then(function() {
+							console.log('exited full screen');
+						}).catch(function(error) {
+							console.log(error);
+						});
+					}
+			}).catch(function(error) {
+				console.log(error);
+			});
+			
+		</script>
 
 	
 	</body>
