@@ -791,14 +791,13 @@
 		<script src="scripts/youTubeAPI.js"></script>
 		<script src="https://player.vimeo.com/api/player.js"></script>
 		<script>
+			// These are Vimeo API rules from https://github.com/vimeo/player.js :
 			const mobileVimeoIframe = document.querySelector('#mobile #subjects .pic-box-savta #movieForMobileWithoutFullScreen');
 			const player = new Vimeo.Player(mobileVimeoIframe);
-		
-			player.on('play', function() {
-				console.log('played the video!: ', mobileVimeoIframe);
-			});
 
-
+			// in some screens the fullscreen button exists, although it should not,
+			// so I wrote this eventListener, in order to prevent the user from making the 
+			// video bigger:
 			player.on('fullscreenchange', function(data) {
 				player.getFullscreen().then(function(fullscreen) {
 					console.log(fullscreen);
@@ -814,8 +813,6 @@
 				});
 			});
 
-			
-			
 		</script>
 
 	
